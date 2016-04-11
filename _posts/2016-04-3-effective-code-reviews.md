@@ -76,9 +76,8 @@ Peer reviews are about people interacting with one another and ineffectiveness s
     &source={{ site.title }}">
       <i class="fa fa-linkedin"></i> LinkedIn
     </a>
-* <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">
-      <i class="fa fa-facebook"></i> Facebook
-    </a>
+* <div class="fb-like" data-href="http://codeahoy.com/2016/04/03/effective-code-reviews/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
 
 <p class="message">
 I would love to hear your feedback, comments, thoughts on conducting effective code reviews. Please leave a
