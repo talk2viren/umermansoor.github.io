@@ -28,7 +28,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <!-- facebook Open Graph Metadatas -->
-<meta content="{{ site.facebook }}" property="fb:app_id">
+<meta content="{{ site.facebook_id }}" property="fb:app_id">
 <meta content="{{ site.title }}" property="og:site_name">
 {% if page.title %}
   <meta content="{{ page.title }}" property="og:title">
@@ -53,9 +53,9 @@
   <meta content="{{ site.url }}/about/" property="article:author">
 {% endif %}
 {% if page.image %}
-  <meta content="{{ site.url }}img/posts/{{ page.image }}" property="og:image">
+  <meta content="{{ site.url }}/img/posts/{{ page.image }}" property="og:image">
 {% else %}
-  <meta content="{{ site.url }}img/logo-768.jpg" property="og:image">
+  <meta content="{{ site.url }}/img/logo-768.jpg" property="og:image">
 {% endif %}
 {% if page.categories %}
   {% for category in page.categories limit:1 %}
