@@ -2,6 +2,7 @@
 layout: post
 title: Effective Code Reviews
 comments: True
+excerpt_separator: <!--more-->
 ---
 
 Code review is the process in which code written by a developer is inspected by another person to look for defects and improvements. In other words, developers work on their code mostly in isolation and call for a review when they are ready.
@@ -19,7 +20,7 @@ However, many teams still struggle with effective code reviews and don’t reap 
 * Developers abandon code ownership and start relying on others to find issues.
 
 In this post, I’ll talk about few things teams and organizations could do to make code reviews a pleasant experience for everyone involved.
-
+<!--more-->
 ## Advice to Management: Create the Right Culture
 
 Effective code reviews require a healthy culture that values quality and excellence. Code reviews will not give you the desired results if the team doesn’t believe in delivering high-quality products. You need a positive culture in which people are engaged – one that thrives on constructive criticism and allows the best ideas to win.
