@@ -1,0 +1,39 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Code Ahoy
+tagline:          ''
+description:      'Blog on Software and Human Factors.'
+url:              http://codeahoy.com
+baseurl:          /
+
+# Social Media
+twitter:        codeahoy
+linkedin:       umansoor
+facebook:       codeahoy
+
+
+author:
+  name:           'Umer Mansoor'
+  url:            https://twitter.com/codeahoy
+
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/umermansoor
+
+gems:
+  - jekyll-paginate
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb
