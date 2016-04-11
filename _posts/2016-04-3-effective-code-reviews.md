@@ -64,21 +64,6 @@ Some of these things won’t work if they come off as rehearsed or said in a sar
 
 Peer reviews are about people interacting with one another and ineffectiveness stems from sociological issues. Yet managers spend a lot of time worrying about which shiny tools to use – while tools will help, they alone won’t magically bring the results. Start with the right culture and… remember the human:-)
 
-
-## Share
-* <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter }}&related={{ site.twitter }}" rel="nofollow" target="_blank" title="Twitter">
-      <i class="fa fa-twitter"></i> Twitter
-    </a>
-* <a href="http://www.linkedin.com/shareArticle
-    ?mini=true
-    &url={{ site.url }}{{ page.url }}
-    &title={{ page.title }}
-    &source={{ site.title }}">
-      <i class="fa fa-linkedin"></i> LinkedIn
-    </a>
-* <div class="fb-like" data-href="http://codeahoy.com/2016/04/03/effective-code-reviews/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-
-
 <p class="message">
 I would love to hear your feedback, comments, thoughts on conducting effective code reviews. Please leave a
 comment below.  
