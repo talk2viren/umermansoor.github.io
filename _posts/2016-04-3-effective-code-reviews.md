@@ -80,7 +80,6 @@ Peer reviews are about people interacting with one another and ineffectiveness s
       <i class="fa fa-facebook"></i> Facebook
     </a>
 
-
 <p class="message">
 I would love to hear your feedback, comments, thoughts on conducting effective code reviews. Please leave a
 comment below.  
