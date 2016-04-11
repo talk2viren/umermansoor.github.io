@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            Code Ahoy
 tagline:          ''
-description:      'Blog on Software and Human Factors.'
+description:      'Articles on Software and Human Factors.'
 url:              http://codeahoy.com
 baseurl:          /
 
@@ -23,6 +23,10 @@ facebook_id:    194256054293519
 author:
   name:           'Umer Mansoor'
   url:            https://twitter.com/codeahoy
+
+name: Code Ahoy
+description: Articles on Software and Human Factors.
+url: http://codeahoy.com
 
 
 paginate:         5
