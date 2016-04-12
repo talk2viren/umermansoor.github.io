@@ -9,7 +9,7 @@ Managing people is an *extremely* difficult task and I'm sad to say that most ma
 
 *What is management?*
 
-To me, management is hiring the right people, telling them *what* needs to get done and *why*, giving them the tools they need and **getting out of their way**.
+To me, management is hiring the right people, telling them *what* needs to get done and *why*, giving them the tools they need and **getting out of their way**. If you get incompetent people, I'm sorry to break it to you but you **will** fail no matter what you do.
 
 The above statement may sound radical (I hope only to a few). The problem is that almost all organizational structures put managers at the top of the hierarchy implying that they are the ones responsible for all decision making. And most managers behave that way... they do not get out of the way. [DeMarco and Lister](http://www.amazon.com/Peopleware-Productive-Projects-Second-Edition/dp/0932633439) provide details of their encounter with one such "manager":
 
@@ -17,8 +17,7 @@ The above statement may sound radical (I hope only to a few). The problem is tha
 
 <!--more-->
 
-Management is not about making technical decisions. It is about finding and bringing the right people on-board. If you get incompetent people, I'm sorry to break it to you but you **will** fail.
-Once the right people are on the bus, good managers take care of them, remove barriers, allow room for mistakes and allow them to succeed at their job.
+Management is not about making technical decisions. It is about getting the right people on the bus and allowing them to take full ownership. It is about taking care of people, removing barriers, having room for mistakes and moving heaven and earth to give their team anything they need to succeed.
 
 **Bad** managers who believe their job is to "*be an intimidating alpha male ready to crack the whip and kick ass*" will see the productivity and quality go down in any job that requires people to use their imagination and brain power. Then they become defensive and start putting "processes" and "measurements" in place. The slow decline begins. People abandon ownership and adopt the "*Meh. Why should I care?*" attitude. The project is doomed at that point. It will either fail or will be of mediocre quality.
 
