@@ -19,7 +19,7 @@ The problem is that almost all organizational structures put managers at the top
 
 Management is not about making technical decisions. It is about getting the right people on the bus and allowing them to take full ownership. It is about taking care of people, removing barriers, having room for mistakes and moving heaven and earth to give their team anything they need to succeed. If you have incompetent people, I'm sorry to break it to you but you **will** fail.
 
-**Bad** managers who believe their job is to "*be an intimidating alpha male ready to crack the whip*" will see the productivity and quality go down in any job that requires people to use their imagination and brain power. Then they become defensive and start putting "processes" and "measurements" in place. The slow decline begins. People abandon ownership and adopt the "*Meh. Why should I care?*" attitude. The project is doomed at that point. It will either fail or will be of mediocre quality.
+**Bad** managers who believe their job is to "*be an intimidating alpha male and to crack the whip*" will see the productivity and quality go down in any job that requires people to use their imagination and brain power. Then they become defensive and start putting "processes" and "measurements" in place. The slow decline begins. People abandon ownership and adopt the "*Meh. Why should I care?*" attitude. Good people leave (physically or mentally) and they end up with yes men. The project is doomed. If it doesn't fail, it will be of mediocre quality. 
 
 In [Peopleware](http://www.amazon.com/Peopleware-Productive-Projects-Second-Edition/dp/0932633439), DeMarco and Lister make a great point:
 
