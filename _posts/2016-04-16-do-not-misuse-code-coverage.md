@@ -13,7 +13,7 @@ Some organizations and managers make high level of code coverage mandatory for t
 
 <!--more-->
 
-In other words, if coverage is only a target, it could be easily achieved with low quality testing. Good testing require developers to think about the tests they are writing. Forced coverage number takes away that incentive and your team obsesses over the number rather than focusing on the quality, sufficiency and maintainability of tests.
+When coverage becomes only a target, it could be easily achieved with **low quality testing**. High quality testing require developers to think carefully about the tests. Forced coverage number takes away that incentive and your team obsesses over the number rather than focusing on the quality, sufficiency and maintainability of tests.
 
 In his excellent article “[How to Misuse Code Coverage](http://www.exampler.com/testing-com/writings/coverage.pdf)”, Brian Marick writes:
 
@@ -27,7 +27,7 @@ sigh of relief at having finished a not-very-fun job?
 
 ## The right way to code coverage
 
-I like the Google [approach](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit#slide=id.g3f5c82004_99_130). They **strive** for 85% code coverage but it is not **“set in stone”** (probably due to the reasons I presented earlier). Expect your team to have high coverage but don't make it a target. Use coverage numbers objectively to improve the quality of tests and the code. Well written tests should have no problem getting 80-90% code coverage. Low coverage numbers ( < 50%) should ring alarm bells and require further investigation.
+I like the Google [approach](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit#slide=id.g3f5c82004_99_130). They **strive** for 85% code coverage but it is not **“set in stone”** (probably due to the reasons we looked at earlier). Managers should expect their team to have high coverage but should not turn it into a target. Use coverage numbers wisely to improve the quality of tests and the code. Well written tests should have no problem attaining 80-90% code coverage. Low coverage numbers ( < 50%) should ring alarm bells and require further investigation.
 
 ## Summary
 
