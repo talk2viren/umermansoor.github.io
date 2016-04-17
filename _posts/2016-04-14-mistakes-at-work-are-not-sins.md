@@ -26,7 +26,7 @@ The last sentence is the key: *The team sociology, however, ~~can~~ will suffer 
 
 The biggest fear managers have is that mistakes made will cost their company money or damage customer relationship. While this is true, most mistakes made in the workplace don't damage company's reputation. Managers should identify **few** key customer facing areas where mistakes will be catastrophic and put additional oversight and checks in places. Keep this list very short and allow employees the freedom to make mistakes in other areas.
 
-Another common irrational fear is that by allowing mistakes, people will make 'stupid' mistakes. I guess I have have been lucky to have managed very few 'bad apples'. (I could only think of 2 bad employees in the last 4 years.) Majority of software developers are smart, talented and proud people who value quality work, learning and professional development.
+Another common irrational fear is that by allowing mistakes, people will make 'stupid' or 'repeated' mistakes. I guess I have have been lucky to have managed very few 'bad apples'. (I could only think of 2 bad employees in the last 4 years.) Majority of software developers are smart, talented and proud people who value quality work, learning and professional development.
 
 In his autobiography, [Against the Odds](http://www.amazon.com/Against-Odds-Autobiography-Business-Icons/dp/1587990148), James Dyson writes:
 
