@@ -33,14 +33,15 @@ Mandating a code coverage number is not the answer. If anything, you'll make mat
 
 I managed a team that consistently had issues with bugs. Luckily, we were catching these bugs in Q/A but because the development team was offshore and in a different timezone, the feedback loop was becoming a burden. The local software development manager was out of ideas as well. I started my investigation one evening. The first thing I looked at was their code coverage. Not stellar at 76% but not so bad either. I scratched my head and dug into the source code and started looking at the tests. And I didn't have to dig deeper to find the problem: the tests were *crap*. I remember a small test that alone got 40% coverage! It was a [dirty hybrid of unit and integration test ](http://blog.stevensanderson.com/2009/08/24/writing-great-unit-tests-best-and-worst-practises/) that tested a high level event processing method with the right parameters. It didn't even check what would happen when one of the parameters is missing or has the wrong value.
 
-In their defense, they had assigned a "junior developer" to write the tests while the "senior guys" wrote actual code. How did we fix it? We didn't ask the team to increase code coverage, in fact, we didn't even mention it. We started educating them on how to write good unit tests. We encouraged them to watch [videos](https://www.youtube.com/watch?v=wEhu57pih5w) during office hours etc. After initial resistance and passive-aggressiveness, they saw the light and realized that a lot of errors Q/A were discovering, they could find themselves using proper unit tests techniques. More importantly, they realized that for them to professionally grow, they must learn how to write proper tests and *write themselves*. The bug count went down significantly.
+In their defense, they had assigned a "junior developer" to write the tests while the "senior guys" wrote actual code. How did we fix it? We didn't ask the team to increase code coverage, in fact, we didn't even mention it. We started educating them on how to write good unit tests. We encouraged them to watch [videos](https://www.youtube.com/watch?v=wEhu57pih5w) during office hours etc. After initial resistance and passive-aggressiveness, they saw the light and realized that a lot of errors Q/A were discovering, they could find themselves using proper unit tests techniques. More importantly, they realized that for them to professionally grow, they must learn to write proper tests and *write themselves*. The bug count went down significantly.
 
 ## The Google approach
 
 I like the Google [approach](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit#slide=id.g3f5c82004_99_130). They **strive** for 85% code coverage but it is not **“set in stone”**. Their code coverage results over a month are shown in the graph below.
 
 ![Google Code Coverage]({{ site.url }}/img/coveragegoogle.png)
-The graph shows 85% code coverage at the 75th percentile and 90% at the 90th percentile. Pretty impressive.
+
+Pretty Impressive.
 
 ## Summary
 
