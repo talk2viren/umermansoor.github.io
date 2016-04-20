@@ -36,12 +36,12 @@ $ git status
 nothing to commit, working directory clean              
 </pre>
 
-Once you stash, you are free to switch branches. When you are ready to resume working on the changes you *stashed*:
+Once you stash, you are free to switch branches. When you are ready to resume working on the changes you *stashed*, you can `apply` the stash:
 <pre class="prettyprint lang-sh">
 $ git stash apply             
 </pre>
 
-You can stash multiple times. Use `git stash list` command to see to list of stashes stored on the stack.
+You can stash multiple times. Use `git stash list` command to see to list of stashes stored on the stash stack.
 
 <pre class="prettyprint lang-sh">
 $ git stash list
@@ -75,7 +75,10 @@ I often notice a typo or a mistake in my commit message after I commit. Luckily,
 $ git commit --amend -m 'New commit message'
 </pre>
 
-To bring up the message editor, don't provide the `-m` parameter.
+To bring up the message editor, don't provide the `-m` parameter:
+<pre class="prettyprint lang-sh">
+$ git commit --amend
+</pre>
 
 Keep in mind that it will not just modify the commit message but also commit any new changes that you might have. This **will not work if you have pushed the commit** to remote repository.
 
@@ -84,4 +87,4 @@ Keep in mind that it will not just modify the commit message but also commit any
 I'll leave you with couple of links that you might find useful:
 
 - [A collect of .gitignore templates ](https://github.com/github/gitignore).
-- Tired of manual `git diff`? [DiffMerge](https://sourcegear.com/diffmerge/) is a great visual utility to compare files and changes.
+- Tired of boring `git diff`? [DiffMerge](https://sourcegear.com/diffmerge/) is a great utility to compare files and changes visually.
