@@ -11,7 +11,7 @@ This post assumes that you are familiar with the basic operation of Git.
 
 <!--more-->
 
-## 1. Difference between `git pull` and `git fetch`
+## 1. Difference Between `git pull` and `git fetch`
 
 `git pull` will download latest changes from the remote repository and **automatically merge** those changes in the local repository. It doesn't give you a chance to review the changes and as a result conflicts might occur (and they often do). One important thing to keep in mind is that **`git pull` will merge only into the current working branch**. Other branches will stay unaffected.
 
@@ -19,7 +19,7 @@ If you only want to download the latest changes and review them before merging o
 
 **In short:** Both are similar with one key difference: `git fetch` only downloads latest changes where as `git pull` also merges them.
 
-## 2. Stashing
+## 2. Quick Look at Stashing
 
 Let's say you are in the middle of implementing a new feature and you need to switch branches to fix a bug or revert back to where you started in the current branch. You don't want to commit half-done work or lose your changes. `git stash` is a handy feature for these types of situations. It takes your changes, saves them to a temporary place and cleans up your working directory. This allows you to switch to other branches or work elsewhere. Let's look at some examples.
 
@@ -67,7 +67,7 @@ $ git push origin --delete `feature`
 
 **Bonus:** `git branch -d` deletes a local branch. Use `-D` instead of `-d` to force delete a local branch without checking its merge status.
 
-### 2. Fixing the commit message before `git push`
+### 2. Fixing the Commit Message Before `git push`
 
 I often notice a typo or a mistake in my commit message after I commit. Luckily, Git has a way to fix this problem.
 
