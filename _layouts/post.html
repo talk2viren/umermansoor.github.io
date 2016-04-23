@@ -8,14 +8,16 @@ layout: default
   {{ content }}
     <p class="message">
       This article was written by <a href="https://www.linkedin.com/in/umansoor">Umer Mansoor</a>.
-      Please feel free to leave your thoughts in the comments section below.
+      Please leave your comments below and also don't forget to <a href="https://www.facebook.com/codeahoy">follow us on Facebook</a>.
     </p>
 
   <!-- Social network buttons -->
   <div class="container">
     <div class="row ">
       <div class="col-xs-2"></div>
+        <div class="fb-follow" data-href="https://www.facebook.com/codeahoy" data-layout="standard" data-show-faces="true"></div>
       <div class="col-xs-8">
+
 
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="codeahoy" data-hashtags="codeahoy">Tweet</a>
         <script type="IN/Share" data-counter="right"></script>
@@ -56,3 +58,12 @@ layout: default
 <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs'); </script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<!-- Facebook Follow -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=194256054293519";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
