@@ -16,7 +16,7 @@ Let's skip to 1999 when HTTP/2's predecessor, HTTP/1.1 was released. Prior versi
 
 In 2004, Web 2.0 ushered in the new era of rich user experience and collaboration. It allowed users to interact with websites, leave comments, indulge in social sharing and enjoy many new features. [New technologies](https://en.wikipedia.org/wiki/Web_2.0#Technologies) emerged and many Web 2.0 websites like Wikipedia, Flickr and YouTube went on to become huge successes.
 
-While all this was going on, the protocol that ran it all, HTTP/1.1, was having trouble keeping up. The websites were growing significantly in size and complexity and it wasn't designed to handle that. But smart people do what they do best: they invented workarounds (aka hacks) to overcome HTTP/1.1 limitations. Things like [domain sharding](https://www.maxcdn.com/one/visual-glossary/domain-sharding-2/), [sprite sheets](https://developer.apple.com/library/iad/documentation/NetworkingInternet/Conceptual/SafariImageDeliveryBestPractices/ReducingHTTPRequestswithSprites/ReducingHTTPRequestswithSprites.html) and [data inlining](http://www.websiteoptimization.com/speed/tweak/inline-images/) were used to **optimize performance**. This added complexity on top of HTTP/1.1 and introduced regressions like unnecessary downloads, poor caching etc. Lack of standards meant that web developers had to deal with different browsers and versions. Ugh! I remember countless hours I sunk into tweaking websites to look great on both Firefox and Internet Explorer 7. It worked, but it was messy. And painful.
+While all this was going on, the protocol that ran it all, HTTP/1.1, was having trouble keeping up. The websites were growing significantly in size and complexity and it wasn't designed to handle that. So smart people did what they do best: they invented workarounds, so-called best practices, to overcome HTTP/1.1 limitations. Hacks like [domain sharding](https://www.maxcdn.com/one/visual-glossary/domain-sharding-2/), [sprite sheets](https://developer.apple.com/library/iad/documentation/NetworkingInternet/Conceptual/SafariImageDeliveryBestPractices/ReducingHTTPRequestswithSprites/ReducingHTTPRequestswithSprites.html) and [data inlining](http://www.websiteoptimization.com/speed/tweak/inline-images/) were used to **optimize performance**. This added complexity on top of HTTP/1.1 and introduced regressions like unnecessary downloads, poor caching etc. Lack of standards meant that web developers had to deal with different browsers and versions. Ugh! I remember countless hours I sunk into tweaking websites to look great on both Firefox and Internet Explorer 7. It worked, but it was messy. And painful.
 
 ## The Journey to HTTP/2: A SPDY Stepping Stone
 
@@ -28,20 +28,18 @@ In reality, SPDY **didn't really replace HTTP/1.1** (and neither does HTTP/2 as 
 
 Google released SPDY in 2010 in Chrome 6 and soon deployed SPDY across all Google services. Word spread and SPDY soon gained traction and support from the community and vendors like Mozilla, Nginx, Microsoft and Facebook. Internet Engineering Task Force (IEFT), responsible for HTTP standards, seized the opportunity and [published HTTP/2 standards in 2015](https://tools.ietf.org/html/rfc7540) deriving heavily from SPDY; SPDY's fingerprints are all over HTTP/2.
 
-Google has announced that it will [stop supporting SPDY on May 15th, 2016](http://blog.chromium.org/2016/02/transitioning-from-spdy-to-http2.html).
-
-Adios SPDY, you will always be remembered as an important stepping stone on the journey to HTTP/2.
+Google has announced that it will [stop supporting SPDY on May 15th, 2016](http://blog.chromium.org/2016/02/transitioning-from-spdy-to-http2.html). Adios SPDY, you will be remembered as an important stepping stone on the journey to HTTP/2.
 
 ## HTTP/2 is Here
 
-Every modern web browser now supports HTTP/2. All major cloud and CDN vendors support HTTP/2. The adoption among websites isn't significant but it's growing. As of April 24, 2016, [7.2% of all websites use HTTP/2](http://w3techs.com/technologies/details/ce-http2/all/all).
+Every modern web browser now supports HTTP/2. All major cloud and CDN vendors support it. The adoption among websites isn't significant but it's growing. As of April 24, 2016, [7.2% of all websites use HTTP/2](http://w3techs.com/technologies/details/ce-http2/all/all).
 
 HTTP/2 brings many improvements to HTTP/1.1 and the biggest ones you need to know are:
 
 ### 1. Multiplexing
-Under HTTP/1.1, connections were persistent which allowed multiple requests to be sent or [pipelined](https://en.wikipedia.org/wiki/HTTP_pipelining) over the same TCP connection. This improved performance by reducing connection establishment and latency overheads, but wasn't a silver bullet. Even though multiple requests could be sent over the same connection, the responses must arrive synchronously in the same order as they were requested. This means an expensive resources (e.g. loading a large image file) will block a lightweight response if requested in the wrong order. This phenomenon is known as the [head-of-line (HOL) blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking).
+Under HTTP/1.1, connections were persistent which allowed multiple requests to be sent or [pipelined](https://en.wikipedia.org/wiki/HTTP_pipelining) over the same TCP connection. While it improved performance by reducing connection establishment overhead, it wasn't a silver bullet. Even though multiple requests could be sent over the same connection, the responses must arrive synchronously in the same order as they were requested. This means an expensive resources (e.g. loading a large image file) will block a lightweight response if requested in the wrong order. This phenomenon is known as the [head-of-line (HOL) blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking).
 
-HTTP/2 allows multiplexing that solves HOL issue of HTTP/1.1 pipelining by allowing responses to be arrived out of order, thus eliminating the need to open multiple connections.
+HTTP/2 allows multiplexing that solves HOL issue by allowing **responses to be arrived out of order**, thus eliminating the need to open multiple connections.
 
 ### 2. Compression & Metadata to Reduce Header Overhead
 Each and every request and response under HTTP/1.1 has a header typically between 200 bytes to 2KB in size. The first issue is that the **headers are not permitted to be compressed**. Another issues with HTTP/1.1 headers is that they contain a lot of **redundant information** that is exchanged several hundred times as browsers make as many requests to load a webpage. Static headers like Accept* and User-Agent only need to be exchanged once.

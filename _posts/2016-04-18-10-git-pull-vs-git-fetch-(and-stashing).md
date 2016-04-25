@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Git is one of, if not the, most popular and most widely used source code management system. In this short post, we'll explore differences between `git pull` and `git fetch` and talk about stashing.
+Git is one of, if not the, most popular and most widely used source code management systems. In this short post, we'll explore differences between `git pull` and `git fetch` and talk about stashing.
 
 This post assumes that you are familiar with the basic operation of Git.
 
