@@ -16,7 +16,7 @@ Let's skip to 1999 when HTTP/2's predecessor, HTTP/1.1 was released. Prior versi
 
 In 2004, Web 2.0 ushered in the new era of rich user experience and collaboration. It allowed users to interact with websites, leave comments, indulge in social sharing and enjoy many new features. [New technologies](https://en.wikipedia.org/wiki/Web_2.0#Technologies) emerged and many Web 2.0 websites like Wikipedia, Flickr and YouTube went on to become huge successes.
 
-While all this was going on, the protocol that ran it all, HTTP/1.1, was having trouble keeping up. The websites were growing significantly in size and complexity and it wasn't designed to handle that. But smart people do what they do best: they invented workarounds (aka hacks) to overcome HTTP/1.1 limitations. Things like [domain sharding](https://www.maxcdn.com/one/visual-glossary/domain-sharding-2/), [sprite sheets](https://developer.apple.com/library/iad/documentation/NetworkingInternet/Conceptual/SafariImageDeliveryBestPractices/ReducingHTTPRequestswithSprites/ReducingHTTPRequestswithSprites.html) and [data inlining](http://www.websiteoptimization.com/speed/tweak/inline-images/) were used **optimize performance**. This added complexity on top of HTTP/1.1 and introduced regressions like unnecessary downloads, poor caching etc. Lack of standards meant that web developers had to deal with the added complexity of dealing with different browsers and versions. Ugh! I remember countless hours I sunk into tweaking websites to look great on both Firefox and Internet Explorer 7. It worked, but it was messy. And painful.
+While all this was going on, the protocol that ran it all, HTTP/1.1, was having trouble keeping up. The websites were growing significantly in size and complexity and it wasn't designed to handle that. But smart people do what they do best: they invented workarounds (aka hacks) to overcome HTTP/1.1 limitations. Things like [domain sharding](https://www.maxcdn.com/one/visual-glossary/domain-sharding-2/), [sprite sheets](https://developer.apple.com/library/iad/documentation/NetworkingInternet/Conceptual/SafariImageDeliveryBestPractices/ReducingHTTPRequestswithSprites/ReducingHTTPRequestswithSprites.html) and [data inlining](http://www.websiteoptimization.com/speed/tweak/inline-images/) were used to **optimize performance**. This added complexity on top of HTTP/1.1 and introduced regressions like unnecessary downloads, poor caching etc. Lack of standards meant that web developers had to deal with different browsers and versions. Ugh! I remember countless hours I sunk into tweaking websites to look great on both Firefox and Internet Explorer 7. It worked, but it was messy. And painful.
 
 ## The Journey to HTTP/2: A SPDY Stepping Stone
 
@@ -44,12 +44,12 @@ Under HTTP/1.1, connections were persistent which allowed multiple requests to b
 HTTP/2 allows multiplexing that solves HOL issue of HTTP/1.1 pipelining by allowing responses to be arrived out of order, thus eliminating the need to open multiple connections.
 
 ### 2. Compression & Metadata to Reduce Header Overhead
-Each and e  very request and response under HTTP/1.1 has a header typically between 200 bytes to 2KB in size. The first issue is that the **headers are not permitted to be compressed**. Another issues with HTTP/1.1 headers is that they contain a lot of **redundant information** that is exchanged several hundred times as browsers as many requests to load a webpage. Static headers like Accept* and User-Agent only need to be exchanged once.
+Each and every request and response under HTTP/1.1 has a header typically between 200 bytes to 2KB in size. The first issue is that the **headers are not permitted to be compressed**. Another issues with HTTP/1.1 headers is that they contain a lot of **redundant information** that is exchanged several hundred times as browsers make as many requests to load a webpage. Static headers like Accept* and User-Agent only need to be exchanged once.
 
 HTTP/2 fixes both these problems by compressing and eliminating unnecessary headers. *High five.*
 
 ### 3. Server Push
-HTTP/2 server can data to a client before the client even asks for it. To understand why it is beneficial, let's understand how a webpage is loaded under HTTP/1.1: web browser requests a web page, waits for it to be downloaded, parses it to find all linked assets such CSS and JavaScript and then make *separate requests* to download these asserts.
+HTTP/2 server can send data to a client before the client even asks for it. To understand why it is beneficial, let's understand how a webpage is loaded under HTTP/1.1: web browser requests a web page, waits for it to be downloaded, parses it to find all linked assets such CSS and JavaScript and then make *separate requests* to download these asserts.
 
 HTTP/2 Server Push allows the server to send these files to the browser proactively with the first request knowing that it will need them to display the page. I'm sure there's a way to tell the server to stop being so proactive if the web browser already has files in its cache.
 
@@ -58,15 +58,13 @@ People debated for a long time whether or not encryption (in the form of TLS) sh
 
 > After extensive discussion, the Working Group did not have consensus to require the use of encryption (e.g., TLS) for the new protocol. However, some implementations have stated that they will **only support HTTP/2 when it is used over an encrypted connection, and currently no browser supports HTTP/2 unencrypted**.
 
-This means that while the use of TLS is not required by the standard, most browsers will require it.
-
-Read Mark Nottingham's excellent [commentary and views](https://www.mnot.net/blog/2014/01/04/strengthening_http_a_personal_view) on this topic, if you are interested.
+This means that while the use of TLS is not required by the standard, most browsers will not work without it. If you are interested, read Mark Nottingham's excellent [commentary and views](https://www.mnot.net/blog/2014/01/04/strengthening_http_a_personal_view) on the topic
 
 ### 5. Binary Encoding
 Unlike HTTP/1.1, HTTP/2 uses binary encoding. Without getting into binary vs text protocols debate, this means that HTTP/2 will be more efficient to parse and compact on the wire but will no longer be human readable. When I was learning HTTP, one of the first things I did was made a request by hand and looked at the response along with all the headers as it arrived in all its glory. Unfortunately, this won't be possible in HTTP/2 - at least not without specialized tools.
 
 
-The good news for web developers is that **HTTP/2 is backwards compatible with HTTP/1.1**. This means if you want to upgrade to HTTP/2, you could do so without changing anything. The upgrade will be equally seamless to your users. Don't forget to undo HTTP/1.1 performance optimizations (aka best practices) as they no longer provide the same benefits.
+The good news for web developers is that **HTTP/2 is backwards compatible** with HTTP/1.1. This means if you want to upgrade to HTTP/2, you could do so without changing anything. The upgrade will be equally seamless to your users. Don't forget to undo HTTP/1.1 performance optimizations (aka best practices) as they no longer provide the same benefits.
 
 ## HTTP/2 - Future is Fast... And Complex
 People have [criticized](https://queue.acm.org/detail.cfm?id=2716278) HTTP/2 for being Google's idea, optimized for their needs and having needless complexity (things like flow controls to prevent DOS attacks). One has to agree that HTTP/2 is undoubtedly more complex than its predecessors, but the complexity is a necessary evil to keep up with today's needs. An average webpage in 2016 is the same [size as the original DOOM shareware binary](https://mobiforge.com/research-analysis/the-web-is-doom?r=1). Sure Google benefits from HTTP/2, but don't we all? It is time to move beyond HTTP/1.1 and I believe HTTP/2 is the answer.
