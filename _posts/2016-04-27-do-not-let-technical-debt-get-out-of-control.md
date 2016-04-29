@@ -20,12 +20,12 @@ The lessons to be learned are:
 ### 1. Acknowledge Technical Debt
 It is an unavoidable reality and could become a major problem if ignored.
 
-### 2. Understand the Short-term vs Long-term Consequences
+### 2. Understand the Short-Term vs Long-Term Consequences
 It will often make sense to ship a subpar system to gain market advantage. In fact, it would be a mistake not to. In our last [startup](http://www.paperistic.com/), we made the opposite mistake and didn’t deliver a *minimum viable product* on time and as a result, lost out on crucial early feedback. The trick is for all stakeholders to understand and prioritize based on the tradeoffs of speed vs quality. Non-technical stakeholders often don’t understand the concept and it is your job to educate them. [Steve McConnell](http://www.ontechnicaldebt.com/blog/steve-mcconnell-on-categorizing-managing-technical-debt/) has some good advice:
 
 > Technical staff should build on the technical debt metaphor as a way to talk to business staff to explain that if they take on short-term technical debt, they will need to pay it off or else it will end up costing the business on the long-term. For example: “If we spend X weeks working on this particular infrastructure area, it will allow us to add features A, B, and C. Although the work itself does not show immediate benefit, it will open the door for other work that will produce business benefits later on.”  Now this becomes a productive discussion and we have a reason for the business to engage.
 
-### 3. Do not let technical debt get out of control
+### 3. Do Not Let Technical Debt Get out of Control
 If you let technical debt accrue and not pay if off, future development will be crippled, code quality will suffer, tribal knowledge will be required to understand all the hacks and people working on the project will become demotivated. Paying off technical debt should be a part of your normal development process to avoid massive interest in the future.
 
 In the next post, we’ll look at Software Entropy and whether the ‘disorder in a software system’ is a bad thing.
