@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 
 > Technical Debt is a **wonderful metaphor** developed by Ward Cunningham to help us think about this problem. In this metaphor, doing things the quick and dirty way sets us up with a technical debt, which is similar to a financial debt. Like a financial debt, the technical debt incurs interest payments, which come in the form of the **extra effort that we have to do in future development because of the quick and dirty design choice**.
 
-I fully agree. It is an excellent metaphor for describing the eventual consequences of adding new functionality to a system in a **quick and dirty** manner to get some urgent functionality out of the door. The alternative approach would have resulted in a much cleaner design and implementation, but would also have taken much longer. Taking on technical debt should be a **strategic decision** where all stakeholders must understand the consequences and risks involved. Like most financial debts, it should not be taken recklessly and interest **payments must be paid on time to avoid penalties**.
+I fully agree. It is an excellent metaphor for describing the eventual consequences of adding new functionality to a system in a **quick and dirty** manner to get something out of the door quickly. The alternative approach would have resulted in a much cleaner design and implementation, but would also have taken much longer. Taking on technical debt should be a **strategic decision** where all stakeholders must understand the consequences and risks involved. Like most financial debts, it should not be taken recklessly and interest **payments must be paid on time to avoid penalties**.
 
  <!--more-->
 
