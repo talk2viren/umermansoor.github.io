@@ -5,19 +5,18 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-[Martin Fowler](http://martinfowler.com/bliki/TechnicalDebt.html) called technical debt a wonderful metaphor:
+
+Technical debt is a useful metaphor for describing the consequences of adding new functionality to a system in a **quick and dirty** manner to get something out of the door faster. The proper way would have resulted in a much cleaner design and implementation, but would also have taken much longer. [Martin Fowler](http://martinfowler.com/bliki/TechnicalDebt.html) calls technical debt a wonderful metaphor:
 
 > Technical Debt is a **wonderful metaphor** developed by Ward Cunningham to help us think about this problem. In this metaphor, doing things the quick and dirty way sets us up with a technical debt, which is similar to a financial debt. Like a financial debt, the technical debt incurs interest payments, which come in the form of the **extra effort that we have to do in future development because of the quick and dirty design choice**.
 
-I fully agree. It is an excellent metaphor for describing the eventual consequences of adding new functionality to a system in a **quick and dirty** manner to get something out of the door quickly. The alternative approach would have resulted in a much cleaner design and implementation, but would also have taken much longer. Taking on technical debt should be a **strategic decision** where all stakeholders must understand the consequences and risks involved. Like most financial debts, it should not be taken recklessly and interest **payments must be paid on time to avoid penalties**.
+Taking on technical debt should be a **strategic decision** where all stakeholders must understand the consequences and risks involved. Like most financial debts, it should not be taken recklessly and interest **payments must be paid on time to avoid penalties**.
 
  <!--more-->
 
 While technical debt has negative connotations, it is an **unavoidable reality** for many software projects. In his [book](http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) on Practical Object-oriented Design in Ruby: An Agile Primer, [Sandi Metz](http://www.sandimetz.com/) wrote:
 
 > Sometimes the value of having the feature right now is so great that it outweighs any future increase in costs. If lack of a feature will force you out of business today it doesn’t matter how much it will cost to deal with the code tomorrow; you must do the best you can in the time you have.
-
-Taking on technical debt is risky business: it gives you the short-term benefits, but you'll have to pay the debt back with interest in the future. Interests will keep on accruing and the more you delay paying the debt off, the higher the interest payments are going to be.
 
 At Starscriber, we accrued technical debt from time to time to take advantage of new business opportunities and tried to pay it off as soon as the dust settled. But we didn’t always succeed. There were at least two projects where the debt got out of control. Implementing (or hacking, would be a better word) new features was a complex and **painful process** for everyone involved: developers, testers and operations teams. The change requests didn't stopped coming and we made the mistake of **not acknowledging that we are accumulating way too much technical debt and letting it drag on for way too long**. The result? It became a huge burden and required a lot of effort just to keep the system running.
 
@@ -36,6 +35,6 @@ In your career, it will often make sense to ship a subpar system to gain market 
 ### 3. Don't Let it Get out of Control: Pay the Debt
 The longer you wait, the higher interest payments get. If you let technical debt accrue and not pay if off, future development will stall, code quality will suffer, tribal knowledge will be required to understand all the hacks and people working on the project will become demotivated. Have a plan for paying off the technical debt to avoid massive interest payments in the future. It should be a part of your normal development process.
 
-Dealing with technical debt is not easy: **upper management often don't always see the value** since it doesn't result in new features; **Things break and you might even have to throw some code out**. Embark on the journey and have faith that you are doing the right thing and that your system will be in a better shape than it was before.
+Taking on technical debt is risky business: it gives you the short-term benefits, but you'll have to pay the debt back with interest in the future. Interests will keep on accruing and the more you delay paying the debt off, the higher the interest payments are going to be. Dealing with technical debt is not always easy: **upper management often don't see the value** since it doesn't result in new features; **Things break and you might even have to throw some code out**. Embark on the journey and have faith that you are doing the right thing and that your system will be in a better shape than it was before.
 
 In the next post or so, we’ll look at Software Entropy and whether or not ‘the disorder in a software system’ is a bad thing. Please like and follow us on [Facebook](https://www.facebook.com/codeahoy) and [Twitter](http://twitter.com/codeahoy) to stay up-to-date.
