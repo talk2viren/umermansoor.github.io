@@ -7,9 +7,9 @@ permalink:        pretty
 #relative_permalinks: true
 
 # Setup
-title:            Code Ahoy
+title:            'Articles on Software and Human Factors. 100% Tested on Humans.'
 tagline:          ''
-description:      'Articles on Software and Human Factors.'
+description:      'Articles on Software and Human Factors. 100% Tested on Humans.'
 url:              http://codeahoy.com
 baseurl:          /
 
