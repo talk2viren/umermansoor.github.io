@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 Software developers, especially those who are new to the field, often [ask](http://two-wrongs.com/how-much-does-an-experienced-programmer-use-google) this question or at least [wonder](http://www.hanselman.com/blog/AmIReallyADeveloperOrJustAGoodGoogler.aspx) whether they are good developers or just good at googling up solutions. 
 
-## "Do experienced programmers use Google frequently?"
+### "Do experienced programmers use Google frequently?"
 
 The resounding answer is **YES, experienced (and good) programmers use Google... a lot**. In fact, one might argue they **use it more than the beginners**. Using Google doesn't make them bad programmers or imply that they cannot code without Google. In fact, truth is quite the opposite: Google is an essential part of their software development toolkit and they know when and how to use it.
 
