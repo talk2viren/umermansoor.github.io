@@ -14,7 +14,7 @@ Taking on technical debt should be a **strategic decision** where all stakeholde
 
  <!--more-->
 
-While technical debt has negative connotations, it is an **unavoidable reality** for many software projects. In his [book](http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) on Practical Object-oriented Design in Ruby: An Agile Primer, [Sandi Metz](http://www.sandimetz.com/) wrote:
+While technical debt has negative connotations, it is an **unavoidable reality** for many software projects. In her [book](http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330) on Practical Object-oriented Design in Ruby: An Agile Primer, [Sandi Metz](http://www.sandimetz.com/) wrote:
 
 > Sometimes the value of having the feature right now is so great that it outweighs any future increase in costs. If lack of a feature will force you out of business today it doesn’t matter how much it will cost to deal with the code tomorrow; you must do the best you can in the time you have.
 
