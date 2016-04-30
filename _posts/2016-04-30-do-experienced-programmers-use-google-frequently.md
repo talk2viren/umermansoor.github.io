@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 Software developers, especially those who are new to the field, often [ask](http://two-wrongs.com/how-much-does-an-experienced-programmer-use-google) this question or at least [wonder](http://www.hanselman.com/blog/AmIReallyADeveloperOrJustAGoodGoogler.aspx) whether they are good developers or just good at googling up solutions. 
 
-**"Do experienced programmers use Google frequently?"** 
+## "Do experienced programmers use Google frequently?"
 
 The resounding answer is **YES, experienced (and good) programmers use Google... a lot**. In fact, one might argue they **use it more than the beginners**. Using Google doesn't make them bad programmers or imply that they cannot code without Google. In fact, truth is quite the opposite: Google is an essential part of their software development toolkit and they know when and how to use it.
 
@@ -22,11 +22,11 @@ Aside from that, good programmers also know that they cannot be the first one to
 
 Recently, I had to write web server using [Netty](http://netty.io/) in Java to handle persistent sockets from mobile games. I had never used Netty before. Here are my Google searches I did:
 
-```
+<p class="message">
 1. netty tutorial
-2. netty maven dependency
-3. netty bytebuf to string
-4. netty bytebuf release
+2. netty maven dependency 
+3. netty bytebuf to string 
+4. netty bytebuf release 
 5. netty 4 changes
 6. setOption("child.bufferFactory") netty 4  
 7. ByteBuf netty
@@ -46,7 +46,7 @@ Recently, I had to write web server using [Netty](http://netty.io/) in Java to h
 21. netty user authentication
 22. netty heartbeat handling
 23. load test netty with 10k concurrent sockets
-```
+</p>
 
 I wrote 255 lines of code that included a working server and a client. I queried google 23 times mostly landing on StackOverflow, Netty 4 website, GitHub, and JavaDocs. If you do the math, that averages out to **1 query every 10 lines of code**! I had no idea. Let me know in the **comments what your average is**.
 
