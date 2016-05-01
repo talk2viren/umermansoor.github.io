@@ -6,12 +6,19 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
+  
+    <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+      <h3>Subscribe to Code Ahoy</h3><p><input type="text" style="width:140px" name="email"/></p>
+      <input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+      <input type="submit" value="Subscribe" />
+      <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+    </form>
+
     <p class="message">
       This article was written by <a href="https://www.linkedin.com/in/umansoor">Umer Mansoor</a>.
       Please leave your comments below and <a href="https://www.facebook.com/codeahoy">
-        like us on <strong>Facebook</a></strong> or 
+        <strong>like us on Facebook</strong></a> or 
         <a href="https://twitter.com/codeahoy"><strong>follow on Twitter</strong></a> to stay up-to-date. <br/>
-        <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
     </p>
 
   <!-- Social network buttons -->
