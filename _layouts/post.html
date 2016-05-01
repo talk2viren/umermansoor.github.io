@@ -7,21 +7,20 @@ layout: default
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
   
-  <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-           <h3>Subscribe to Code Ahoy</h3>
-           <p>Join today and be the first to get notified on new updates.</p>
-           <input type="text" style="width:180px; font-size: 16px; height:34px;" name="email" placeholder="Email Address"/>
-           <input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/>
-           <input type="submit" class="button" value="Subscribe Now" />
-  </form>
-   
-
     <p class="message">
       This article was written by <a href="https://www.linkedin.com/in/umansoor">Umer Mansoor</a>.
       Please leave your comments below and <a href="https://www.facebook.com/codeahoy">
         <strong>like us on Facebook</strong></a> or 
         <a href="https://twitter.com/codeahoy"><strong>follow on Twitter</strong></a> to stay up-to-date. <br/>
     </p>
+    
+      <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+           <h3>Subscribe to Code Ahoy</h3>
+           <p>Join today and be the first to get notified on new updates.</p>
+           <input type="text" style="font-size: 16px; height:34px;" name="email" size="28" placeholder="Email Address"/>
+           <input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+           <input type="submit" class="button" value="Subscribe Now" />
+  </form>
 
   <!-- Social network buttons -->
   <div class="container">
