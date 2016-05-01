@@ -7,13 +7,23 @@ layout: default
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
   
-    <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-      <h3>Subscribe to Code Ahoy</h3>
-      <p><strong>Join today and be the first to get notified on new updates.</strong></p>
-      <input type="text" style="width:140px" name="email" placeholder="Email Address"/>
-      <input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/>
-      <input type="submit" value="Subscribe Now" />
-    </form>
+  <div id="form-main">
+     <div id="form-div">
+        <form class="form" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=CodeAhoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+           <h3>Subscribe to Code Ahoy</h3>
+           <p><strong>Join today and be the first to get notified on new updates.</strong></p>
+           <p class="email">
+               <input type="text" style="width:140px" name="email" placeholder="Email Address"/>
+           </p>
+           <input type="hidden" value="CodeAhoy" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+           <div class="submit">
+               <input type="submit" value="Subscribe Now" />
+               <div class="ease"></div>
+           </div>
+       </form>
+    </div>
+  </div>
+   
 
     <p class="message">
       This article was written by <a href="https://www.linkedin.com/in/umansoor">Umer Mansoor</a>.
