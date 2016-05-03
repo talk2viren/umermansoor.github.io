@@ -5,6 +5,8 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
+![Broken Windows]({{ site.url }}/img/broken_windows.jpg)
+
 > “Complexity is the business we are in and complexity is what limits us.” - Fred Brooks, The Mythical Man-Month
 
 Software projects go through many modifications over their lifetime. As they evolve, the code grows in size and complexity creeps in. Software developers spend a large portion of their time **maintaining** existing software either by adding new functionality or fixing bugs. Often times, they are forced to take **shortcuts** to meet deadlines. Developers add new functionality in a 'quick and dirty' manner and apply duct-tape to defects. While the organization meets its short-term goal of getting the software out of the door quickly, the code quality suffers and deteriorates. After a while, things start to get really bad. The software becomes so complex and buggy, that it is virtually impossible to maintain. Fixing a bug would introduces more bugs and modifying one part of the software would break several others.
@@ -17,7 +19,7 @@ Let's look at a related concept called **software entropy**. Entropy is the amou
 
 When the 'disorder' or the *software entropy* increases, it leads to **[software rot](https://en.wikipedia.org/wiki/Software_rot)**. When the software or code rot gets bad, people become frustrated and consider major refactoring or in some cases [rewriting from scratch](http://codeahoy.com/2016/04/21/when-to-rewrite-from-scratch-autopsy-of-a-failed-software/). These solutions will fix the problem in the short-term but the software will rot again if the team doesn't adopt a plan for keeping future complexity under control.
 
-While there are many factors that lead to software rot, the most important ones, according to [Andrew Hunt](https://en.wikipedia.org/wiki/Andy_Hunt_(author)) and [Dave Thomas](https://en.wikipedia.org/wiki/Dave_Thomas_(programmer)), are the **psychology and the team culture**. In their book [The Pragmatic Programmer](http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), they use a fascinating metaphor to argue that **software entropy is contagious and if not controlled, becomes an epidemic**.
+While there are many factors that lead to software rot, the most important ones, according to [Andrew Hunt](https://en.wikipedia.org/wiki/Andy_Hunt_(author)) and [Dave Thomas](https://en.wikipedia.org/wiki/Dave_Thomas_(programmer)), are the **psychology and the team culture**. In their book, [The Pragmatic Programmer](http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), they argue that **software entropy is contagious and if not controlled, becomes an epidemic**.
 
 > In inner cities, some buildings are beautiful and clean, while others are rotting hulks. Why? Researchers in the field of crime and urban decay discovered a fascinating trigger mechanism, one that very quickly turns a clean, intact, inhabited building into a smashed and abandoned derelict .
 >
@@ -30,3 +32,4 @@ Broken window theory was proposed by criminologists [James Wilson](https://en.wi
 > **Don’t leave “broken windows”** (bad designs, wrong decisions, or poor code) unrepaired. Fix each one as soon as it is discovered. If there is insufficient time to fix it properly, then board it up. **Perhaps you can comment out the offending code, or display a “Not Implemented” message, or substitute dummy data instead. Take some action to prevent further damage and to show that you’re on top of the situation**.
 
 A simple comment around ugly code stating that its ugly and needs to get fixed soon is better than nothing. Code can quickly rot once windows start breaking. Even a mere perception of disorder could result in total chaos. Don't leave broken windows, fix them as soon as you could. Entropy will creep in - don't let it win.
+
