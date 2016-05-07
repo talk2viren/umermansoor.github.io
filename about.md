@@ -8,9 +8,7 @@ title: About
 Hi there. I’m Umer Mansoor, the author of this blog and your host. Building great software and teams is my passion.
 </p>
 
-**A little background about me:** I have been working with startups and constructing software since 2005. My first full-time job after graduating in 2011 was at a [startup](http://www.starscriber.com) where I learned a lot of other things besides software development: building teams, motivating teams and a little bit about sales and marketing. Most importantly, I learned that *passionate people could achieve anything they set their minds on*. Building products should be fun. And we had a blast building several products with a combined user base of 10 million users – that are still in production.
-
-I started this blog on [Wordpress](https://10kloc.wordpress.com/) (it runs on [Jekyll](https://jekyllrb.com/) now) as “notes to self” with technical articles on Cassandra, Hadoop and Java and Concurrent programming, Node.JS. The posts later switched to rants on Usability and UI, Hiring Offshore Developers, Software Design and Architecture and lately Managing Software Teams. I will continue publishing as I find time.
+**A little background about me:** I have been working with startups and constructing software since 2005. My first full-time job after graduating in 2011 was at a [startup](http://www.starscriber.com) where I learned a lot of other things besides software development: building teams, motivating teams and a little bit about sales and marketing. Most importantly, I learned that *passionate people could achieve anything they set their minds on*. Building products should be fun. And we had a blast building several products for millions of users – that are still in production.
 
 I live in the [Bay Area](https://en.wikipedia.org/wiki/Alameda,_California) and work in San Francisco, California. And loving it all… the weather, the food and the diversity.
 

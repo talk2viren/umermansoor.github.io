@@ -259,7 +259,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.00rem;
   font-weight: 300;
 }
 
@@ -437,9 +437,9 @@ a.pagination-item:hover {
 /*
  * CSS Form Email Subscription
  */
- 
+
 .button {
-    background-color: #008CBA; 
+    background-color: #008CBA;
     border: none;
     color: white;
     padding: 8px 26px;
