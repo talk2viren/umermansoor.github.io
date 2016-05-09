@@ -23,7 +23,7 @@ MVP is a great way to test the actual usage and assumptions as opposed to conven
 
 > In incremental model the whole requirement is divided into various builds ... more easily managed modules.  Each module passes through the requirements design, implementation and testing phases. A working version of software is produced during the first module, **so you have working software early on during the software life cycle**. Each subsequent release of the module adds function to the previous release. The process continues till the complete system is achieved.
 
-The article even has an illustration showing how the Mona Lisa is built incrementally or piece-by-piece:
+The article even has an illustration showing how the Mona Lisa would be built incrementally or piece-by-piece:
 
 ![Incremental Mona Lisa.jpg]({{ site.url }}/img/Incremental-mona-lisa.jpg)
 
