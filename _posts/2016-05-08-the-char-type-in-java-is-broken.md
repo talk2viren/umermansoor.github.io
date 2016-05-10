@@ -19,7 +19,7 @@ But `char` is a different story altogether. Let's look at its [official definiti
 
 >  **Some people are under the misconception that Unicode is simply a 16-bit code where each character takes 16 bits and therefore there are 65,536 possible characters. This is not, actually, correct**. It is the single most common myth about Unicode, so if you thought that, don't feel bad.
 
-There is no such as "16-bit Unicode character". Please read [Joel's article](http://www.joelonsoftware.com/articles/Unicode.html) if you don't understand the last statement.
+There is no such thing as "16-bit Unicode character". Please read [Joel's article](http://www.joelonsoftware.com/articles/Unicode.html) if you don't understand the last statement.
 
 `char` uses 16 bits to store Unicode characters that fall in the 0 - 65,535 which isn't enough to store all Unicode characters anymore. You might think: *Gee, 65,535 is plenty already. I'll never use that many*. That's true. But your users will. And when they send you a character that requires more than 16 bits, like these emojis 👦👩, the `char` methods like `someString.charAt(0)` or `someString.substring(0,1)` will break and give you only half the code point. And the worst part is that the compiler won't even complain. Recently, a fellow developer told me that their "North American users" started complaining that the chat nicknames and messages "aren't displaying properly". After a lot of grief, they found the issue and had to undo all `char` manipulation in their software to handle emojis and other cool characters. (Use [`codePointAt(index)`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#codePointAt(int)) instead which returns an int that will fit all Unicode characters in existence.)
 
