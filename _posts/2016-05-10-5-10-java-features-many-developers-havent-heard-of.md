@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Doing code reviews, it dawned on me that many developers aren't yet familiar with the Java language features that were introduced as far back as Java 7 and are still doing things the old fashioned way. While there's no harm in doing things the old fashioned way if it works, knowledge is power. In this post, I'm going to look at 10 features that many Java developers might not have heard of.
+Doing code reviews, it dawned on me that many developers aren't yet familiar with the Java language features that were introduced as far back as Java 7 and are still doing things the old fashioned way. While there's no harm in doing things the old fashioned way if it works, knowledge is power. In this post, we're going to look at 10 features that many Java developers might not have heard of.
 
 A word of warning: just because a feature exists doesn't mean you must use it. Do not rush and use a feature that you do not yet understand.
 
@@ -33,7 +33,7 @@ try {
 ```
 There's a lot of noise in the code above and twin `try-catch` statements. It is unnecessarily verbose, even by Java standards.
 
-The *try-with-resources* statement addresses this issue. In it, you declare any object that implements [`java.lang.Closeable`](https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html) at the start of the block. When the block exits, it automatically closes the Stream by calling its `close()` method. Let's rewrite code above using *try-with-resources*:
+The *try-with-resources* statement addresses this issue. In it, you declare any object that implements [`java.lang.Closeable`](https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html) at the start of the block. When the block exits, Java automatically closes the object by calling its `close()` method. Let's rewrite code above using *try-with-resources*:
 
 ```java
 try(FileInputStream is = new FileInputStream("unreadme.txt")) {
@@ -45,7 +45,7 @@ try(FileInputStream is = new FileInputStream("unreadme.txt")) {
 
 <!--more-->
 
-You can even specify multiple `Closeable` objects and they will all be automatically closed.
+Much cleaner. You can even specify multiple `Closeable` objects.
 
 ## 2. Catch Multiple Exceptions in a Single `catch` Block
 Since Java 7, multiple exceptions can be caught in a single `catch` block which makes the code less verbose and avoids duplication. Here's an example of the multi-catch block:
@@ -79,7 +79,7 @@ try {
 }
 ```
 
-Catching `Exception` is generally a bad idea. The block in the code above will catch all exceptions that are thrown in the code above including the ones that it cannot handle and prevent upper methods in the stack from handling it properly.
+Catching [`Exception`](https://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html) is generally a bad idea. The `catch` block in the example above will catch all exceptions that are thrown in the `try` body including the ones that it cannot handle. This prevents upper methods in the stack from handling the exception properly.
 
 The only catch is that the exceptions in multi-catch must be disjoint. See this [SO answer](http://stackoverflow.com/questions/8393004/in-a-java-7-multicatch-block-what-is-the-type-of-the-caught-exception) for more details.
 
@@ -99,7 +99,7 @@ Since Java 8, you can include **method bodies [to interfaces](https://docs.oracl
 This blog has a good [overview of the subject](http://zeroturnaround.com/rebellabs/java-8-explained-default-methods/).
 
 ## 5. Parallel Sorting of Large Arrays
-This one's my favorite. It allows **larger arrays to be sorted faster**. The way it works is by dividing the larger array into several smaller subarrays and then sorting each subarray concurrently on in parallel. The results are combined or merged back together to provide the answer. So instead of,
+This one's my favorite. It allows **larger arrays to be sorted faster**. The way it works is by dividing a large array into several smaller subarrays and then sorting each subarray concurrently on in parallel. The results are combined or merged back together to provide the answer. So instead of,
 
 ```java
 Array.sort(someArray); // Sorts arrays sequentially
@@ -118,7 +118,7 @@ The analysis done for this [article](http://www.drdobbs.com/jvm/parallel-array-o
 4x!? I'd be very pleased with anything over 2x.
 
 ## 6. Optional Values
-Java 8 has introduced a container object called [`Optional`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) for wrapping references that may not be present or `null`.
+Java 8 has introduced a container object called [`Optional`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) for wrapping references that may not be present or `null`. A method can wrap its return type in `Optional` as shown in the following example:
 
 ```java
 public static Optional<User> getUser(String id) {
