@@ -5,13 +5,28 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-After doing code reviews recently, it dawned on me that while many Java developers know about the [big](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) [changes](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html) in Java 8, they aren't yet familiar with some cool language features that were introduced as far back as Java 7. In this post, we're going to look at 10 features that many Java developers might not have heard of.
+After doing code reviews recently, it dawned on me that many developers who **use Java casually or as a second language** aren't familiar or intimate with some cool improvements and features that were introduced in Java 7 or earlier. In this post, I'll list 10 features that I feel everyone programming in Java must at least know about. I'm excluding the [big](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) [changes](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html) in Java 8 since everyone seem to at least know about them.
+
+Here's a list of features covered in this post so you could skip to the one you don't know about or skip this post entirely if you know all of them :-)
+
+1. [The try-with-resources Statement](#1)
+2. [Catch Multiple Exceptions in a Single `catch` Block](#2)
+3. [Underscores in Numeric Literals](#3)
+4. [Default Methods (in Interface)](#4)
+5. [Parallel Sorting of Large Arrays](#5)
+6. [Optional Return Values](#6)
+7. [Strings in switch statements](#7)
+8. [The Diamond Operator <>](#8)
+9. [Annotations Everywhere](#9)
+10. [Varargs](#10)
+
+<!--more-->
 
 A word of caution: There's no harm in doing things the old fashioned way if it is working. It is much better than rushing to use a feature that is not fully understood. But knowledge is power.
 
 Without further ado, let's get started.
 
-## 1. The try-with-resources Statement
+## <a name="1"></a> 1. The try-with-resources Statement
 
 Prior to Java 7, working with [`InputStream`](https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html) (and other similar APIs) produced ugly looking code. Here's an egregious example.
 
@@ -47,7 +62,7 @@ try(FileInputStream is = new FileInputStream("unreadme.txt")) {
 
 Much cleaner. You can even specify multiple `Closeable` objects.
 
-## 2. Catch Multiple Exceptions in a Single `catch` Block
+## <a name="2"></a> 2. Catch Multiple Exceptions in a Single `catch` Block
 Since Java 7, multiple exceptions can be caught in a single `catch` block which makes the code less verbose and avoids duplication. Here's an example of the multi-catch block:
 
 ```java
@@ -83,23 +98,29 @@ Catching [`Exception`](https://docs.oracle.com/javase/7/docs/api/java/lang/Excep
 
 The only catch is that the exceptions in multi-catch must be disjoint. See this [Stack Overflow answer](http://stackoverflow.com/questions/8393004/in-a-java-7-multicatch-block-what-is-the-type-of-the-caught-exception) for more details.
 
-## 3. Underscores in Numeric Literals
-Starting from Java 7, you can use underscores in numeric literals to make your code more readable. Examples:
+## <a name="3"></a> 3. Underscores in Numeric Literals
+Starting from Java 7, you can use underscores in numeric literals to make your code more readable. The underscores can appear **anywhere between the digits**, except at the start or at the end of literal. Here are some examples taken from [Oracle's tutorial](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html):
 
 ```java
+long creditCardNumber = 1234_5678_9012_3456L;
+long socialSecurityNumber = 999_99_9999L;
 long phoneNumber = 123_456_7890L;
-long data = 0B1101001_10000100_10011010;
+long data = 0b11010010_01101001_10010100_10010010;
+byte nybbles = 0b0010_0101;
+long maxLong = 0x7fff_ffff_ffff_ffffL;
 int x6 = 0x5_2;
 ```
-The underscores can appear **anywhere between the digits**, except at the start or at the end of literal.
 
-## 4. Default Methods
+Although, I'm not sure if it would ever make sense to store credit cards or social security numbers in your code, **using underscores certainly make reading hex and binary variables a lot more convenient.**
+
+
+## <a name="4"></a> 4. Default Methods (in Interface)
 Since Java 8, you can include **method bodies [to interfaces](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)** which wasn't allowed in the previous versions of Java. These methods are known as the **default methods** because they are **automatically** included in classes that implement the interface. Default methods were **added primarily for backwards compatibility reasons and you should [use them judiciously](https://zeroturnaround.com/rebellabs/how-your-addiction-to-java-8-default-methods-may-make-pandas-sad-and-your-teammates-angry/)**.
 
 This blog has a good [overview of the subject](http://zeroturnaround.com/rebellabs/java-8-explained-default-methods/).
 
-## 5. Parallel Sorting of Large Arrays
-This one's my favorite. It allows larger arrays to be **sorted faster**. The way it works is by dividing a large array into several smaller subarrays and then sorting each subarray concurrently or in parallel. The results are merged back together to provide the answer. So instead of,
+## <a name="5"></a>5. Parallel Sorting of Large Arrays
+This one's my favorite. It allows larger arrays to be **sorted faster**. It works by dividing a large array into several smaller subarrays and then sorting each subarray concurrently or in parallel. The results are merged back together to form the answer. So instead of,
 
 ```java
 Array.sort(someArray); // Sorts arrays sequentially
@@ -117,7 +138,7 @@ The analysis done for this [article](http://www.drdobbs.com/jvm/parallel-array-o
 
 4x!? I'd be very pleased with anything over 2x.
 
-## 6. Optional Values
+## <a name="6"></a>6. Optional Return Values
 Java 8 has introduced a container object called [`Optional`](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) for wrapping objects that may not be present or `null`. A method can wrap its return type in `Optional`. Let's look at an example:
 
 ```java
@@ -141,9 +162,8 @@ if (optional.isPresent()) {
 
 In case you are wondering, what's wrong with just returning the `null` value? Callers aren't always aware that method may return `null` and do not always check for it. This happens frequently and is one of the reasons why the  [`NullPointerException`](https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html)s are so plentiful. So, [if you are tired of null pointer exceptions](http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html), use `Optional`.
 
-
-## 7. Strings in switch statements
-I almost forgot that Java has a `switch-case` statement. Prior to Java 7, `switch-case` statement only worked with integer types (except `long`) and `enums`. Java 7 introduced the ability to use a `String` object as the expression. Here's how it works:
+## <a name="7"></a>7. Strings in switch statements
+I almost forgot that Java has a `switch-case` statement. Prior to Java 7, `switch-case` statement only worked with integer types (except `long`) and `enums`. Java 7 introduced the ability to use a `String` object as the expression. Here's how it looks:
 
 ```java
 String car = getCar();
@@ -164,7 +184,7 @@ switch(car) {
 }
 ```
 
-Instead of the more cluttered:
+Equivalent to the more clutter:
 
 ```java
 if (car.equals("Corvette")) {
@@ -178,7 +198,7 @@ if (car.equals("Corvette")) {
 }
 ```
 
-## 8. The Diamond Operator <>
+## <a name="8"></a>8. The Diamond Operator <>
 Diamond operators were introduced to make the use of generics a little less verbose. Take a look at this example:
 
 ```java
@@ -192,10 +212,10 @@ Map<String, List<String>> aMap = new HashMap<>();
 
 When the compiler encounters the diamond operator (<>), it infers the generic type arguments from the context automatically.
 
-## 9. Annotations Everywhere
+## <a name="9"></a>9. Annotations Everywhere
 Thanks to Java 8, annotations can be retrofitted [almost anywhere](http://docs.oracle.com/javase/tutorial/java/annotations/basics.html) in your code. Great, because that's [just what we needed](http://www.annotatiomania.com/). I'm fine with annotations, but I've seen some developers going overboard, trying to do **too much magic** with annotations. Too much of annotations, just like too much of anything, are bad. You're probably better off not knowing that this feature even exists.
 
-## 10. Varargs
+## <a name="10"></a>10. Varargs
 [Varargs](http://docs.oracle.com/javase/1.5.0/docs/guide/language/varargs.html) are useful for passing an arbitrary number of parameters to a method. Such as [`String.format(String format, Object...args)`](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-). Joshua Bloch in [Effective Java](http://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683) recommends using varargs judiciously:
 
 > varargs are effective in circumstances where you really do want a method with a variable number of arguments. Varargs were designed for printf, which was added to the platform in release 1.5, and for the core reflection facility (Item 53), which was retrofitted to take advantage of varargs in that release. Both printf and reflection benefit enormously from varargs. You can retrofit an existing method that takes an array as its final parameter to take a varargs parameter instead with no effect on existing clients. **But just because you can doesn’t mean that you should!**
