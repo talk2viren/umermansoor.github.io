@@ -58,8 +58,6 @@ try(FileInputStream is = new FileInputStream("unreadme.txt")) {
 }
 ```
 
-<!--more-->
-
 Much cleaner. You can even specify multiple `Closeable` objects.
 
 ## <a name="2"></a> 2. Catch Multiple Exceptions in a Single `catch` Block
@@ -184,7 +182,7 @@ switch(car) {
 }
 ```
 
-Equivalent to the more clutter:
+Which is equivalent to the more cluttered:
 
 ```java
 if (car.equals("Corvette")) {
@@ -204,16 +202,17 @@ Diamond operators were introduced to make the use of generics a little less verb
 ```java
 Map<String, List<String>> aMap = new HashMap<String, List<String>>();
 ```
-Lots of visual clutter. The parameter types are duplicated. Since Java 7, you can replace the type definitions on the right side of the assignment expression with the diamond operator, `<>`. The above statement could be rewritten as:
+
+The parameter types are duplicated on the left and right sides of the expression. Since Java 7, you can omit the type definitions on the right side of assignment expressions with a diamond operator, `<>`. The above statement could be rewritten as:
 
 ```java
 Map<String, List<String>> aMap = new HashMap<>();
 ```
 
-When the compiler encounters the diamond operator (<>), it infers the generic type arguments from the context automatically.
+When the compiler encounters the diamond operator (<>), it **infers the generic type arguments from the context**.
 
 ## <a name="9"></a>9. Annotations Everywhere
-Thanks to Java 8, annotations can be retrofitted [almost anywhere](http://docs.oracle.com/javase/tutorial/java/annotations/basics.html) in your code. Great, because that's [just what we needed](http://www.annotatiomania.com/). I'm fine with annotations, but I've seen some developers going overboard, trying to do **too much magic** with annotations. Too much of annotations, just like too much of anything, are bad. You're probably better off not knowing that this feature even exists.
+Thanks to Java 8, annotations can be retrofitted [almost anywhere](http://docs.oracle.com/javase/tutorial/java/annotations/basics.html) in your code. Great, because that's [just what we needed](http://www.annotatiomania.com/). I'm fine with annotations, but I've seen some developers going overboard, trying to do **too much magic** with annotations. Too much of annotations, just like too much of anything, are bad. You're probably better off not knowing that this feature even exists. End of my rant.
 
 ## <a name="10"></a>10. Varargs
 [Varargs](http://docs.oracle.com/javase/1.5.0/docs/guide/language/varargs.html) are useful for passing an arbitrary number of parameters to a method. Such as [`String.format(String format, Object...args)`](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-). Joshua Bloch in [Effective Java](http://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683) recommends using varargs judiciously:
@@ -221,5 +220,3 @@ Thanks to Java 8, annotations can be retrofitted [almost anywhere](http://docs.o
 > varargs are effective in circumstances where you really do want a method with a variable number of arguments. Varargs were designed for printf, which was added to the platform in release 1.5, and for the core reflection facility (Item 53), which was retrofitted to take advantage of varargs in that release. Both printf and reflection benefit enormously from varargs. You can retrofit an existing method that takes an array as its final parameter to take a varargs parameter instead with no effect on existing clients. **But just because you can doesn’t mean that you should!**
 
 That's sound advice. Just because there's a feature available, doesn't mean you have to use it.
-
-#### Do you agree with the list? How many features in the list were new to you? Please let us know in the comments section below.
