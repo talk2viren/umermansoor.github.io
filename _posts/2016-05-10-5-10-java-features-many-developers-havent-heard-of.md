@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 After doing code reviews recently, it dawned on me that many developers who **use Java casually or as a second language** aren't familiar or intimate with some cool improvements and features that were introduced in Java 7 or earlier. In this post, I'll list 10 features that I feel everyone programming in Java must at least know about. I'm excluding the [big](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) [changes](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html) in Java 8 since everyone seem to at least know about them.
 
-Here's a list of features covered in this post so you could skip to the one you don't know about or skip this post entirely if you know all of them :-)
+Here's a list of features covered in this post so you could skip to the one you don't know about or skip this post entirely if you know them all :-)
 
 1. [The try-with-resources Statement](#1)
 2. [Catch Multiple Exceptions in a Single `catch` Block](#2)
