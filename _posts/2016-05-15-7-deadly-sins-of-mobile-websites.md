@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 *A mobile website is designed and optimized for browsing on a smartphone*. They come in various flavours: sometimes there are different desktop and mobile versions, other times they are the same. The focus of this article is on those websites that are specifically designed for "*enhancing the mobile user experience*", although more often than not, it has the exact opposite effect.
 
 ![BBC mobile Site]({{ site.url }}/img/7deadly/1.png)
-*BBC mobile Site*
+*A mobile site*
 
 <!--more-->
 
@@ -40,7 +40,7 @@ Websites guilty of this vice try to cram too much un-necessary text to look busy
 
 In real life, we like people who are articulate. They speak fluently, coherently and get their thoughts across in a concise manner. Why should websites be any different?
 
-![This looks like dog's hairy behind!]({{ site.url }}/img/7deadly/4.png)
+![This looks like dog's hairy behind!]({{ site.url }}/img/7deadly/4.jpg)
 *This looks like dog's hairy behind!*
 
 ## The 3rd deadly sin: Crappy Navigation
@@ -52,14 +52,14 @@ Hidden menus, hover objects, small buttons, small radio buttons, buttons that ar
 
 ## The 4th deadly sin: Different Content/Theme from the Desktop Version
 
-Often times, the mobile website looks so different from the desktop version that users start wondering if they are on the right website. Worse still, if the mobile website has a very different layout and content, it's like asking users to go over another learning curve. No thanks.
+Often times, the mobile website looks so different from the desktop version that users start wondering if they are on the right website. Worse still, if the mobile website has a very different layout and content, it's like asking **users to go over another learning curve**. No thanks.
 
 ![Desktop vs Mobile version. Is this the same site? Where did the content go?]({{ site.url }}/img/7deadly/6.jpg)
 *Desktop vs Mobile version. Is this the same site? Where did the content go?*
 
 ## The 5th deadly sin: Popups
 
-Ah, the joy of having a huge box in front of my face telling me how good the App is and I should get it from the App Store.  The irony: already have the steaming pile of sh*t app installed and much rather use the website. How about I just leave instead?
+Ah, the joy of having a huge box in front of my face telling me how good the App is and I should get it from the App Store. The irony: already have the steaming pile of sh*t app installed and much rather use the website. How about I just leave instead?
 
 ![The content is behind there.]({{ site.url }}/img/7deadly/7.jpg)
 *The content is behind there. Somewhere.*
@@ -72,7 +72,7 @@ Need I say more? Popups are so bad on mobile websites they should be banned alto
 
 ## The 6th deadly sin: Auto Redirect
 
-At first, it sounds like a novel idea: redirect users to mobile optimized or iPad optimized website based on the type of device/browser they are using. If done right, that is, you have a great mobile website e.g. [Boston Globe](http://www.bostonglobe.com), [BBC](http://www.bbc.co.uk), it's a great idea. The problem is when the mobile website sucks (guilty of 7 sins), users who want to use desktop version will get agitated if they don't get what they want. They will get very annoyed if even if they are asked to make the very important decision to choose between "The Mobile Version", "The Desktop Version", or "Get the App" every single time.
+At first, it sounds like a novel idea: redirect users to mobile optimized or iPad optimized website based on the type of device/browser they are using. If done right, that is, you have a great mobile website, it's a great idea. The problem is when the mobile website sucks, **users who want to see the desktop version will get agitated if they don't get what they want**. They will get very annoyed if even if they are asked to make the *very important decision* to choose between "The Mobile Version", "The Desktop Version", or "Get the App" every single time.
 
 But what makes auto redirect an absolute sin is faulty redirects. As Yoshikiyo Kato writes in this [post](http://blog.nxcgroup.com/2013/google-to-start-penalizing-mobile-redirects/):
 
@@ -86,7 +86,7 @@ In fact, faulty redirection is so bad that there are reports suggesting that [Go
 
 ## The 7th deadly sin: Advertisement & Banner Ads
 
-How could anyone ever even think about jamming in bunch of advertisement even with that much limited screen real-estate? Some people think putting banners on websites is a wise idea. News Flash - Banner ads are trouble. This is 2013, not 1999.
+How could anyone ever even think about jamming in bunch of advertisement even with that much limited screen real-estate? Some people think putting banners on websites is a wise idea. News Flash - Banner ads are trouble. This is 2016, not 1999.
 
 [Banner ads suck](http://www.digitaltrends.com/web/banner-ads-suck-say-guys-who-invented-banner-ads/) say guys who invented banner ads. Nuff said.
 
