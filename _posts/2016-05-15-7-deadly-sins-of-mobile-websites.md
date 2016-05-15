@@ -45,14 +45,14 @@ In real life, we like people who are articulate. They speak fluently, coherently
 
 ## The 3rd deadly sin: Crappy Navigation
 
-Hidden menus, hover objects, small buttons, small radio buttons, buttons that are too close to each other, the list goes on. Imagine, you're travelling in a municipal bus  which is jerking you around like no roller coaster would, while you are trying to *upvote* the new kitten video. But you can't seem to click the damn button. Every time you try, it opens the link besides that button - every link left or right seems to work and no matter how hard you try, you just cannot press the damn button. And who do you blame for your misery - there's only one culprit - your. fat. finger.
+Hidden menus, hover objects, small buttons, small radio buttons, buttons that are too close to each other, the list goes on. Imagine, you're travelling in a municipal bus  which is jerking you around like no roller coaster would, while you are trying to *upvote* the new kitten video. But you can't land your finger on the damn button. Every time you try, it opens the link besides that button - every link left or right seems to work and no matter how hard you try. And who do you blame for your misery: your. fat. fingers.
 
 ![Will I get it to land on the right link this time?]({{ site.url }}/img/7deadly/5.jpg)
 *Will I get it to land on the right link this time?*
 
 ## The 4th deadly sin: Different Content/Theme from the Desktop Version
 
-Often times, the mobile website looks so different from the desktop version that I start wondering if they I'm the right website. If the mobile website has a very different layout and navigation, it's asking **users to go through another learning curve**. No thanks.
+Often times, the mobile website looks so different from the desktop version that I start wondering if I'm the right website. If the mobile website has a very different layout and navigation, it's asking **users to go through another learning curve**. No thanks.
 
 ![Desktop vs Mobile version. Is this the same site? Where did the content go?]({{ site.url }}/img/7deadly/6.jpg)
 *Desktop vs Mobile version. Is this the same site? Where did the content go?*
@@ -72,9 +72,9 @@ Need I say more? Popups are so bad on mobile websites they should be banned alto
 
 ## The 6th deadly sin: Auto Redirect
 
-At first, it sounds like a novel idea: redirect users to mobile optimized or iPad optimized website based on the type of device/browser they are using. If done right, that is, you have a great mobile website, it's a great idea. The problem is when the mobile website sucks, **users who want to see the desktop version will get agitated if they don't get what they want**. They will get very annoyed if even if they are asked to make the *very important decision* to choose between "The Mobile Version", "The Desktop Version", or "Get the App" every single time.
+At first, it sounds like a novel idea: redirect users to mobile optimized or iPad optimized website based on the type of device/browser they are using. If done right and you have a great mobile website, it works great. The problem is when the mobile website sucks, **users who just want to use the desktop version instead will get agitated if they don't get what they want**. I become very annoyed whenever sites ask me to make the *very important decision* to choose between *"The Mobile Version"*, *"The Desktop Version"*, or *"Get the App"* every single time.
 
-But what makes auto redirect an absolute sin is faulty redirects. As Yoshikiyo Kato writes in this [post](http://blog.nxcgroup.com/2013/google-to-start-penalizing-mobile-redirects/):
+But what makes **auto redirect an absolute sin is faulty redirects**. As Yoshikiyo Kato writes in this [post](http://blog.nxcgroup.com/2013/google-to-start-penalizing-mobile-redirects/):
 
 > A faulty redirect is when a desktop page redirects smartphone users to an irrelevant page on the smartphone-optimized website. A typical example is when all pages on the desktop site redirect smartphone users to the homepage of the smartphone-optimized site.
 
