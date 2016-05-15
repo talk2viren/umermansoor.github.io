@@ -47,8 +47,8 @@ In real life, we like people who are articulate. They speak fluently, coherently
 
 Hidden menus, hover objects, small buttons, small radio buttons, buttons that are too close to each other, the list goes on. Imagine, you're travelling in municipal bus  which is jerking you around like no roller coaster would while  you are trying to post a comment to the just-posted wise meme. But you can't seem to click on the "Post Comment" button. Every time you try, it opens the link besides that button - every link left or right seems to work and no matter how hard you try, you just cannot press the damn button. And who do you blame for your misery - there's only one culprit - your. fat. finger.
 
-![Will I get it land on the right link this time?]({{ site.url }}/img/7deadly/5.jpg)
-*Will I get it land on the right link this time?*
+![Will I get it to land on the right link this time?]({{ site.url }}/img/7deadly/5.jpg)
+*Will I get it to land on the right link this time?*
 
 ## The 4th deadly sin: Different Content/Theme from the Desktop Version
 
@@ -94,6 +94,7 @@ How could anyone ever even think about jamming in bunch of advertisement even wi
 *Last time we had little success with one banner. This time, let's double up the banners.*
 
 ![Overlay ad gone wrong]({{ site.url }}/img/7deadly/9.jpg)
+*Double check ads to make sure they don't appear like these on smartphones.*
 
 Well there you have it, *The 7 deadly sins of mobile websites*. I hope you found this list useful. If you are guilty of committing these sins, don't feel bad. As [Robert Zoellick](https://en.wikipedia.org/wiki/Robert_Zoellick) said:
 
