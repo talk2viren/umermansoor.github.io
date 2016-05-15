@@ -24,7 +24,7 @@ The sins presented in this article are so common that I'm sure readers must be a
 
 ## The 1st deadly sin: Slow to Load
 
-It's a [well-known phenomenon](http://blog.kissmetrics.com/loading-time/) that website loading time is a crucial factor in determining the site's success. Websites that are slow  by virtue of loading high res images (even worse, whole carousel full of images), useless piles of Javascript crap, will [lead to abandonment](http://gigaom.com/2011/07/19/consumers-losing-patience-with-the-slow-mobile-web/).
+It's a [well-known phenomenon](http://blog.kissmetrics.com/loading-time/) that website loading time is a crucial factor in determining the site's success. Websites that are slow by virtue of loading high resolution images (even worse, whole carousel full of images), useless piles of Javascript crap, will [lead to abandonment](http://gigaom.com/2011/07/19/consumers-losing-patience-with-the-slow-mobile-web/).
 
 ![Wait... wait... wait for it...]({{ site.url }}/img/7deadly/2.png)
 *Wait... wait... wait for it...*
@@ -33,7 +33,7 @@ I have decided not to sound like a broken record. Instead I will leave you with 
 
 ## The 2nd deadly sin: Cluttered with Text
 
-Websites guilty of this vice try to cram too much un-necessary text to look busy, put [happy talk](http://en.wikipedia.org/wiki/Happy_talk) ("Welcome to my sweet, lovely website") or what I like to call "me" talk ("We are very happy to receive the elusive Greatness-Trophy thanks to the hard work and dedication of our CEO"). The average user who arrived on Acme Widget's website to check hours of operation don't give a fat f*ck about their head of marketing's epiphanies .
+Websites guilty of this vice try to cram too much un-necessary text to look busy, put [happy talk](http://en.wikipedia.org/wiki/Happy_talk) (*"Welcome to my sweet, lovely website"*) or what I like to call "me" talk (*"We are very happy to receive the elusive Greatness-Trophy thanks to the hard work and dedication of our CEO"*). The average user who arrived on Acme Widget's website to check hours of operation don't give a fat f*ck about their head of marketing's epiphanies.
 
 ![Time to bring out the Magnifier]({{ site.url }}/img/7deadly/3.png)
 *Time to bring out the Magnifier*
@@ -45,21 +45,21 @@ In real life, we like people who are articulate. They speak fluently, coherently
 
 ## The 3rd deadly sin: Crappy Navigation
 
-Hidden menus, hover objects, small buttons, small radio buttons, buttons that are too close to each other, the list goes on. Imagine, you're travelling in municipal bus  which is jerking you around like no roller coaster would while  you are trying to post a comment to the just-posted wise meme. But you can't seem to click on the "Post Comment" button. Every time you try, it opens the link besides that button - every link left or right seems to work and no matter how hard you try, you just cannot press the damn button. And who do you blame for your misery - there's only one culprit - your. fat. finger.
+Hidden menus, hover objects, small buttons, small radio buttons, buttons that are too close to each other, the list goes on. Imagine, you're travelling in a municipal bus  which is jerking you around like no roller coaster would, while you are trying to *upvote* the new kitten video. But you can't seem to click the damn button. Every time you try, it opens the link besides that button - every link left or right seems to work and no matter how hard you try, you just cannot press the damn button. And who do you blame for your misery - there's only one culprit - your. fat. finger.
 
 ![Will I get it to land on the right link this time?]({{ site.url }}/img/7deadly/5.jpg)
 *Will I get it to land on the right link this time?*
 
 ## The 4th deadly sin: Different Content/Theme from the Desktop Version
 
-Often times, the mobile website looks so different from the desktop version that users start wondering if they are on the right website. Worse still, if the mobile website has a very different layout and content, it's like asking **users to go over another learning curve**. No thanks.
+Often times, the mobile website looks so different from the desktop version that I start wondering if they I'm the right website. If the mobile website has a very different layout and navigation, it's asking **users to go through another learning curve**. No thanks.
 
 ![Desktop vs Mobile version. Is this the same site? Where did the content go?]({{ site.url }}/img/7deadly/6.jpg)
 *Desktop vs Mobile version. Is this the same site? Where did the content go?*
 
 ## The 5th deadly sin: Popups
 
-Ah, the joy of having a huge box in front of my face telling me how good the App is and I should get it from the App Store. The irony: already have the steaming pile of sh*t app installed and much rather use the website. How about I just leave instead?
+Ah, the joy of having a huge box in front of my face telling me how good the App is and I should get it from the App Store. The irony: I already have the steaming pile of sh*t app installed and much rather use the website. How about I just leave instead?
 
 ![The content is behind there.]({{ site.url }}/img/7deadly/7.jpg)
 *The content is behind there. Somewhere.*
