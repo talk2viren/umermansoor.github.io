@@ -17,7 +17,7 @@ The sins presented in this article are so common that I'm sure readers must be a
 1. Slow to load
 2. Cluttered with text (Happy talk, Me Talk)
 3. Crappy navigation (Small buttons)
-4. Different content/theme from the Desktop version? ("Honey, where did the categories go?")
+4. Different content/theme from the Desktop version? (*"Honey, where did the categories go?"*)
 5. Popups
 6. Auto Redirect
 7. Advertisements and Banners
