@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 Software estimation is a hard problem. So much so that in 2012, when [Woody Zuill](https://twitter.com/WoodyZuill) tweeted his [blog post](http://zuill.us/WoodyZuill/2012/12/10/no-estimate-programming-series-intro-post/) with the hashtag [#NoEstimates](https://twitter.com/hashtag/noestimates?src=rela), he set the software development community on fire. Everyone from discontented developers to seasoned software veterans flocked to the discussion on Twitter on either side of the debate. (You can read more about the #NoEstimates movement [here](http://ronjeffries.com/xprog/articles/the-noestimates-movement/).) In this post, I'll take a slightly different angle and look at how software estimation is often misunderstood and confused with organization's targets and commitments.
 
-[Tom Demarco](https://en.wikipedia.org/wiki/Tom_DeMarco) is quoted as saying:
+[Tom Demarco](https://en.wikipedia.org/wiki/Tom_DeMarco) gave the following tongue-in-cheek definition of a software estimate:
 
 > “An estimate is the most optimistic prediction that has a non-zero probability of coming true.”
 
@@ -34,7 +34,7 @@ Google gives the following [definition](https://www.google.com/webhp?sourceid=ch
 > 1. roughly calculate or judge the value, number, quantity, or extent of.
 > 2. an approximate calculation or judgment of the value, number, quantity, or extent of something.
 
-This definition is correct but the term is widely misunderstood by non-technical stakeholders and software developers alike. Estimates are **confused with organizational targets and plans. An organizational target is a desirable outcome that benefits the organization in one way or the other. It is an objective that the organization seeks**. When you hear statements that sound similar to the following, immediately know that the speaker is talking about the organization's targets, not estimates:
+Strictly speaking, the dictionary's definition is correct but the term has very different connotations in the software world. Estimates are **confused with organizational targets and plans. An organizational target is a desirable outcome that benefits the organization in one way or the other. It is an objective that the organization seeks**. When you hear statements that sound similar to the following, immediately know that the speaker is talking about the organization's targets, not estimates:
 
 - "The goal is to have the *new feature* released by May 19th all users."
 - "We must have the product ready by the end of this month for our show and tell."
@@ -45,11 +45,11 @@ While estimates are related to targets, the two are are entirely different beast
 
 > An estimate is NOT a plan. **Estimates** are unbiased; **Plans** are heavily biased and rely on estimates to meet the **target**.
 
-And I wish I had known the difference early on in my career. Many times I got requests along the following lines:
+I wish I had known the difference early on in my career. Many times I got requests along the following lines:
 
-> "Umer, we need this product ready in 2 months or we'll lose the bid to the other vendor." - Account Manager
+> "*Umer*, we need this product ready in 2 months or we'll lose the bid to the other vendor." - Account Manager
 
-I used to get all worked up at what I felt were unrealistic `deadlines and estimates`. In hindsight, these non-technical managers were just sharing business commitments and targets. And there's nothing wrong with it. *(In some cases though, I'd have appreciated if they had consulted the team before making any commitments but that's another story.)* Without knowing the difference between estimates and plans, I committed to the deadlines that were imposed on me. Even if the product was done on time, there were negative side-effects. The team was overworked, the work was of low-quality and [technical debt was accrued](http://codeahoy.com/2016/04/27/do-not-let-technical-debt-get-out-of-control/). I accepted targets as estimates and as a substitute for plan. In his book [Software Estimation: Demystifying the Black Art](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351), which is a definitive work on the subject, Steve McConnel provides a more productive way to deal with such requests:
+I used to get all worked up at what I felt were unrealistic deadlines and estimates. In hindsight, these non-technical managers were just sharing business commitments and targets. And there's nothing wrong with it. *(In some cases though, I'd have appreciated if they had consulted the team before making any commitments but that's another story.)* Without knowing the difference between estimates and plans, I committed to the imposed deadlines. Even if the product was done on time, there were negative side-effects. The team was overworked, the work was of low-quality and [technical debt was accrued](http://codeahoy.com/2016/04/27/do-not-let-technical-debt-get-out-of-control/). I accepted targets as estimates and as a substitute for a plan. In his book [Software Estimation: Demystifying the Black Art](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351), which is a definitive work on the subject, Steve McConnel provides a more productive way to deal with such requests:
 
 > EXECUTIVE: How long do you think this project will take? We need to have this
 software ready in 3 months for a trade show. I can’t give you any more team
@@ -77,9 +77,10 @@ we can in the next 3 months*.
 (In this example, the actual estimate to finish the project was 5 months.)
 
 The key take aways from this post are:
+
 - Estimates are a crucial part of any plan, and a bad plan is better than no plan at all.
 - Estimates ≠ Targets, and, Estimates ≠ Plans.
 - Estimates are unbiased.
 - Plans are heavily biased and incorporate estimates to meet targets.
 
-Estimating software development tasks is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. I've seen so many developers provide really bad estimates or get bullied into accepting unreasonable estimates. I think it's mainly because they lack the training and experience. Software estimation is tough, but it's certainly not magic. I'll blog about how to get better at estimating and provide more accurate estimates. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
+Estimating software development tasks is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. I've seen so many developers provide really bad estimates or get bullied into accepting unreasonable estimates. I feel it's mainly because they lack the training and experience. Software estimation is tough, but it's certainly not magic. I'll blog about how to get better at estimating and provide more accurate estimates. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
