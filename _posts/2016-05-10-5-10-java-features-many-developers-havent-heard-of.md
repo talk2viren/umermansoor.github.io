@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 
 After doing code reviews recently, it dawned on me that many developers who **use Java casually or as a second language** aren't familiar or intimate with some cool improvements and features that were introduced in Java 7 or earlier. In this post, I'll list 10 features that I feel everyone programming in Java must at least know about. I'm excluding the [big](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) [changes](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html) in Java 8 since everyone seem to at least know about them.
 
+<!--more-->
+
 Here's a list of features covered in this post so you could skip to the one you don't know about or skip this post entirely if you know them all :-)
 
 1. [The try-with-resources Statement](#1)
@@ -15,12 +17,10 @@ Here's a list of features covered in this post so you could skip to the one you 
 4. [Default Methods (in Interface)](#4)
 5. [Parallel Sorting of Large Arrays](#5)
 6. [Optional Return Values](#6)
-7. [Strings in switch statements](#7)
-8. [The Diamond Operator <>](#8)
+7. [Strings in `switch` statements](#7)
+8. [The Diamond Operator `<>`](#8)
 9. [Annotations Everywhere](#9)
 10. [Varargs](#10)
-
-<!--more-->
 
 A word of caution: There's no harm in doing things the old fashioned way if it is working. It is much better than rushing to use a feature that is not fully understood. But knowledge is power.
 
@@ -160,7 +160,7 @@ if (optional.isPresent()) {
 
 In case you are wondering, what's wrong with just returning the `null` value? Callers aren't always aware that method may return `null` and do not always check for it. This happens frequently and is one of the reasons why the  [`NullPointerException`](https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html)s are so plentiful. So, [if you are tired of null pointer exceptions](http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html), use `Optional`.
 
-## <a name="7"></a>7. Strings in switch statements
+## <a name="7"></a>7. Strings in `switch` statements
 I almost forgot that Java has a `switch-case` statement. Prior to Java 7, `switch-case` statement only worked with integer types (except `long`) and `enums`. Java 7 introduced the ability to use a `String` object as the expression. Here's how it looks:
 
 ```java
@@ -196,7 +196,7 @@ if (car.equals("Corvette")) {
 }
 ```
 
-## <a name="8"></a>8. The Diamond Operator <>
+## <a name="8"></a>8. The Diamond Operator `<>`
 Diamond operators were introduced to make the use of generics a little less verbose. Take a look at this example:
 
 ```java
