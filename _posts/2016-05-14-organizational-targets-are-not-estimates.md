@@ -25,7 +25,7 @@ We need estimates for the following reasons:
 - To allocate cost, resources and people.
 - To make go/no-go calls: pursue the development or kill the proposal.
 
-In short, **we need estimates to make decisions** and **estimates form the foundation of plans**. Good estimates allow us to make sound decisions and to chart a course of action.
+**We need estimates to make decisions** and **estimates form the foundation of plans**. Good estimates allow us to make sound decisions and to chart a course of action.
 
 ## What is an Estimate?
 
@@ -34,14 +34,14 @@ Google gives the following [definition](https://www.google.com/webhp?sourceid=ch
 > 1. roughly calculate or judge the value, number, quantity, or extent of.
 > 2. an approximate calculation or judgment of the value, number, quantity, or extent of something.
 
-Strictly speaking, the dictionary's definition is correct but the term has very different connotations in the software world. Estimates are **confused with organizational targets and plans. An organizational target is a desirable outcome that benefits the organization in one way or the other. It is an objective that the organization seeks**. When you hear statements that sound similar to the following, immediately know that the speaker is talking about the organization's targets, not estimates:
+Strictly speaking, the dictionary's definition is correct but the term has very different connotations in the software world. Estimates are frequently **confused with organizational targets and plans. An organizational target is a desirable outcome that benefits the organization in one way or the other. It is an objective that the organization seeks**. When you hear statements that sound similar to the following, immediately know that the speaker is talking about the organization's targets, not estimates:
 
-- "The goal is to have the *new feature* released by May 19th all users."
-- "We must have the product ready by the end of this month for our show and tell."
-- "We need this feature released in time for Christmas."
-- "We must get the module updated ASAP to align with the new regulation."
+- *"The goal is to have the new feature released by May 19th all users."*
+- *"We must have the product ready by the end of this month for our show and tell."*
+- *"We need this feature released in time for Christmas."*
+- *"We must get the module updated ASAP to align with the new regulation."*
 
-While estimates are related to targets, the two are are entirely different beasts. **A target is a goal which requires a sound plan to achieve it. In turn plans require estimates. But estimation doesn't need to look at a target or a plan. Estimates should be completely unbiased**. If it requires 6 weeks to update a module to use DynamoDB instead of Cassandra, it will take 6 weeks irrespective of the target which could be 4 weeks or 6 months. Estimates don't care about plans, it is the other way around. Good plans incorporate estimates to figure out how to meet the target. If the target is to have the DynamoDB upgrade complete in 4.5 weeks instead of 6 weeks, the plan might include additional resources to speed up the process.
+While estimates are related to targets, the two are are entirely different beasts. **A target is a goal which requires a sound plan to achieve it. In turn plans require estimates. But estimation doesn't need to look at a target or a plan. Estimates should be completely unbiased**. If it requires 6 weeks to update a module to use DynamoDB instead of Cassandra, it will take 6 weeks irrespective of the target which could be 4 weeks or 6 months. Estimates don't care about plans; it's the other way around. Good plans incorporate estimates to figure out how to meet the target. If the target is to have the DynamoDB upgrade complete in 4.5 weeks instead of 6 weeks, the plan might include additional resources to speed up the process.
 
 > An estimate is NOT a plan. **Estimates** are unbiased; **Plans** are heavily biased and rely on estimates to meet the **target**.
 
@@ -83,4 +83,4 @@ The key take aways from this post are:
 - Estimates are unbiased.
 - Plans are heavily biased and incorporate estimates to meet targets.
 
-Estimating software development tasks is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. I've seen so many developers provide really bad estimates or get bullied into accepting unreasonable estimates. I feel it's mainly because they lack the training and experience. Software estimation is tough, but it's certainly not magic. I'll blog about how to get better at estimating and provide more accurate estimates. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
+Estimating software development tasks is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. Software estimation is tough, but it's certainly not magic. I'll blog about how to get better at estimating and provide more accurate estimates. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
