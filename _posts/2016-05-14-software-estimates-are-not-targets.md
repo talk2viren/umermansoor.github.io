@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Organizational Targets Are Not Estimates
+title: Software Estimates are not Targets
 comments: True
 excerpt_separator: <!--more-->
 ---
 
-Software estimation is a hard problem. So much so that in 2012, when [Woody Zuill](https://twitter.com/WoodyZuill) tweeted his [blog post](http://zuill.us/WoodyZuill/2012/12/10/no-estimate-programming-series-intro-post/) with the hashtag [#NoEstimates](https://twitter.com/hashtag/noestimates?src=rela), he set the software development community on fire. Everyone from discontented developers to seasoned software veterans flocked to the discussion on Twitter on either side of the debate. (You can read more about the #NoEstimates movement [here](http://ronjeffries.com/xprog/articles/the-noestimates-movement/).) In this post, I'll take a slightly different angle and look at how software estimation is often misunderstood and confused with organization's targets and commitments.
+Software estimation is a hard problem. So much so that in 2012, when [Woody Zuill](https://twitter.com/WoodyZuill) tweeted his [blog post](http://zuill.us/WoodyZuill/2012/12/10/no-estimate-programming-series-intro-post/) with the hashtag [#NoEstimates](https://twitter.com/hashtag/noestimates?src=rela), he set the software development community on fire. Everyone from discontented developers to seasoned software veterans flocked to the discussion on Twitter on either side of the debate. (You can read more about the #NoEstimates movement [here](http://ronjeffries.com/xprog/articles/the-noestimates-movement/).) In this post, let's try to answer the question whether we need estimates and then look at what software estimates are and more importantly what they aren't.
 
 [Tom Demarco](https://en.wikipedia.org/wiki/Tom_DeMarco) gave the following tongue-in-cheek definition of a software estimate:
 
@@ -41,9 +41,9 @@ Strictly speaking, the dictionary's definition is correct but the term has very 
 - *"We need this feature released in time for Christmas."*
 - *"We must get the module updated ASAP to align with the new regulation."*
 
-While estimates are related to targets, the two are are entirely different beasts. **A target is a goal which requires a sound plan to achieve it. In turn plans require estimates. But estimation doesn't need to look at a target or a plan. Estimates should be completely unbiased**. If it requires 6 weeks to update a module to use DynamoDB instead of Cassandra, it will take 6 weeks irrespective of the target which could be 4 weeks or 6 months. Estimates don't care about plans; it's the other way around. Good plans incorporate estimates to figure out how to meet the target. If the target is to have the DynamoDB upgrade complete in 4.5 weeks instead of 6 weeks, the plan might include additional resources to speed up the process.
+While estimates are related to targets, the two are are entirely different beasts. **A target is a goal which requires a sound plan to achieve it. In turn plans require estimates. But estimation doesn't need to look at a target or a plan. Estimates should be completely unbiased**. If it requires 6 weeks to update a module to use DynamoDB instead of Cassandra, it will take 6 weeks irrespective of the target which could be 4 weeks or 6 months. Good plans incorporate estimates to figure out how to meet the target. If the target is to have the DynamoDB upgrade complete in 4.5 weeks instead of 6 weeks, the plan might include additional resources to speed up the process.
 
-> An estimate is NOT a plan. **Estimates** are unbiased; **Plans** are heavily biased and rely on estimates to meet the **target**.
+> An estimate is NOT a target. **Estimates** are unbiased; **Plans** are heavily biased and rely on estimates to figure out how to meet the **target**.
 
 I wish I had known the difference early on in my career. Many times I got requests along the following lines:
 
@@ -76,11 +76,15 @@ we can in the next 3 months*.
 
 (In this example, the actual estimate to finish the project was 5 months.)
 
-The key take aways from this post are:
+Steve gives the following definition of a "Good Estimate" in his book:
+
+> A good estimate is an estimate that provides a clear enough view of the project reality to allow the project leadership to make good decisions about how to control the project to hit its targets.
+
+100% agreed. The key take aways from this post are:
 
 - Estimates are a crucial part of any plan, and a bad plan is better than no plan at all.
-- Estimates ≠ Targets, and, Estimates ≠ Plans.
+- Estimates ≠ Targets.
 - Estimates are unbiased.
 - Plans are heavily biased and incorporate estimates to meet targets.
 
-Estimating software development tasks is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. Software estimation is tough, but it's certainly not magic. I'll blog about how to get better at estimating and provide more accurate estimates. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
+Software estimation is tough. There are many unknowns and uncertainties. It's like driving on the [Bay Bridge](https://en.wikipedia.org/wiki/San_Francisco%E2%80%93Oakland_Bay_Bridge) to get to San Francisco in dense fog and broken headlights, only to receive a phone call from the hosts that the party has moved to the opposite side. Software estimation is tough, but it's certainly not magic. This post touched upon the definition of software estimates and the relationship between estimates, plans and targets. Later posts will talk about how to get better at estimating. In the meantime, go buy a copy of [Steve's book](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351). You will not regret it.
