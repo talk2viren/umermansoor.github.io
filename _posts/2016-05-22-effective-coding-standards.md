@@ -33,26 +33,24 @@ Recently, I came across a blog post from [Richard Rodger](https://twitter.com/rj
 >
 > **It’s better to throw coding standards out and allow free expression**. The small win you get from increased conformity does not move the needle. Coding standards are technical ass-covering.
 
-*Oh boy*. While I **disagree** with Richard that coding standards should be abandoned, I can see where he's coming from. I briefly worked with a nut-job of a "senior developer" who came in as the project lead that we had worked on for almost 6 months. He was an academic who had just finished his PhD and had little experience working as a software developer. He spent first 2 weeks writing "coding standards" in total isolation like he was some kind of a God and we were lowly beings who just weren't good enough. His coding standard documentation was full of his personal opinions and his insane coding style. The control freak demanded that we update the source code we had already written to adopt his standards. No explanation given. I have never seen team morale go down so fast and needless to say, I had a very brief stay at that job.
+*Oh boy*. While I **disagree** with Richard that coding standards should be abandoned, I can see where he's coming from. I briefly worked with a nut job of a "senior developer" who came in as the project lead for a project we've been working on for 6 months. He was an academic who had just finished his PhD and had little experience working as a software developer. He spent first couple of weeks writing "coding standards" in *total isolation* like he was some kind of a God and we were lowly beings who just weren't good enough. He shared with the team after he was complete and it was full of his personal opinions and his insane coding style. The control freak *demanded* that we update the source code we had already written to reflect his standards. No explanation given. I have never seen team morale go down so fast and needless to say, I had a very brief stay at that job.
 
-Another example I can think of is a manager who insisted on being part of every major code review. During the reviews, he would point out so-called 'errors and 'deviations' from his "coding standards" that were purely formatting issues. The irony: he hadn't written down his coding standards anywhere! I guess he thought developers would learn his style through osmosis. Sometimes, we felt as if he made up rules on the fly. As I mentioned in my post on conducting [effective code reviews](http://codeahoy.com/2016/04/03/effective-code-reviews/): it is useless to argue over formatting issues if you don't have coding standards.
+Another example I can think of is a manager who insisted on being part of every major code review. During the reviews, he would point out so-called 'errors and 'deviations' from his "coding standards" that were purely formatting issues. The irony: *he hadn't written down his coding standards anywhere!* I guess he thought developers would learn his style through osmosis. Sometimes, we felt as if he made up rules on the fly. As I mentioned in my post on conducting [effective code reviews](http://codeahoy.com/2016/04/03/effective-code-reviews/): it is useless to argue over formatting issues if you don't have coding standards.
 
-The point is that coding standards are often misunderstood by naive managers and control freaks who misuse it in one way or the other such that it achieves nothing (*no one follows them*) or causes friction within the team. **The problem isn't with coding standards. It is how they are used. They can be a wonderful practice that offers tremendous benefits especially for a large software project**.
-
-Coding standards that suck have the following attributes:
+The point is that coding standards are often misunderstood by naive managers and control freaks who misuse it in one way or the other such that it achieves nothing (*no one follows them*) or causes friction within the team. **The problem isn't with coding standards. It is how they are used. They can be a wonderful practice that offers tremendous benefits especially for a large software project**. Coding standards that suck have the following attributes:
 
 - full of author's own opinions and personal coding style.
-- huge focus on style and formatting.
-- recommendations disguised as standards. **Standards must be treated like rules and hence must be enforceable**.
+- huge focus on style and formatting often vague.
+- recommendations disguised as standards. I have made this [mistake](https://github.com/starscriber/coding-standards/wiki). **Standards must be treated like rules and hence must be enforceable**.
 
-Good software developers and architects understand that coding style is very personal varies from individual to individual and they write coding standards that respect their freedom and allows them to express themselves. They do not mechanize the whole process rather they focus on a few well-known practices that are widely accepted or common sense items. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
+Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect individual developer's freedom and allows them to express themselves. They do not attempt to mechanize the whole process rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
 
 - No more than one statement per line.
 - Line length should not exceed 80 or 100 characters.
 - Test class must start with the name of the class they are testing followed by 'Test'. E.g. `ServerConfigurationTest`.
 - One character variable names should only be used in loops or for temporary variables.
 
-All of these could be easily justified in a black-and-white manner without the enforcer appearing like a dictator. On the other extreme, here are some so called "standards" that will rub developers the wrong way and prompt un-necessary debates"
+All of these could be easily justified in a black-and-white manner without the enforcer appearing like a dictator. On the other extreme, here are some so called "standards" that will rub developers the wrong way and prompt un-necessary debates:
 
 - Class names must not end in `-er`. *[Personal Opinion]*
 - Don't use `static` fields or methods. *[Personal Opinion]*
