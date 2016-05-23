@@ -39,7 +39,7 @@ The point is that coding standards are often misunderstood by naive managers and
 - huge focus on style and formatting issues and is often vague.
 - recommendations disguised as standards. I have made this [mistake](https://github.com/starscriber/coding-standards/wiki). **Standards must be treated like rules and hence must be enforceable**.
 
-Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect individual developers' freedom and allow them to express themselves. They do not attempt to mechanize the whole process, rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
+Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect developers' freedom and allow them to express themselves. They do not attempt to mechanize the whole process, rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
 
 - No more than one statement per line.
 - Line length should not exceed 80 or 100 characters.
@@ -53,7 +53,7 @@ All of these could be easily justified in a black-and-white manner without the e
 - Aim for low Cohesion and High Coupling. *[Recommendation. Cannot be enforced.]*
 - Use Test Driven Development. *[Recommendation. Cannot be enforced.]*
 
-There is a grey area between common sense guidelines and personal preferences such as whether to put braces on the same line or the next. Standardize for the sake of consistency, but try to keep items in the grey area (generally formatting issues) to a bare minimum.
+There is a grey area between common sense guidelines and personal preferences such as whether to put braces on the same line or the next. Standardize if you must, but try to keep items in the grey area (generally formatting issues) to a bare minimum.
 
 ## Effective Coding Standards
 
@@ -73,21 +73,19 @@ To recap, effective coding standards:
 1. are short, simple and concise rules. They *do not attempt to cover and processify everything* and leave plenty of room for developers to exercise their own creativity.
 2. strike the right balance between formatting issues and issues that "*make the wrong code look wrong*".
 3. are black and white instead of vague suggestions or recommendations.
-4. Are adopted by the team and actively enforced. By having coding standards and not following them might [convey a sense of abandonment or that no one cares](http://codeahoy.com/2016/05/02/software-rot-entropy-and-the-broken-window-theory/).
 
-If you want to look at an **example of good coding standards**, here are [Google's Coding Standards](http://google.github.io/styleguide/javaguide.html) for Java.
+Coding standards, when used for the right reasons and in the right manner, offer many benefits. They make source code more readable and the software project more maintainable. They also help catch bugs and mistakes that are disguised as seemingly harmless code. While they might not catch all possible bugs, I'll take something over nothing any day.
 
 ## Automate the Process of Checking Code Standards
 
-Once you have effective coding standards, you should **automate the process** of checking source code's adherence to standards. It will save a lot of time in peer reviews and catch everything that humans might miss. There is an abundance of style checking tools available for all major [programming languages](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis). For our Java projects, we use a popular tool called [Checkstyle](http://checkstyle.sourceforge.net/). It provides several [Checks](http://checkstyle.sourceforge.net/checks.html) and by default, checks code against [Sun's conventions](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html). But you could easily **choose [Google's coding standards](https://google.github.io/styleguide/javaguide.html) or customize it to adopt your own**. If you use IntelliJ IDEA (which I highly recommend), there's a [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065) that shows results right inside the IDE.
+Once you have effective coding standards, you should **automate the process** of checking source code's adherence to standards. It will save a lot of time in peer reviews and catch everything that humans might miss. There is an abundance of style checking tools available for all major [programming languages](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis). For our Java projects, we use a popular tool called [Checkstyle](http://checkstyle.sourceforge.net/) which checks source code for style and design problems. It provides several *[Checks](http://checkstyle.sourceforge.net/checks.html)* and by default, checks code against [Sun's conventions](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html). Or you could choose [Google's coding standards](https://google.github.io/styleguide/javaguide.html), which I recommend. If you use IntelliJ IDEA (also highly recommended), there's a [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065) that shows results right inside the IDE.
 
 ![IntelliJ Checkstyle]({{ site.url }}/img/checkstyle-intellij.png)
 
-In summary, coding standards, when used for the right reasons and in the right manner, offer many benefits. They make source code more readable and the software project more maintainable. They also help catch bugs and mistakes that are disguised as seemingly harmless code. While they might not catch all possible bugs, I'll take something over nothing any day.
+If you are starting fresh and looking for coding standards, start by searching online for well-known standards for your programming language. Start small and remember that there is more than *one right way* to style the code. There might already be a [standard](https://www.python.org/dev/peps/pep-0008/) available from the language creators. For Java, I personally like [Google's coding standards](http://google.github.io/styleguide/javaguide.html) that I adopted with slight modifications to indentation rules. Google also have coding standards for many [other languages](https://github.com/google/styleguide). **Your coding standards should check for both style issues and design problems**. Once you have standards, make sure that they are **adopted by the team and automated**. However, code that deviates from standards shouldn't be considered erroneous. It should simply be marked as out of compliance and deviations must be reviewed and fixed.
 
 ## Suggested Reading
 - [List of tools for static code analysis](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)
 - [Why Coding Standards Matter (blog)](http://paul-m-jones.com/archives/34)
 - [FindBugs (Java)](http://findbugs.sourceforge.net/)
 - [PMD](http://pmd.github.io/)
-- [pep8 (python)](https://pypi.python.org/pypi/pep8)
