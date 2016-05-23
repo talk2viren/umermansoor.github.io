@@ -5,12 +5,9 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Coding standards are a set of guidelines, best practices, programming styles and conventions that developers adhere to when writing source code for a project. To understand, let's take a look at few coding standards from the ['Linux kernel coding style'](https://www.kernel.org/doc/Documentation/CodingStyle):
+Coding standards are a set of guidelines, best practices, programming styles and conventions that developers adhere to when writing source code for a project. All big software companies have them. Here are few guidelines from the ['Linux kernel coding style'](https://www.kernel.org/doc/Documentation/CodingStyle):
 
 > **a.** Tabs are 8 characters, and thus indentations are also 8 characters.
-There are heretic movements that try to make indentations 4 (or even 2!)
-characters deep, and that is akin to trying to define the value of PI to
-be 3.
 >
 > **b.** The limit on the length of lines is 80 columns and this is a strongly
 preferred limit.
@@ -24,7 +21,6 @@ p = kcalloc(n, sizeof(...), ...);
 Both forms check for overflow on the allocation size n * sizeof(...),
 and return NULL if that occurred.
 
-
 <!--more-->
 
 Recently, I came across a blog post from [Richard Rodger](https://twitter.com/rjrodger). In '[Why I Have Given Up on Coding Standards](http://www.richardrodger.com/2012/11/03/why-i-have-given-up-on-coding-standards/#.V0FHiJMrJsM)', he writes:
@@ -33,17 +29,17 @@ Recently, I came across a blog post from [Richard Rodger](https://twitter.com/rj
 >
 > **It’s better to throw coding standards out and allow free expression**. The small win you get from increased conformity does not move the needle. Coding standards are technical ass-covering.
 
-*Oh boy*. While I **disagree** with Richard that coding standards should be abandoned, I can see where he's coming from. I briefly worked with a nut job of a "senior developer" who came in as the project lead for a project we've been working on for 6 months. He was an academic who had just finished his PhD and had little experience working as a software developer. He spent first couple of weeks writing "coding standards" in *total isolation* like he was some kind of a God and we were lowly beings who just weren't good enough. He shared with the team after he was complete and it was full of his personal opinions and his insane coding style. The control freak *demanded* that we update the source code we had already written to reflect his standards. No explanation given. I have never seen team morale go down so fast and needless to say, I had a very brief stay at that job.
+*Oh boy*. While I **disagree** with Richard that coding standards should be abandoned, I can understand his views. I briefly worked with a nut job of a "senior developer" who came in as the project lead for a project we'd been working on for 6 months. He was an academic who had just finished his PhD and had little experience working on real world projects. He spent first couple of weeks writing "coding standards" in *total isolation* like he was some kind of a God and we were lowly beings who just weren't good enough. His coding standards document was full of his personal opinions and promoted some insane form of coding style. The control freak *demanded* that we update the source code we had already written to reflect his standards. I have never witnessed team morale hit rock bottom so fast. Needless to say, I had a very brief stay at that job.
 
-Another example I can think of is a manager who insisted on being part of every major code review. During the reviews, he would point out so-called 'errors and 'deviations' from his "coding standards" that were purely formatting issues. The irony: *he hadn't written down his coding standards anywhere!* I guess he thought developers would learn his style through osmosis. Sometimes, we felt as if he made up rules on the fly. As I mentioned in my post on conducting [effective code reviews](http://codeahoy.com/2016/04/03/effective-code-reviews/): it is useless to argue over formatting issues if you don't have coding standards.
+Another example that I can think of: a manager who insisted on being part of every major code review. During the reviews, he would flag formatting issues, that were almost always a matter of preference, as "errors". The worst part of the story is that *he hadn't written down his coding standards anywhere!* I guess he thought developers would learn his style through osmosis. Sometimes, it felt as if he made up rules on the fly. As I mentioned in my post on conducting [effective code reviews](http://codeahoy.com/2016/04/03/effective-code-reviews/), it is useless arguing over formatting issues if you don't have coding standards.
 
-The point is that coding standards are often misunderstood by naive managers and control freaks who misuse it in one way or the other such that it achieves nothing (*no one follows them*) or causes friction within the team. **The problem isn't with coding standards. It is how they are used. They can be a wonderful practice that offers tremendous benefits especially for a large software project**. Coding standards that suck have the following attributes:
+The point is that coding standards are often misunderstood by naive managers and control freaks who misuse it in one way or the other such that it achieves nothing (*no one follows them*) or causes friction within the team and hurts morale. Many software developers get bitter and hate coding standards. Coding standards aren't the problem. Like any other tool, they become harmful when used incorrectly or in the wrong hands. Coding standards that suck have the following attributes:
 
 - full of author's own opinions and personal coding style.
-- huge focus on style and formatting often vague.
+- huge focus on style and formatting issues and is often vague.
 - recommendations disguised as standards. I have made this [mistake](https://github.com/starscriber/coding-standards/wiki). **Standards must be treated like rules and hence must be enforceable**.
 
-Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect individual developer's freedom and allows them to express themselves. They do not attempt to mechanize the whole process rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
+Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect individual developers' freedom and allow them to express themselves. They do not attempt to mechanize the whole process, rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn't already involved in formulating the standards. Here are **few examples of good coding standards** related to formatting:
 
 - No more than one statement per line.
 - Line length should not exceed 80 or 100 characters.
@@ -57,15 +53,15 @@ All of these could be easily justified in a black-and-white manner without the e
 - Aim for low Cohesion and High Coupling. *[Recommendation. Cannot be enforced.]*
 - Use Test Driven Development. *[Recommendation. Cannot be enforced.]*
 
-There is a grey area between common sense and personal preferences such as whether to put braces on the same line or the next. Standardize for the sake of consistency, but try to keep items in the grey area (generally formatting issues) to a minimum.
+There is a grey area between common sense guidelines and personal preferences such as whether to put braces on the same line or the next. Standardize for the sake of consistency, but try to keep items in the grey area (generally formatting issues) to a minimum.
 
 ## Effective Coding Standards
 
-Let's ask the question: why exactly do we need coding standards and what benefits do they offer? [Most](https://msdn.microsoft.com/en-us/library/aa291591(v=vs.71).aspx) [articles](https://www.sitepoint.com/coding-standards/) [I](https://www.smashingmagazine.com/2012/10/why-coding-style-matters/) found online draw a direct relationship between coding standards and software maintainability. There is no doubt that source code that adheres to a standard is consistent and easier to comprehend. But effective coding standards offer another huge benefit which is often overlooked at the expense of focusing on aesthetics. **Effective coding standards focus on techniques that highlight problems and make bugs stand-out and visible to everyone**. [Joel said it better in 2005](http://www.joelonsoftware.com/articles/Wrong.html):
+Let's ask the question: why exactly do we need coding standards and what benefits do they offer? [Most](https://msdn.microsoft.com/en-us/library/aa291591(v=vs.71).aspx) [articles](https://www.sitepoint.com/coding-standards/) [I](https://www.smashingmagazine.com/2012/10/why-coding-style-matters/) found online draw a direct relationship between coding standards and software maintainability. While there is absolutely no doubt that source code that adheres to good standards is more readable and reflects harmony, there is another side of coding standards which is often overlooked at the expense of too much attention on aesthetics. **Effective coding standards focus on techniques that highlight problems and make bugs stand-out and visible to everyone**. [Joel said it better in 2005](http://www.joelonsoftware.com/articles/Wrong.html):
 
 > Look for **coding conventions that make wrong code look wrong**.
 
-In Java programming, the following standards will help catch bugs early on and increase software quality:
+In Java programming, having the following standards will help catch bugs early on and increase software quality:
 
 - Whenever your override `equals()` method, you must also override the `hashCode()` method.
 - Do not compare strings using `==` or `!=`
@@ -74,23 +70,24 @@ In Java programming, the following standards will help catch bugs early on and i
 
 To recap, effective coding standards:
 
-1. are simple. They do not attempt to process-ify everything and allow plenty of room to developers to exercise their creativity.
-2. strike the right balance between formatting issues and issues that "make wrong code look wrong".
-3. are black and white rules instead of vague suggestions or recommendations.
-4. Are adopted by the team and actively enforced.
+1. are short, simple and concise rules. They *do not attempt to cover and processify everything* and leave plenty of room for developers to exercise their own creativity.
+2. strike the right balance between formatting issues and issues that "*make the wrong code look wrong*".
+3. are black and white instead of vague suggestions or recommendations.
+4. Are adopted by the team and actively enforced. By having coding standards and not following them might [convey a sense of abandonment or that no one cares](http://codeahoy.com/2016/05/02/software-rot-entropy-and-the-broken-window-theory/).
 
-If you want to look at an **example of good coding standards, here are [Google's Coding Standards](http://google.github.io/styleguide/javaguide.html)** for Java.
+If you want to look at an **example of good coding standards**, here are [Google's Coding Standards](http://google.github.io/styleguide/javaguide.html) for Java.
 
 ## Automating Coding Standards
 
-I mentioned that good coding standards must be enforceable. Once you have enforceable standards, **automate the process of checking whether or not the code adheres to standards**. It will save a lot of time in peer reviews and catch everything that humans might miss. There are several style checking tools available for [several programming languages](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis). For our Java projects, we use a popular tool called [Checkstyle](http://checkstyle.sourceforge.net/). It provides several [Checks](http://checkstyle.sourceforge.net/checks.html) and by default, checks code against [Sun's code conventions](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html). But you could as easily **choose [Google's Coding Standards](https://google.github.io/styleguide/javaguide.html) or customize to adopt to your own**. If you use IntelliJ Idea (which I highly recommend), there's a [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065) that shows results right inside the IDE:
+I mentioned that good coding standards must be enforceable. Once you have enforceable standards, **automate the process** of checking source code's adherence to standards. It will save a lot of time in peer reviews and catch everything that humans might miss. There are a plethora of style checking tools available for all major [programming languages](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis). For our Java projects, we use a popular tool called [Checkstyle](http://checkstyle.sourceforge.net/). It provides several [Checks](http://checkstyle.sourceforge.net/checks.html) and by default, checks code against [Sun's code conventions](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html). But you could as easily **choose [Google's Coding Standards](https://google.github.io/styleguide/javaguide.html) or customize to adopt to your own standards**. If you use IntelliJ IDEA (which I highly recommend), there's a [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065) that shows results right inside the IDE.
 
 ![IntelliJ Checkstyle]({{ site.url }}/img/checkstyle-intellij.png)
 
-**Effective coding standards** guarantee that the source code is more readable and more maintainable. Peer reviews can be conducted more efficiently as reviewers have no trouble understanding the code that adheres to well-known company standards. It helps new developers drive up the learning curve faster. Effective coding standards also highlight subtle mistakes and detect bad patterns that might cause errors. They might not catch all possible bugs, but it is sure as hell better than nothing.
+In summary, coding standards, when used for the right reasons and in the right manner, offer many benefits. They make source code more readable and the software project more maintainable. They also help catch bugs and mistakes that are disguised as seemingly harmless code. While they might not catch all possible bugs, I'll take something over nothing any day.
 
 ## Suggested Reading
 - [List of tools for static code analysis](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)
 - [Why Coding Standards Matter (blog)](http://paul-m-jones.com/archives/34)
 - [FindBugs (Java)](http://findbugs.sourceforge.net/)
 - [PMD](http://pmd.github.io/)
+- [pep8 (python)](https://pypi.python.org/pypi/pep8)
