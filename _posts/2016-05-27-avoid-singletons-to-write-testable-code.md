@@ -9,6 +9,8 @@ Often times in software development, there is a need to share a single instance 
 - ensure that exactly *one* object of a class exists.
 - provide a way to get that object.
 
+<!--more-->
+
 This is a **valid and a very common requirement** but is often equated and related to a design pattern called the Singleton. While they provide a quick and easy solution, **singletons are considered bad because they make unit testing and debugging difficult**. [Brian Button](https://www.linkedin.com/in/brianbutton) has made some valid [arguments](https://blogs.msdn.microsoft.com/scottdensmore/2004/05/25/why-singletons-are-evil/) against singletons:
 
 > [Singletons] provide a well-known point of access to some service in your application so that you don’t have to pass around a reference to that service. How is that different from a global variable? (remember, globals are bad, right???) What ends up happening is that the **dependencies in your design are hidden inside the code, and not visible by examining the interfaces of your classes and methods**. You have to inspect the code to understand exactly what other objects your class uses.
