@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Often times in software development, there is a need to share a single object of a class throughout the code base. For example, we might want to store all online users in one central registry or share a central queue amongst all producer and consumer objects. We want to:
+Often times there is a need to share a single object of a class throughout the code base. For example, we might want to store all online users in one central registry or share a central queue amongst all producer and consumer objects. We want to:
 
 - ensure that exactly *one* object of a class exists.
 - provide a way to get that object.
