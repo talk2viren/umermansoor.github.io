@@ -4,14 +4,14 @@ title: Avoid Singletons to Write Testable Code
 excerpt_separator: <!--more-->
 ---
 
-Often times in software development, there is a need to share a single instance or exactly one object throughout the code base. For example, we might want to store all online users in one central registry or share a central queue amongst all producers and consumers. We want to:
+Often times in software development, there is a need to share a single object of a class throughout the code base. For example, we might want to store all online users in one central registry or share a central queue amongst all producer and consumer objects. We want to:
 
 - ensure that exactly *one* object of a class exists.
 - provide a way to get that object.
 
 <!--more-->
 
-This is a **valid and a very common requirement** but is often equated and related to a design pattern called the Singleton. While they provide a quick and easy solution, **singletons are considered bad because they make unit testing and debugging difficult**. [Brian Button](https://www.linkedin.com/in/brianbutton) has made some valid [arguments](https://blogs.msdn.microsoft.com/scottdensmore/2004/05/25/why-singletons-are-evil/) against singletons:
+This is a **valid and a very common requirement** but is often equated and related to a design pattern called [Singleton](https://sourcemaking.com/design_patterns/singleton). While they provide a quick and easy solution, **singletons are considered bad because they make unit testing and debugging difficult**. [Brian Button](https://www.linkedin.com/in/brianbutton) has made some valid [arguments](https://blogs.msdn.microsoft.com/scottdensmore/2004/05/25/why-singletons-are-evil/) against singletons:
 
 > [Singletons] provide a well-known point of access to some service in your application so that you don’t have to pass around a reference to that service. How is that different from a global variable? (remember, globals are bad, right???) What ends up happening is that the **dependencies in your design are hidden inside the code, and not visible by examining the interfaces of your classes and methods**. You have to inspect the code to understand exactly what other objects your class uses.
 
@@ -53,7 +53,7 @@ public class SomeClassUsingDependencyInjection {
 }
 ```
 
-Problem solved. However initializing all objects in the `main()` method and passing them where they are needed is a mechanical task and increases the number of arguments that declared in constructors. **Dependency injection frameworks and containers like [Google's Guice](https://github.com/google/guice) or [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html) are designed to automate this task**. You declare a 'dependency' on objects you need in your class and the framework will automatically inject the objects. Let's rewrite the above example and use Spring framework to inject dependencies:
+Problem solved. However initializing all objects in the `main()` method and passing them where they are needed is a mechanical task and increases the number of arguments that declared in constructors. **Dependency injection (DI) frameworks and containers like [Google's Guice](https://github.com/google/guice) or [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html) are designed to automate this task**. You declare a 'dependency' on objects you need in your class and the framework will automatically inject the objects. Let's rewrite the above example and use Spring framework to inject dependencies:
 
 ```java
 public class SomeClassUsingSpringDI {
@@ -80,6 +80,6 @@ public class UserRegistry {
 }
 ```
 
-We can also have multiple implementations of the `UserRegistry` such as one that uses an in-memory data structure to store users and another one that uses an external cache, and tell the DI framework to choose and inject the right one without changing the code.
+We can also have multiple implementations of the `UserRegistry` such as one that uses an in-memory data structure to store users and another one that uses an external cache, and tell the DI framework to pick and inject the right one at run-time.
 
-**To write testable code, we must separate object creation from the business logic** and singletons by their nature prevent this by providing a global way to create and obtain their instance. Same arguments apply to creating objects using the `new` operator. Dependency injection frameworks centralize object creation and separates it from the business logic making it possible to isolate methods and write good unit tests. Projects of all sizes can benefit from DI frameworks. I normally include a DI framework form the very start because it's tough to resist the singleton urge half-way through the project when you really need it and don't have time to mess around with setting up DI.
+**To write testable code, we must separate object creation from the business logic** and singletons by their nature prevent this by providing a global way to create and obtain their instance. Same arguments apply to creating objects using the `new` operator. Dependency injection frameworks centralize object creation and separates it from the business logic making it possible to isolate methods and write good unit tests. Projects of all sizes can benefit from DI frameworks. I normally include a DI framework form the very start because it's tough to resist the singleton temptation half-way through the project when you really need it and don't have time to mess around setting up DI.
