@@ -85,6 +85,7 @@ Once you have effective coding standards, you should **automate the process** of
 If you are starting fresh and looking for coding standards, start by searching online for well-known standards for your programming language. Start small and remember that there is more than *one right way* to style the code. There might already be a [standard](https://www.python.org/dev/peps/pep-0008/) available from the language creators. For Java, I personally like [Google's coding standards](http://google.github.io/styleguide/javaguide.html) that I adopted with slight modifications to indentation rules. Google also have coding standards for many [other languages](https://github.com/google/styleguide). **Your coding standards should check for both style issues and design problems**. Once you have standards, make sure that they are **adopted by the team and automated**. However, code that deviates from standards shouldn't be considered erroneous. It should simply be marked as out of compliance and deviations must be reviewed and fixed.
 
 ## Suggested Reading
+
 - [List of tools for static code analysis](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)
 - [Why Coding Standards Matter (blog)](http://paul-m-jones.com/archives/34)
 - [FindBugs (Java)](http://findbugs.sourceforge.net/)
