@@ -53,7 +53,7 @@ public class SomeClassUsingDependencyInjection {
 }
 ```
 
-Problem solved. However initializing all objects in the `main()` method and passing them where they are needed is a mechanical task and increases the number of arguments that declared in constructors. **Dependency injection (DI) frameworks and containers like [Google's Guice](https://github.com/google/guice) or [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html) are designed to automate this task**. You declare a 'dependency' on objects you need in your class and the framework will automatically inject the objects. Let's rewrite the above example and use Spring framework to inject dependencies:
+Problem solved. However initializing all objects in the `main()` method and passing them where they are needed is a mechanical task and increases the number of arguments that declared in constructors. Dependency injection (DI) frameworks and containers like [Google's Guice](https://github.com/google/guice) or [Spring](http://docs.spring.io/autorepo/docs/spring/3.2.x/spring-framework-reference/html/beans.html) are designed to *automate* this task. **You just declare *dependencies* on objects where you need them and the framework automatically provides or *injects* them**. It's that simple. Let's rewrite the above example using Spring:
 
 ```java
 public class SomeClassUsingSpringDI {
