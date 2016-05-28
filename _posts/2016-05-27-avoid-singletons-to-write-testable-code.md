@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Avoid Singletons to Write Testable Code
+comments: True
 excerpt_separator: <!--more-->
 ---
 
