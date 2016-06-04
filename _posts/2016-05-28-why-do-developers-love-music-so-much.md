@@ -11,7 +11,7 @@ I used to like open floor plans until I had to work in one. On my first day of w
 
 <!--more-->
 
-At Starscriber, I had a semi-private office that I shared with a senior developer. The outside area was big enough for 5 developers. A third office was left vacant in case someone needed complete privacy but was hardly ever used. The Operations and the I.T. staff sat in a different section that was separated from the engineering offices by a corridor and couple of doors. The engineering offices were generally very quiet and distractions to developers were kept to a minimum. The office layout looked like this:
+At Starscriber, I had a semi-private office that I shared with a senior developer. The outside area was big enough for 4, perhaps 5 developers. A third office was left vacant in case someone needed complete privacy but was hardly ever used. The Operations and the I.T. staff sat in a different section that was separated from the engineering offices by a corridor and couple of doors. The engineering offices were generally very quiet and distractions to developers were kept to a minimum. The office layout looked like this:
 
 ![Starscriber engineering offices]({{ site.url }}/img/blogs/starscriber-offices.png)
 
