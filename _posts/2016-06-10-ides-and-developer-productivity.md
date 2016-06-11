@@ -9,8 +9,6 @@ I used to be neutral on the choice and even the use of an IDE for writing code. 
 
 <!--more-->
 
-![Dependency graph in IntelliJ]({{ site.url }}/img/blogs/maven-intellij-graph.png)
-
 It was at that point that I was convinced that **knowing how to effectively use an IDE has a profound impact on developer productivity**. This is especially true for complex enterprise applications, where superior knowledge of IDE can provide a significant boost in productivity.
 
 I started out with Vim and loved it. When I first tried Eclipse/NetBeans for Java development, I was overwhelmed by the number things that were cluttered on the screen.
