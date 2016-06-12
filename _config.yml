@@ -19,6 +19,8 @@ linkedin:       umansoor
 facebook:       codeahoy
 facebook_id:    194256054293519
 
+gems:
+  - jekyll-redirect-from
 
 author:
   name:           'Umer Mansoor'

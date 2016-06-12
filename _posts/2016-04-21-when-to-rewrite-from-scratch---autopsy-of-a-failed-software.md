@@ -2,6 +2,7 @@
 layout: post
 title: When to Rewrite from Scratch - Autopsy of a Failed Software
 comments: True
+redirect_from: "/2016/04/21/rewrite-from-scratch-autopsy-of-a-failed-software-project/"
 excerpt_separator: <!--more-->
 ---
 
