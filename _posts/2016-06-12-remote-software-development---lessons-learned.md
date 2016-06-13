@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Remote Software Development - Our Journey (What Worked and What Didn't)
+title: Remote Software Development - Lessons Learned
 comments: True
 excerpt_separator: <!--more-->
 ---
