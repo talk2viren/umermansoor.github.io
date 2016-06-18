@@ -5,11 +5,11 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-In all my years of building server-side applications, I have come to believe that the single most important aspect that determines the long term success of these projects isn't the speed of algorithms or the fancy frameworks. *Nope*. It's the complexity of the code. **Unmanaged complexity has a profound effect on the maintainability of large projects**. Applications that are difficult to understand aren't amenable to refactoring and introducing new features become a slow and painful process. I've seen complicated systems where developers were petrified of making even small changes in the fear that it might break some other part in the system. Or the spaghetti code that is only understood by a single individual or a handful of developers who get a free pass on anything because the project will be doomed if they quit.
+In all my years of building server-side applications, I have come to believe that the single most important aspect that determines the long term success of these projects isn't the speed of algorithms or the fancy frameworks. *Nope*. It's the complexity of the code. **Unmanaged complexity has a profound effect on the maintainability of large projects**. Applications that are difficult to understand aren't amenable to refactoring. Introducing **new features become a slow and painful process, increasing the crucial time to market**. I've seen complicated systems where developers were petrified of making even small changes in the fear that they might inadvertently break some other part. Or the spaghetti code that is only understood by a single individual or a handful of developers who get a free pass on anything because the project will be doomed if they quit.
 
 <!--more-->
 
-There are many factors that result in complicated code. **One of the factors is [coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) between your application's modules which makes it very difficult to understand or change the code**. Let's walkthrough a trivial example. Suppose there's a server that allows users to connect. When users connect and authenticate, they are wrapped in a 'User' class:
+There are multiple factors that contribute to code complexity. **One of important factors is [coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) between the application's modules**. Let's walkthrough a trivial example. Suppose there's a server that allows users to connect. When users connect and authenticate, they are wrapped in a 'User' class:
 
 ```java
 // Represents a user
@@ -32,14 +32,16 @@ void sayHello(User user) {
 }
 ```
 
-I'm sure that the flaw is obvious: the *User* class failed to encapsulate the *socket* object and leaked it to the world. If we want to switch to another communication mechanism other than 'Socket', we'll have to make changes everywhere it is used . However, the `sayHello(...)` method isn't entirely innocent. **It sinned in the manner it interacted with the *socket* object. Instead of asking the *user* object to send a message, it obtained access to an independent "third-party" object (*socket*) that it used to send directly**. The example might be contrived, but I have seen this pattern far too many times in "enterprise" applications. The good news is that **this kind of coupling can be easily detected. The technique to identify this behavior has a fancy name: [The Law of Demeter](http://www.ccs.neu.edu/research/demeter/papers/law-of-demeter/oopsla88-law-of-demeter.pdf)**. The "law" (the term itself is a misnomer. It's a technique or a guideline) can be [summarized](https://en.wikipedia.org/wiki/Law_of_Demeter) as:
+The *User* class has an obvious flaw: it failed to encapsulate the *socket* object and leaked it to the world. If we want to change this implementation in the future (e.g. use an asynchronous socket library), we'll have to make changes in many places.
+
+However, the `sayHello(...)` method isn't entirely innocent. **It sinned in the manner in which it interacted with the *socket* object**. Instead of asking the *user* object to send a message to the user it represents, it **obtained access to an independent "third-party" object** (*socket*) and used it directly. The example might be contrived, but I have seen this pattern far too many times in "real-world" applications. The good news is that **this can be easily detected using a technique with a fancy name: [The Law of Demeter](http://www.ccs.neu.edu/research/demeter/papers/law-of-demeter/oopsla88-law-of-demeter.pdf)**. The "law" (the term itself is a misnomer. It's rather a technique or a guideline) can be [summarized](https://en.wikipedia.org/wiki/Law_of_Demeter) as:
 
 >
 - Each unit should have only **limited knowledge about other units**: only units "closely" related to the current unit.
 - Each unit should only talk to its friends; **don't talk to strangers**.
 - **Only talk to your immediate friends**.
 
-In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the law tells says that we shouldn't obtain access to third-party objects and manipulate them directly**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
+In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the law says that we shouldn't obtain access to third-party objects and manipulate them directly**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
 
 
 ```java
@@ -66,7 +68,7 @@ public class Foo {
 }
 ```
 
-Scroll up and look at the `sayHello(...)` method above and notice how it violates the Law of Demeter. Even though **the method itself is pretty much helpless, it helps us detect tight-coupling**. The real problem is that the *User* class failed to hide its internal details. Let's fix it:
+Scroll up and look at the `sayHello(...)` method and notice how it violates the Law of Demeter. Even though **the method itself is pretty much helpless, it helps us detect tight-coupling**. The problem starts with the *User* class that failed to hide its internal details. So let's fix it:
 
 ```java
 class User {
@@ -75,7 +77,7 @@ class User {
   // Make the field private to hide it from the world.
   private final Socket socket;
 
-  // Implement (encapsulate) the functionality of message sending
+  // Simplified implementation to encapsulate messaging functionality
   void sendMessage(String message) {
     OutputStream outputStream = socket.getOutputStream();
     PrintWriter out = new PrintWriter(outputStream);
@@ -83,7 +85,7 @@ class User {
   }
 }
 ```
-Now that's done. Let's fix the `sayHello(...)` method to stop relying on the *socket* object:
+Now let's fix the `sayHello(...)` method to stop relying on the *socket* object:
 
 ```java
 // Doesn't violate the Law of Demeter anymore.
@@ -92,6 +94,6 @@ void sayHello(User user) {
 }
 ```
 
-(Coupling) Problem solved. In their book [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), Andrew and Dave call for writing **"shy" code that doesn't interact with too many things**.
+(Coupling) Problem solved. In their book [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), [Andrew](https://twitter.com/pragmaticandy) and Dave suggest writing **"shy" code that doesn't interact with too many things**.
 
 I keep an eye out for the Law of Demeter violations when writing or reviewing code. However, this could be automated with [source code analyzers](http://pmd.github.io/). I haven't personally used it myself so take my advice with a grain of salt. I'll update this post if I use it myself.
