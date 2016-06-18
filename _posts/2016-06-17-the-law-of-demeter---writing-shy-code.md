@@ -23,18 +23,21 @@ class User {
 If we want to send a message a user, we would do something like this:
 
 ```java
-// Send "Hello." string to a User
-void sayHello(User user) {
-  Socket s = user.socket; // Get the user's socket
-  OutputStream outputStream = s.getOutputStream();
-  PrintWriter out = new PrintWriter(outputStream);
-  out.println("Hello."); // send the message to the socket.
+// Another class
+class Message {
+  // Send "Hello." string to a User
+  public void sayHello(User user) {
+    Socket s = user.socket; // Get the user's socket
+    OutputStream outputStream = s.getOutputStream();
+    PrintWriter out = new PrintWriter(outputStream);
+    out.println("Hello."); // send the message to the socket.
+  }
 }
 ```
 
 The *User* class has an obvious flaw: it failed to encapsulate the *socket* object and leaked it to the world. If we want to change this implementation in the future (e.g. use an asynchronous socket library), we'll have to make changes in many places.
 
-However, the `sayHello(...)` method isn't entirely innocent. **It sinned in the manner in which it interacted with the *socket* object**. Instead of asking the *user* object to send a message to the user it represents, it **obtained access to an independent "third-party" object** (*socket*) and used it directly. The example might be contrived, but I have seen this pattern far too many times in "real-world" applications. The good news is that **this can be easily detected using a technique with a fancy name: [The Law of Demeter](http://www.ccs.neu.edu/research/demeter/papers/law-of-demeter/oopsla88-law-of-demeter.pdf)**. The "law" (the term itself is a misnomer. It's rather a technique or a guideline) can be [summarized](https://en.wikipedia.org/wiki/Law_of_Demeter) as:
+However, the *sayHello(...)* method of the *Message* class isn't entirely innocent. **It sinned in the manner in which it interacted with the *socket* object**. It **obtained access to an independent "third-party" object** (*socket*) and used it directly. The example might be contrived, but I have seen this pattern far too many times in "real-world" applications. The good news is that **this can be easily detected using a technique with a fancy name: [The Law of Demeter](http://www.ccs.neu.edu/research/demeter/papers/law-of-demeter/oopsla88-law-of-demeter.pdf)**. The "law" (the term itself is a misnomer. It's rather a technique or a guideline) can be [summarized](https://en.wikipedia.org/wiki/Law_of_Demeter) as:
 
 >
 - Each unit should have only **limited knowledge about other units**: only units "closely" related to the current unit.
@@ -43,7 +46,7 @@ However, the `sayHello(...)` method isn't entirely innocent. **It sinned in the 
 >
 > The fundamental notion is that **a given object should assume as little as possible about the structure or properties of anything else** (including its subcomponents), in accordance with the principle of "information hiding".
 
-In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the Law discourages direct access and use of third-party objects**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
+In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the law discourages direct access and use of third-party objects**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
 
 ```java
 public class Foo {
@@ -86,12 +89,14 @@ class User {
   }
 }
 ```
-Now let's fix the `sayHello(...)` method to stop relying on the *socket* object:
+Now we can fix the `sayHello(...)` method to stop relying on the *socket* object:
 
 ```java
-// Doesn't violate the Law of Demeter anymore.
-void sayHello(User user) {
-  user.sendMessage("Hello.");
+class Message {
+  // Doesn't violate the Law of Demeter anymore.
+  public void sayHello(User user) {
+    user.sendMessage("Hello.");
+  }
 }
 ```
 
