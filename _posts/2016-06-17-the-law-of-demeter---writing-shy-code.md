@@ -9,7 +9,7 @@ In all my years of building server-side applications, I have come to believe tha
 
 <!--more-->
 
-There are multiple factors that contribute to code complexity. **One of important factors is [coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) between the application's modules**. Let's walkthrough a trivial example. Suppose there's a server that allows users to connect. When users connect and authenticate, they are wrapped in a 'User' class:
+There are multiple factors that contribute to code complexity. **One important factor is the amount of [coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) or interdependencies between the application's modules**. Let's walkthrough a trivial example. Suppose there's a server that allows users to connect. When users connect and authenticate, they are wrapped in a 'User' class:
 
 ```java
 // Represents a user
@@ -40,9 +40,10 @@ However, the `sayHello(...)` method isn't entirely innocent. **It sinned in the 
 - Each unit should have only **limited knowledge about other units**: only units "closely" related to the current unit.
 - Each unit should only talk to its friends; **don't talk to strangers**.
 - **Only talk to your immediate friends**.
+>
+> The fundamental notion is that **a given object should assume as little as possible about the structure or properties of anything else** (including its subcomponents), in accordance with the principle of "information hiding".
 
-In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the law says that we shouldn't obtain access to third-party objects and manipulate them directly**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
-
+In short, tight coupling between logically independent modules violates the Law of Demeter. Although, it is a side effect of poor encapsulation, **the Law discourages direct access and use of third-party objects**. Here's a good [example](http://pmd.github.io/pmd-5.1.3/rules/java/coupling.html) to illustrate the Law of Demeter:
 
 ```java
 public class Foo {
@@ -68,7 +69,7 @@ public class Foo {
 }
 ```
 
-Scroll up and look at the `sayHello(...)` method and notice how it violates the Law of Demeter. Even though **the method itself is pretty much helpless, it helps us detect tight-coupling**. The problem starts with the *User* class that failed to hide its internal details. So let's fix it:
+Now scroll back up and look at the `sayHello(...)` method. It violates the Law of Demeter by talking to a stranger: the *socket* object. Even though **the method itself is pretty much helpless, it helps us detect tight-coupling**. The problem starts with the *User* class that failed to hide its internal details. So let's fix it:
 
 ```java
 class User {
