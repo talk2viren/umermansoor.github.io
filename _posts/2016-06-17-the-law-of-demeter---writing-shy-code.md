@@ -17,6 +17,12 @@ class User {
   public final String username;
   public final int id;
   public final Socket socket;
+
+  public void disconnect() {
+    socket.close();
+  }
+
+  // Other methods that operate on the socket.
 }
 ```
 
