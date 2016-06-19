@@ -108,4 +108,4 @@ class Message {
 
 (Coupling) Problem solved. In their book [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), [Andrew](https://twitter.com/pragmaticandy) and Dave suggest writing **"shy" code that doesn't interact with too many things**.
 
-I keep an eye out for the Law of Demeter violations when writing or reviewing code. However, this could be automated with [source code analyzers](http://pmd.github.io/). I haven't personally used it myself so take my advice with a grain of salt. I'll update this post if I use it myself.
+I keep an eye out for the Law of Demeter violations when writing or reviewing code and **refactor code to reduce unnecessary coupling where it makes sense**. This could be automated with [source code analyzers](http://pmd.github.io/). I haven't personally used it myself so take my advice with a grain of salt. I'll update this post if I use it myself.

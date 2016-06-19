@@ -11,11 +11,11 @@ The concept of the minimum viable product or the MVP was popularized by Eric Rei
 
 Startups fail for many reasons but one of the **biggest reasons is that they build products that their customers do not want**. By that time, it's too late. They have already spent months or even years of their lives building a great product - a grand vision - that the market isn't, unfortunately, willing to purchase. MVP is a strategy to avoid exactly that scenario: **building something that the customers do not want**.
 
+<!--more-->
+
 Eric [cites](http://www.inc.com/lee-clifford-julie-schlosser/lean-startup-eric-ries-testing-your-product.html) the story of Zappos. They didn't start out with a grand vision of building a cool website, distribution and call centers. Nope. **Zappos started by testing a simple hypothesis: are customers willing to buy shoes online?**
 
 > **They went to local shoe store, took pictures of each of their products and put them online. If anyone bought shoes from them [at this early stage], they planned to go to the store, buy the shoes and mail them to the customer**. There was no big business behind it; there was a website and a hope that they'll get so many orders that it will get annoying to do all the purchasing and shipping manually. **It was all to test their big idea**.
-
-<!--more-->
 
 MVP is a great way to test the actual usage and assumptions as opposed to conventional market research that includes researching online, surveys etc. which often provide misleading results.
 

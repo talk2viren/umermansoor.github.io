@@ -7,9 +7,9 @@ excerpt_separator: <!--more-->
 
 If I may be so brash, it is my opinion that the `char` type in Java is broken and should be avoided. It's not suitable for modern needs, makes debugging a nightmare and **should be retired**. `char` is for representing characters (e.g. 'a', 'b', 'c') and has been supported in Java since it was released about 20 years ago. When Java first came out, the world was a simpler place. Windows 95 was the latest, greatest operating system, world's [first flip phone](https://en.wikipedia.org/wiki/Motorola_StarTAC) was just put on sale, and Unicode had less than *40,000* characters, all of which fit perfectly into the 16-bit space that `char` provides. But things have changed drastically. Unicode has outgrown the 16-bit space and now requires 21 bits for all of its *120,737* characters.
 
-Java has supported Unicode since its first release and **strings are internally represented using [UTF-16](https://en.wikipedia.org/wiki/UTF-16) encoding**. UTF-16 is a *variable length* encoding scheme. For characters that can fit into the 16 bits space, it uses 2 bytes to represent them. For all other characters, it uses 4 bytes. This is great. All possible Unicode characters in existence plus a lot more (1 million more) could be represented using UTF-16 and thus as Strings in Java.
-
 <!--more-->
+
+Java has supported Unicode since its first release and **strings are internally represented using [UTF-16](https://en.wikipedia.org/wiki/UTF-16) encoding**. UTF-16 is a *variable length* encoding scheme. For characters that can fit into the 16 bits space, it uses 2 bytes to represent them. For all other characters, it uses 4 bytes. This is great. All possible Unicode characters in existence plus a lot more (1 million more) could be represented using UTF-16 and thus as Strings in Java.
 
 But `char` is a different story altogether. Let's look at its definition from the [official source](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html):
 
