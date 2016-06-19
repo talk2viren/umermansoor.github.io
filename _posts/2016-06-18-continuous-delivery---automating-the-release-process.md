@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 
 For many software developers release days are stressful events. There's always some risk that things might go wrong in the process or there could be a bug that would surface after deployment to production. At my previous company, we had a manual release process that was very human intensive; hence, error prone. On release days, guys would load the binaries on a staging environment, perform a manual UAT (User Acceptance Test). If it was successful, the software was copied to production servers and verified with smoke tests and occasionally, a trimmed down version of the UAT was run again. Here are the problems we faced:
 
+<!--more-->
+
 - 2 out 3 times when we had to roll back a release because of an issue, it was due to a **configuration mismatch** between staging and production environments.
 - The release process was **slow** and it took a long time to release new features to our users. It wasn't uncommon for the release process to take days or sometimes even weeks.
 - The slow release process and the manual UAT had another side-effect: developers didn't get timely feedback on their features. **By the time they got feedback, they were often in the middle of another feature**. This incurred additional overhead because their memories were no longer fresh and on rare occasions, the error got re-introduced due to mix-ups between branches.
