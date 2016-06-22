@@ -5,17 +5,23 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Let's face it: **mistakes are inevitable in creative processes that require brain power**. Software design and development falls into this category. When people are building complex systems, sometimes things go wrong. Even with detailed designs and processes, there are hundreds of micro-decisions that are made by the developers when they are writing code. The **traditional view is to assign blame and point fingers when something fails.** In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads nowhere:
+Let's face it: mistakes happen. They are inevitable in any creative process that requires brain power. Software design and development falls into this category. When people are building complex systems, *mistakes* are made. And what happens when failure occurs? **The traditional view is to assign blame and point fingers at the person or people responsible for the failure**, because it's easy to identify the culprit than the actual cause. In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads nowhere:
 
 <!--more-->
 
 > When faced with a human error problem, you may be tempted to ask '**Why didn't they watch out better? How could they not have noticed?**'. You think you can solve your human error problem by telling people to be more careful, by reprimanding the miscreants, by issuing a new rule or procedure. These are all expressions of **'The Bad Apple Theory', where you believe your system is basically safe if it were not for those few unreliable people in it**. This old view of human error is increasingly outdated and will lead you nowhere. **The new view, in contrast, understands that a human error problem is actually an organizational problem**.
 
-When employees are blamed by their superiors who have the power of hindsight on their side, they become defensive. When this happens, **the team sociology suffers and employees lose motivation to do good work**. The alternate is to assume that everyone involved in the failure had good intentions and they didn't think that the mistake was possible. It starts with hiring good people. If you have incompetent turkeys on your team, no amount of processes or metrics will save the project. After you have hired good people, trust them to make the right decisions. **Managers who constantly question the competence of their teams can't build productive teams**.
+When employees are blamed and shamed by their superiors, who have the the power of hindsight on their side, few things happen:
 
-When failures occur, the goal should be to understand '*what*' caused the failure without focusing on the '*who*'. **Mistakes should be analyzed with a perspective of learning**. John Allspaw, the CTO of Etsy, calls this type of the analysis the "[blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/)":
+- Employees become defensive and lose motivation. **The overall team sociology and culture suffers**.
+- Employees start hiding mistakes. The team and the company doesn't learn any lessons and nothing is done to prevent failures from happening again.
+- No one actually takes the responsibility and everyone blames each other.
 
-> [...] **by investigating mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process of individuals** proximate to the failure, an organization can come out safer than it would normally be if it had simply punished the actors involved as a remediation.
+So how should companies handle mistakes?
+
+When failure occurs, the role of the management should be to figure out what happened so they can improve something to prevent it from happening again. **But the management doesn't have a crystal ball that can give out all the details**. They have to rely on their employees for this information. But for employees to get past their natural instincts and admit responsibility for their mistakes, requires a culture and an environment that doesn't assign blame. It requires a **"Just Culture"**. The CTO of Etsy, John Allspaw, [describes it](https://codeascraft.com/2012/05/22/blameless-postmortems/):
+
+> Having a **Just Culture** means that you’re making effort to balance safety and accountability.  It means that **by investigating mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process of individuals** proximate to the failure, an organization can come out safer than it would normally be if it had simply punished the actors involved as a remediation.
 >
 Having a “blameless” Post-Mortem process means that engineers whose actions have contributed to an accident can give a detailed account of:
 >
@@ -27,7 +33,9 @@ Having a “blameless” Post-Mortem process means that engineers whose actions 
 >
 …and that they can give this detailed **account without fear of punishment or retribution**.
 
-When employees are punished or shamed for their mistakes, they become hesitant of giving out the actual details of what happened. This simply guarantees that **the mistake will be repeated again in the future because nothing was done to fix the [root cause](https://en.wikipedia.org/wiki/Root_cause)**. There are various techniques to get to the root cause. I have been using a technique known as the '5 Whys' which works really well in most situations. It was developed by [Sakichi Toyoda](https://en.wikipedia.org/wiki/Sakichi_Toyoda) and its goal is to:
+For management, it starts with hiring good people and assuming that everyone involved in the failure had good intentions; they didn't think that the mistake was possible. If you have incompetent turkeys on your team, no amount of processes or metrics will save the project. After you have hired good people, trust them to make the right decisions. **Managers who constantly question the competence of their teams can't build productive teams**.
+
+When failures occur, the goal should be to understand '*what*' caused the failure without focusing on the '*who*'. There are various techniques to get to the [root cause](https://en.wikipedia.org/wiki/Root_cause). I have been using a technique known as the '5 Whys' which works really well in most situations. It was developed by [Sakichi Toyoda](https://en.wikipedia.org/wiki/Sakichi_Toyoda) and its goal is to:
 
 >  determine the root cause of a problem by **repeating the question "Why?" Each question forms the basis of the next question**.
 
@@ -51,6 +59,6 @@ For more comprehensive analysis that goes beyond 'first stories', [John](https:/
 | Saying what people should have done is a satisfying way to describe failure  | Saying what people should have done doesn’t explain why it made sense for them to do what they did  |
 | Telling people to be more careful will make the problem go away  | Only by constantly seeking out its vulnerabilities can organizations enhance safety  |
 
-*Blameless postmortems* create a culture where people are not afraid of admitting their mistakes, in fact, they happily provide details so others in the team can avoid the same mistake in the future. **Mistakes are viewed as an opportunity to learn valuable lessons from**. When failure happens, a thorough analysis is performed, with an emphasis on **process over people, to make sure it doesn't happen again**. These postmortems should be performed after the problem has been solved when emotions aren't running high. The results or findings must be shared with the entire team or the company.
+*Blameless postmortems* aren't about avoiding accountability. They are about **creating a culture** where people come freely admit their mistakes and learn from them. **A mistake can be a great opportunity to learn a valuable lesson from**. When failure happens, a thorough analysis is performed, with an emphasis on **process over people, to make it better**. These analysis or 'blameless postmortems' should be performed after the problem has been solved when emotions aren't running high. The results or findings must be shared with the entire team or the company.
 
-One thing I have experienced is that **some people have a natural tendency to assign blame to others**. Some do it more explicitly than the others. As managers, you need to keep your eyes and ears open and when **you detect finger pointing, you must tactfully shift the focus away from people and back to the process** - the '*what*' and the '*how*', not the '*who*'.
+One thing I have experienced is that **some people have a natural tendency to assign blame to others**. Some do it more explicitly than the others. As managers when you are trying to create a *Just Culture*, you need to keep your eyes and ears open and when **you detect finger pointing, you must tactfully shift the focus away from people and back to the process**.
