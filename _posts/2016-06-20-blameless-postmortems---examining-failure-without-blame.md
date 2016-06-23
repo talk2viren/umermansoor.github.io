@@ -19,7 +19,7 @@ When employees are blamed and shamed by their superiors, who have the the power 
 
 So how should companies handle mistakes?
 
-When failure occurs, the role of the management should be to figure out what happened so they can improve something to prevent it from happening again. **But the management doesn't have a crystal ball that can give out all the details**. They have to rely on their employees for this information. But for employees to get past their natural instincts and admit responsibility for their mistakes, requires a culture and an environment that doesn't assign blame. It requires a **"Just Culture"**. The CTO of Etsy, John Allspaw, [describes it](https://codeascraft.com/2012/05/22/blameless-postmortems/):
+When failure occurs, the role of the management should be to figure out what happened so they can improve something to prevent it from happening again. **But the management doesn't have a crystal ball that can give out all the details**. They have to rely on their employees for this information. In order for employees to come forward and admit responsibility for their mistakes, the right type of culture and environment must be present. One that doesn't punish people for their mistakes. It requires a **"Just Culture"**. The CTO of Etsy, John Allspaw, [describes it](https://codeascraft.com/2012/05/22/blameless-postmortems/):
 
 > Having a **Just Culture** means that you’re making effort to balance safety and accountability.  It means that **by investigating mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process of individuals** proximate to the failure, an organization can come out safer than it would normally be if it had simply punished the actors involved as a remediation.
 >
