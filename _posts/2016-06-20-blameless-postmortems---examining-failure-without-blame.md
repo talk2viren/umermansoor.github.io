@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Let's face it: mistakes happen. They are inevitable in any creative process that requires brain power. Software design and development falls into this category. When people are building complex systems, *mistakes* are made. And what happens when failure occurs? **The traditional view is to assign blame and point fingers at the person or people responsible for the failure**, because it's easy to identify the culprit than the actual cause. In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads nowhere:
+Let's face it: mistakes happen. They are inevitable in any creative process that requires brain power. Software design and development falls into this category. When people are building complex systems, *mistakes* are made. And what happens when failure occurs? **The traditional view is to assign blame and point fingers at the person or people responsible for the failure**, because it's easy to identify the culprit than the actual cause. In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads us nowhere:
 
 <!--more-->
 
@@ -15,7 +15,7 @@ When employees are blamed and shamed by their superiors, who have the the power 
 
 - Employees become defensive and lose motivation. **The overall team sociology and culture suffers**.
 - Employees start hiding mistakes. The team and the company doesn't learn any lessons and nothing is done to prevent failures from happening again.
-- No one actually takes the responsibility and everyone blames each other.
+- No one actually takes the responsibility and everybody blames each other.
 
 So how should companies handle mistakes?
 
@@ -23,7 +23,7 @@ When failure occurs, the role of the management should be to figure out what hap
 
 > Having a **Just Culture** means that you’re making effort to balance safety and accountability.  It means that **by investigating mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process of individuals** proximate to the failure, an organization can come out safer than it would normally be if it had simply punished the actors involved as a remediation.
 >
-Having a “blameless” Post-Mortem process means that engineers whose actions have contributed to an accident can give a detailed account of:
+**Having a “blameless” Post-Mortem process** means that engineers whose actions have contributed to an accident can give a detailed account of:
 >
 - what actions they took at what time,
 - what effects they observed,
@@ -49,7 +49,7 @@ Here's an example of 5 Whys in practice from [Joel's blog](http://www.joelonsoft
 - *Why?* – We were fully aware of problems like this, and have been for many years.  But - we do not have a written standard and verification process for production switch configurations.
 - *Why?* – Documentation is often thought of as an aid for when the sysadmin isn’t around or for other members of the operations team, whereas, it should really be thought of as a checklist.
 
-For more comprehensive analysis that goes beyond 'first stories', [John](https://codeascraft.com/2012/05/22/blameless-postmortems/) suggests looking for "second stories" that are collected from multiple sources and perspectives:
+For more comprehensive and formal analysis that goes beyond 'first stories', [John Allspaw](https://codeascraft.com/2012/05/22/blameless-postmortems/) collecting "second stories" from multiple sources and perspectives as part of the formal postmortem process:
 
 > From [Behind Human Error](https://www.amazon.com/Behind-Human-Error-David-Woods/dp/0754678342) here’s the difference between “first” and “second” stories of human error:
 
@@ -59,6 +59,6 @@ For more comprehensive analysis that goes beyond 'first stories', [John](https:/
 | Saying what people should have done is a satisfying way to describe failure  | Saying what people should have done doesn’t explain why it made sense for them to do what they did  |
 | Telling people to be more careful will make the problem go away  | Only by constantly seeking out its vulnerabilities can organizations enhance safety  |
 
-*Blameless postmortems* aren't about avoiding accountability. They are about **creating a culture** where people come freely admit their mistakes and learn from them. **A mistake can be a great opportunity to learn a valuable lesson from**. When failure happens, a thorough analysis is performed, with an emphasis on **process over people, to make it better**. These analysis or 'blameless postmortems' should be performed after the problem has been solved when emotions aren't running high. The results or findings must be shared with the entire team or the company.
+A *Just Culture and blameless postmortems* aren't about avoiding accountability. In fact they achieve the opposite effect by **creating a culture** where people can freely admit their mistakes and learn from them. **A mistake can be a great opportunity to learn a valuable lesson from**. When failure happens, a thorough analysis is performed, with an emphasis on **process over people, to make it better**. These analyses or 'postmortems' should be performed *after* the problem has been solved; when emotions aren't running high. The results or findings must be shared with the entire team or the company.
 
-One thing I have experienced is that **some people have a natural tendency to assign blame to others**. Some do it more explicitly than the others. As managers when you are trying to create a *Just Culture*, you need to keep your eyes and ears open and when **you detect finger pointing, you must tactfully shift the focus away from people and back to the process**.
+It'll be helpful to keep in mind that **most people have a natural tendency to assign blame to others**. Some do it more explicitly than the others. As managers when you are trying to create a *Just Culture*, you need to keep your eyes and ears open and when **you detect finger pointing, you must tactfully shift the focus away from people and back to the process**.
