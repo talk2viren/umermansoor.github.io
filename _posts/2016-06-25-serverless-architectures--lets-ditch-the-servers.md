@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Serverless architecture is a fascinating concept that is [quickly](http://martinfowler.com/articles/serverless.html) [gaining](http://highscalability.com/blog/2015/12/7/the-serverless-start-up-down-with-servers.html) [momentum](https://www.manning.com/books/serverless-architectures-on-aws). **The idea is to be able to run server-side code without worrying about the messy details of provisioning and setting up servers**. You write code, upload it and — voilà! — it starts running. All the complications of managing the infrastructure, provisioning servers, auto-scaling, installing languages and frameworks are eliminated and hidden away by the vendor. The vendor takes care of invoking the code in response to a request, providing it the context and input information it needs to do its job and return the result back to the client.
+Serverless architecture is a fascinating new(-ish) trend that is [quickly](http://martinfowler.com/articles/serverless.html) [gaining](http://highscalability.com/blog/2015/12/7/the-serverless-start-up-down-with-servers.html) [momentum](https://www.manning.com/books/serverless-architectures-on-aws). **The idea is to be able to run server-side code without worrying about the messy details of provisioning and setting up servers**. You write code, upload it and — voilà! — it starts running. All the complications of managing the infrastructure, provisioning servers, auto-scaling, installing languages and frameworks are eliminated and hidden away by the vendor. The vendor takes care of invoking the code in response to a request, providing it the context and input information it needs to do its job and return the result back to the client.
 
 <!--more-->
 
