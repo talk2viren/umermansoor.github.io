@@ -1,6 +1,6 @@
 ---
 layout: post
-title: REST API Design and the HTTP Methods
+title: REST Design - Choosing the Right HTTP Method
 comments: True
 excerpt_separator: <!--more-->
 ---
@@ -99,7 +99,7 @@ PUT /students/<student_id>
 
 There is a common [misconception](http://www.tbray.org/ongoing/When/200x/2009/03/20/Rest-Casuistry) that it isn't RESTful to use the HTTP POST method to update existing resources. People who hold this view suggest that one should always use the PUT method for updates and POST for creating new resources. This isn't quite right. The REST standard doesn't stop us from using POST requests for updates. In fact, it doesn't even talk about it because **idempotency and safety guarantees are properties of the HTTP protocol, not of the REST standard**. [Roy Fielding](http://roy.gbiv.com/),  [writes](http://roy.gbiv.com/untangled/2009/it-is-okay-to-use-post):
 
-> Some people think that REST suggests not to use POST for updates.  Search my dissertation and you won’t find any mention of CRUD or POST. The only mention of PUT is in regard to HTTP’s lack of write-back caching.  The main reason for my lack of specificity is because the methods defined by HTTP are part of the Web’s architecture definition, not the REST architectural style.
+> Some people think that REST suggests not to use POST for updates.  Search my dissertation and you won’t find any mention of CRUD or POST. The only mention of PUT is in regard to HTTP’s lack of write-back caching.  The main reason for my lack of specificity is because the methods defined by HTTP are part of the Web’s architecture definition, not the REST architectural style. [...] For example, it isn’t RESTful to use GET to perform unsafe operations because that would violate the definition of the GET method in HTTP, which would in turn mislead intermediaries and spiders.
 
 Therefore, **the choice between PUT and POST boils down to one thing: idempotency guarantee of these methods**. Because PUT is idempotent, clients or intermediaries can repeat a PUT request if the the response for the first request doesn't arrive on time, even though the request was processed by the server. In order to stay idempotent, PUT requests must replace the entire resource and hence must send all the attributes. For partial updates, POST or PATCH (non-idempotent methods) must be used.
 
