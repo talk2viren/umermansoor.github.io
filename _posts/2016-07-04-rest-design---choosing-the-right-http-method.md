@@ -5,9 +5,13 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-One of the challenges when designing a REST API is choosing the right HTTP method (*GET*, *PUT*, *POST* etc.) that corresponds with the operation being performed. Some people incorrectly assume that they can freely choose any method as long as the client and the server agree on it. This is wrong because **a request passes through many intermediaries and middleware applications which perform optimizations based on the HTTP method type. These optimizations depend on a key property of HTTP methods: [the idempotency guarantee]((http://codeahoy.com/2016/06/30/idempotent-and-safe-http-methods-why-do-they-matter/))**, which is defined in the [HTTP specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+One of the challenges when designing a REST API is choosing the right HTTP method (*GET*, *PUT*, *POST* etc.) that corresponds with the operation being performed. Some people incorrectly assume that they can freely choose any method as long as the client and the server agree on it. This is wrong because a request passes through many intermediaries and middleware applications which perform optimizations based on the HTTP method type. These optimizations depend on two key characteristics of HTTP methods: [idempotency and safety]((http://codeahoy.com/2016/06/30/idempotent-and-safe-http-methods-why-do-they-matter/)), which are defined in the [HTTP specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
-To understand, suppose you are implementing an operation and you choose an idempotent HTTP method that invokes the operation. You must ensure that the implementation returns the same result if invoked once or multiple times for the same input, to adhere to the idempotency contract.
+**Safe HTTP Methods**: Safe methods aren't expected to cause any side effects. These operations are read-only. for example querying a database.
+
+**Idempotent HTTP Methods**: Idempotent methods guarantee that repeating a request has the same effect as making the request once.
+
+Idempotency and safety are properties of HTTP methods that server applications must correctly implement. This means if you are implementing an operation and choose an idempotent HTTP method to invoke the operation, you must ensure that the implementation returns the same result if invoked once or multiple times for the same input, to adhere to the method's idempotency contract.
 
 <!--more-->
 
@@ -38,7 +42,7 @@ POST /students/ // Create a new student
 }
 ```
 
-**If POST is used for updating an existing resource, it is allowed to pass partial information in the request**. For example, to update the GPA of a student, we'll make the POST request on the specific record (given by the `student_id`) and only supply the attribute we want to update:
+**POST requests are allowed to perform partial updates**. For example, to update the GPA of a student, we'll make the POST request on the specific record (given by the `student_id`) and only supply the attribute we want to update:
 
 ```javascript
 POST /students/<student_id>
@@ -101,7 +105,7 @@ There is a common [misconception](http://www.tbray.org/ongoing/When/200x/2009/03
 
 > Some people think that REST suggests not to use POST for updates.  Search my dissertation and you won’t find any mention of CRUD or POST. The only mention of PUT is in regard to HTTP’s lack of write-back caching.  The main reason for my lack of specificity is because the methods defined by HTTP are part of the Web’s architecture definition, not the REST architectural style. [...] For example, it isn’t RESTful to use GET to perform unsafe operations because that would violate the definition of the GET method in HTTP, which would in turn mislead intermediaries and spiders.
 
-Therefore, **the choice between PUT and POST boils down to one thing: idempotency guarantee of these methods**. Because PUT is idempotent, clients or intermediaries can repeat a PUT request if the the response for the first request doesn't arrive on time, even though the request was processed by the server. In order to stay idempotent, PUT requests must replace the entire resource and hence must send all the attributes. For partial updates, POST or PATCH (non-idempotent methods) must be used.
+Therefore, **the choice between PUT and POST boils down to one thing: idempotency guarantee of these methods**. Because PUT is idempotent, clients or intermediaries can repeat a PUT request if the the response for the first request doesn't arrive on time, even though the request may have been processed by the server. In order to stay idempotent, PUT requests must replace the entire resource and hence must send all the attributes. For partial updates, POST or PATCH (non-idempotent methods) must be used.
 
 ### DELETE: Idempotent
 
@@ -125,7 +129,7 @@ Here's a table summarizing the results:
 
 | HTTP Method | Idempotent?      | Operation?   
 | ----------- | ---------------  | --------- |
-| GET         | yes              | **Retrieval** or Query       |
-| POST        | NO               | Create or **partially update** resources        |
-| PUT         | yes              | Create or **fully update** resources       |
-| PATCH       | NO               | **Partially update resources**        |
+| GET         | yes              | Retrieval or query.      |
+| POST        | NO               | Create or update resources. Partial updates are allowed.        |
+| PUT         | yes              | Create or update resources. Partial updates are not allowed.      |
+| PATCH       | NO               | For partial updates.       |
