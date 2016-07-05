@@ -112,7 +112,7 @@ Therefore, **the choice between PUT and POST boils down to one thing: idempotenc
 DELETE requests are idempotent and are used for deleting a resource. One common confusion people have with DELETE calls is what type of HTTP status code to return on repeat calls. Some people assume that because DELETE is idempotent, it must always return the same HTTP status e.g. `HTTP 200`. This assumption is wrong. Although there is no harm in returning the same status code, if your use case requires it, **returning a different status code like the `HTTP 404: Not Found` doesn't violate the idempotency contract**. Idempotency doesn't concern itself with what is returned to the client. It refers to the state of some resource on the server. So it is perfectly valid to return `HTTP 200: OK` on the first delete call, and `HTTP 404: Not Found` on subsequent ones, since in both cases, the resource is deleted and its state isn't changed on the server side. You might also use `HTTP 204: No Content` if the response body is empty.
 
 
-### PATH: Non-Idempotent
+### PATCH: Non-Idempotent
 
 I like to think of PATCH as the non-idempotent cousin of the PUT request. Because it is non-idempotent, it could be used partial updates:
 
