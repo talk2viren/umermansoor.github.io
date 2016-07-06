@@ -5,15 +5,15 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-One of the challenges when designing a REST API is choosing the right HTTP method (*GET*, *PUT*, *POST* etc.) that corresponds with the operation being performed. Some people incorrectly assume that they can freely choose any method as long as the client and the server agree on it. This is wrong because a request passes through many intermediaries and middleware applications which perform optimizations based on the HTTP method type. These optimizations depend on two key characteristics of HTTP methods: [idempotency and safety]((http://codeahoy.com/2016/06/30/idempotent-and-safe-http-methods-why-do-they-matter/)), which are defined in the [HTTP specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+One of the challenges when designing a REST API is choosing the right HTTP method (*GET*, *PUT*, *POST* etc.) that corresponds with the operation being performed. Some people incorrectly assume that they can freely choose any method as long as the client and the server agree on it. This is wrong because a request passes through many intermediaries and middleware applications which perform optimizations based on the HTTP method type. These optimizations depend on two key characteristics of HTTP methods: [idempotency and safety](http://codeahoy.com/2016/06/30/idempotent-and-safe-http-methods-why-do-they-matter/), which are defined in the [HTTP specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+
+<!--more-->
 
 **Safe HTTP Methods**: Safe methods aren't expected to cause any side effects. These operations are read-only. E.g. querying a database.
 
 **Idempotent HTTP Methods**: Idempotent methods guarantee that repeating a request has the same effect as making the request once.
 
 Idempotency and safety are properties of HTTP methods that server applications must correctly implement. This means if you are implementing an operation and choose an idempotent HTTP method to invoke the operation, you must ensure that the implementation returns the same result if invoked once or multiple times for the same input.
-
-<!--more-->
 
 ### GET: Idempotent & Safe
 
@@ -132,4 +132,5 @@ Here's a table summarizing the results:
 | GET         | yes              | Retrieval or query.      |
 | POST        | NO               | Create or update resources. Partial updates are allowed.        |
 | PUT         | yes              | Create or update resources. Partial updates are not allowed.      |
+| DELETE       | yes             | Delete resources.       |
 | PATCH       | NO               | For partial updates.       |
