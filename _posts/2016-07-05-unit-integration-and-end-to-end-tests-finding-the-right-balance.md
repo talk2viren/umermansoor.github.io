@@ -7,11 +7,13 @@ excerpt_separator: <!--more-->
 
 This is something I have sadly noticed in many projects that I have worked on. Instead of a mixture of [unit](http://artofunittesting.com/definition-of-a-unit-test/) and other types of tests, some projects primarily rely only on end-to-end tests (**E2E**). In E2E, the *whole system* is tested by performing some high-level action and checking the result that the system produces. E.g. for a web server, this means you **start the server, initialize a HTTP client, make a HTTP request and then check the outermost response**. By skipping unit and integration tests, we lose many benefits that these tests offer, as we'll see in a minute. What's worse is that people start calling these tests the "unit tests" just because they live inside the project and use [JUnit framework](http://junit.org/junit4/). Developers like end-to-end testing:
 
+<!--more-->
+
 - because it boost code coverage and everything including the database gets tested.
 - because they can outsource or offload writing tests to Q/A or junior developers.
 - because sometimes, it is the only way the system could be tested. However, this is a symptom of much broader design and architectural problem.
 
-<!--more-->
+
 
 **The biggest drawback of end-to-end tests is that they cannot isolate failure**. For large systems, when these tests fail, it's like finding a needle in the haystack. Because unit tests focus on small modules that are tested independently, they can **pin-point the error** which saves a lot of time. For the record, I've nothing against end-to-end testing. I have an issue with **only writing end-to-end tests** and skipping unit and integration testing.
 
