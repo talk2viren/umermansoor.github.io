@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Let's face it: failure is inevitable in complex systems. It cares not for the number of tests you ran, code reviews or your monitoring tools. It just happens. And how is failure usually dealt with? Instead of learning from it to improve the resilience of the system, **the traditional view is to assign blame and point fingers at individuals responsible for the failure**, because it's easy to identify the culprit than the actual cause. In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads us nowhere:
+Let's face it: failure is inevitable in complex systems. It cares not for the number of tests you ran, code reviews or your monitoring tools. It just happens. And how is failure usually dealt with? Instead of learning from it to improve the resilience of the system, **the traditional view is to assign blame and point fingers at individuals responsible for the failure**. This happens because it's easier to identify the culprit than the actual cause. In [The Field Guide to Understanding Human Error](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265), author [Sidney Dekker](http://sidneydekker.com/) refers to this as the "old view" that leads us nowhere:
 
 <!--more-->
 
