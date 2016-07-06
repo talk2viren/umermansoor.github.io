@@ -9,17 +9,15 @@ This is something that I have noticed on many projects that I have worked on: wh
 
 - because it boost code coverage and everything including the database gets tested.
 - because they can outsource or offload writing tests to Q/A or junior developers.
-- because sometimes, it is the only way the system could be tested. However, this is symptom of much broader design and architectural issues.
+- because sometimes, it is the only way the system could be tested. However, this is a symptom of much broader design and architectural problem.
 
 <!--more-->
 
-**The biggest drawback of end-to-end tests is that they fail to isolate failure**. For large systems, when tests fail, it's like finding a needle in the haystack. Because unit tests focus on small modules that are tested independently, they can pin-point the error which might save a lot of time that would be otherwise wasted in debugging and locating the problem. For the record, **I've nothing against end-to-end testing. I have an issue with only writing end-to-end tests and skipping unit and integration tests altogether**.
+**The biggest drawback of end-to-end tests is that they cannot isolate failure**. For large systems, when these tests fail, it's like finding a needle in the haystack. Because unit tests focus on small modules that are tested independently, they can pin-point the error which saves a lot of time. For the record, I've nothing against end-to-end testing. I have an issue with **only writing end-to-end tests** and skipping unit and integration testing.
 
 Another benefit that unit tests have over end-to-end tests is that they always work. No matter where you are. If I can download the run the project on my machine, I should be able to run unit tests. In contrast, end-to-end tests fail if some external component, database or messaging queue, is not available or cannot be reached. Unit tests allow developers to change the code or add new features with confidence. When I add a new feature to a large project and all unit tests pass, it gives me confidence that the new feature didn't break existing logic.
 
-**The key is finding the right balance between unit, integration and end-to-end tests**. Integration tests have one major advantage over unit tests: **they ensure that modules that work well in isolation, also play well together**. Integration tests typically focus on a small number of modules and test their interactions.
-
-So what's the right balance between unit, integration and end-to-end tests? According to [Google](http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html):
+On the other hand, integration tests have one major advantage over unit tests: **they ensure that modules that work well in isolation, also play well together**. Integration tests typically focus on a small number of modules and test their interactions. **The key is finding the right balance between unit, integration and end-to-end tests**. According to [Google](http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html):
 
 >  To find the right balance between all three test types, the best visual aid to use is the testing pyramid. Here is a simplified version of the testing pyramid from the opening keynote of the 2014 Google Test Automation Conference:
 >
