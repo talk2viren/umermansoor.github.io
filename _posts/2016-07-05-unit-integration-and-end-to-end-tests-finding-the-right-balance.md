@@ -5,11 +5,13 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-This is something that I have noticed on many projects that I have worked on: what some developers call unit tests are actually end-to-end tests in disguise. They write tests that start testing at the top-most level and check the last outcome. E.g. for a web server, **these types of tests start the server, initialize a HTTP client, pass the request and then check outermost response**. Developers like end-to-end tests:
+This is something that I have noticed on many projects that I have worked on: what some developers call unit tests are actually end-to-end tests in disguise. They write tests that start testing at the top-most level and check the last outcome. E.g. for a web server, **these types of tests start the server, initialize a HTTP client, pass the request and then check outermost response**. Developers like end-to-end testing:
 
-- because it is an easy way to boost code coverage and everything including the database gets tested.
-- end-to-end tests are the only way the system would be tested. This is a symptom of broader design issues.
-- they can outsource or offload writing tests to Q/A or junior developers.
+- because it boost code coverage and everything including the database gets tested.
+- because they can outsource or offload writing tests to Q/A or junior developers.
+- because sometimes, it is the only way the system could be tested. However, this is symptom of much broader design and architectural issues.
+
+<!--more-->
 
 **The biggest drawback of end-to-end tests is that they fail to isolate failure**. For large systems, when tests fail, it's like finding a needle in the haystack. Because unit tests focus on small modules that are tested independently, they can pin-point the error which might save a lot of time that would be otherwise wasted in debugging and locating the problem. For the record, **I've nothing against end-to-end testing. I have an issue with only writing end-to-end tests and skipping unit and integration tests altogether**.
 
