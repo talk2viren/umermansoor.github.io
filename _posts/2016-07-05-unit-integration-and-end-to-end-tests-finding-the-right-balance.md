@@ -5,15 +5,17 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-This is something I have regrettably noticed in many backend projects that I have worked on. Developers write "unit tests" that in reality are 'end-to-end' tests. They test the entire flow of the application from start to the end. There is no isolation of units and **the notion of the unit is the whole system**, along with all of its external dependencies like databases, queues, caches, and other services. For a web server project, the tests start the server, initialize a HTTP client, make a HTTP request and check the response to make sure it has all the expected information. If so, the tests is declared a success. By treating the whole system as a unit and not testing independent units in isolation and their interplay, we loose many benefits that unit and integration tests offer. Technically speaking, these developers aren't violating the definition or principles of unit testing. Unit testing is [ill-defined](http://martinfowler.com/bliki/UnitTest.html). But a project should have a **balanced mix of various automated tests to capture different types of bugs**. We'll later cover what the right balance is.
+This is something I have regrettably noticed in many backend projects that I have worked on. Developers write "unit tests" that in reality are 'end-to-end' tests. They test the entire flow of the application from start to the end. There is no isolation of units and **the notion of the unit is the whole system**, along with all of its external dependencies like databases, queues, caches, and other services. For a web server project, these tests start the server, initialize a HTTP client, make a HTTP request and check the response to make sure it has all the expected information. If so, the test is declared a success. By treating the whole system as a unit and not testing independent units in isolation and their interplay, we loose many benefits that unit and integration tests offer.
 
 <!--more-->
 
-Developers like to end-to-end testing:
+Technically speaking, these developers aren't violating the definition or principles of unit testing. Unit testing is [ill-defined](http://martinfowler.com/bliki/UnitTest.html). I don't claim to be an expert, but in my humble opinion:
 
-- because it boosts code coverage and everything including the database gets tested.
-- because they can outsource or offload writing tests to Q/A or junior developers.
-- because sometimes, it is the only way the system could be tested. However, this is a symptom of much broader design and architectural problem.
+- Unit testing should focus on testing small units (typically a Class or a complex algorithm).
+- Units should be tested in isolation and independent of other units. This is typically achieved by [mocking](https://en.wikipedia.org/wiki/Mock_object) the dependencies.
+- Unit tests should be fast. Usually shouldn't take more than a few seconds to provide feedback.
+
+Most projects benefit from having a **balanced mix of various automated tests to capture different types of errors**. The exact composition of the mix varies depending on the nature of the project, as we'll see later.
 
 End-to-end tests are good at capturing certain kinds of bugs, but their **biggest drawback is that they cannot pin-point the root cause of failure**. Anything in the entire flow could have contributed to the error. In large and complex systems, it's like finding a needle in the haystack: you'll find the root cause, but it will take time. Because unit tests focus on small modules that are tested independently, they can **identify the lines of code that caused the failure** with laser-sharp accuracy, which can save a lot of time.
 
