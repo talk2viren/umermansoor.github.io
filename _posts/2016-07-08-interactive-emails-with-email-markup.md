@@ -37,5 +37,6 @@ I personally find this very useful and it has some interesting [use cases](https
 - [Event reservation](https://developers.google.com/gmail/markup/reference/event-reservation) - Includes options for basic event reminders without a ticket, event with ticket & no reserved seating, sports or music event with ticket, event with ticket & reserved seating, multiple tickets, updating an event, and canceling an event. This Highlight is also supported in Google Now.
 
 For more information:
+
  - Kristi Hines has written a good [article](https://moz.com/blog/markup-for-emails) if you are interested in using Email Markup for your product your services.
  - [Guide](https://developers.google.com/gmail/markup/getting-started) from Google.
