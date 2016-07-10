@@ -8,6 +8,7 @@ excerpt_separator: <!--more-->
 It was a pleasant surprise when itinerary for my upcoming flight automatically showed up on my [Galaxy S6](https://en.wikipedia.org/wiki/Samsung_Galaxy_S6). I didn't have open my Gmail and search for the confirmation email. It was right there, just when I needed it to check the departure time.
 
 ![google-flight-trip]({{ site.url }}/img/blogs/google-flight-trip.png)
+*(disclaimer: not my itinerary)*
 
 <!--more-->
 
