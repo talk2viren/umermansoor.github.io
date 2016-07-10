@@ -9,6 +9,6 @@ After years of building applications and platforms using the [Service Oriented A
 
 <!--more-->
 
-I have created a fictional project called 'Cinema 3' that demonstrates the use of microservices for a service that allows users to find movies and book tickets online. **Here's a [link to the project on GitHub](https://github.com/umermansoor/microservices)**. The [README](https://github.com/umermansoor/microservices/blob/master/README.md) file describes what it does, how to run it and how the project is structured. The source code itself is really simple because Flask is extremely light-weight (aside from the fact that this is just an example project.)
+I have created a fictional project called [Cinema 3](https://github.com/umermansoor/microservices) that demonstrates the use of microservices for a service that allows users to find movies and book tickets online. **Here's a [link to the project on GitHub](https://github.com/umermansoor/microservices)**. The [README](https://github.com/umermansoor/microservices/blob/master/README.md) file describes what it does, how to run it and how the project is structured. The source code itself is really simple because Flask is extremely light-weight (aside from the fact that this is just an example project.)
 
 If you have any comments or question about the project, please let me know in the comments section below.
