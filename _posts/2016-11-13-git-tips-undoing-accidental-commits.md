@@ -10,7 +10,7 @@ Here are couple of git *undo's* to get yourself out of trouble. Before you use a
 <!--more-->
 
 ### Accidentally committed to `master` instead of a new branch
-Use the commands below if you have accidentally committed your changes to the master branch instead of a new branch but haven't pushed your changes to the remote repository yet.
+Use the commands below if you have accidentally committed your changes to the master branch instead of a new branch but haven't pushed to the remote repository yet.
 
 <pre class="prettyprint lang-sh">
 # Create a new branch copying current state of master
@@ -32,7 +32,7 @@ git reset --hard HEAD^
 # Switch to the new branch to see your changes
 git checkout right-branch
 # Apply the commit to the right branch
-git cherry-pick <commit-hash>
+git cherry-pick commit-hash
 </pre>
 
 Till next time.
