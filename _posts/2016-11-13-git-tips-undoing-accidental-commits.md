@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 
 Here are couple of git *undo's* to get yourself out of trouble. Before you use anything from this post, please make a copy of the your working directory and store it somewhere safe. *Git can be very unforgiving and you may lose your changes without any warning*.
 
+<!--more-->
+
 ### Accidentally committed to `master` instead of a new branch
 Use the commands below if you have accidentally committed your changes to the master branch instead of a new branch but haven't pushed your changes to the remote repository yet.
 
