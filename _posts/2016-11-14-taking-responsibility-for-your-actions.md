@@ -20,11 +20,11 @@ In your career, you **will make mistakes**. [They are inevitable](http://codeaho
 
 <!--more-->
 
-Sure any of the above factors could have played a role in the failure. But deflecting responsibility by making excuses or blaming someone or something is the worst possible way to handle such situations. What you should do instead is own up and offer solutions. That's what your coworkers and management is interested in.
+Sure any of the above factors could have played a role in the failure. But deflecting responsibility by making excuses or blaming someone or something is the worst possible way to handle such situations. What you should do instead is own up and offer solutions. That's what your coworkers and management are interested in.
 
 I'm reminded of this [email](https://lkml.org/lkml/2012/12/23/75) from Linus in which he gets furious at a kernel programmer for making up "*lame excuses*". (For the record, I strongly disagree with the language in the email.)
 
-Responsibility is a two-way street. It has to be both given and accepted. I have seen managers foolishly thinking that they can walk up to an employee say out loud "*You are responsible for this*" or "*You own this*" and walk away. If the employee doesn't accept or accept half-heartedly, the responsibility gets diluted. The employee must be willing to accept the responsibility. Quoting from Pragmatic Programmer:
+Responsibility is a two-way street. It has to be both given and accepted. I have seen managers foolishly thinking that they can walk up to an employee say out loud "*You are responsible for this*" or "*You own this*" and walk away. If the employee doesn't accept or accepts half-heartedly, the responsibility gets diluted. The employee must be willing to accept the responsibility. Quoting from Pragmatic Programmer:
 
 > **Responsibility is something you actively agree to**. You make a commitment to ensure that something is done right, but you don't necessarily have direct control over every aspect of it. In addition to doing your own personal best, you must analyze the situation for risks that are beyond your control. **You have the right not to take on a responsibility for an impossible situation**, or one in which the risks are too great. You'll have to make the call based on your own ethics and judgment.
 
