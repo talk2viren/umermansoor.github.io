@@ -15,11 +15,11 @@ Pixel art is done in very low resolutions. What this means is that you'll start 
 
 So go ahead and create a new image in Photoshop. The screenshot below is for creating a 20x20 pixels sprite.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/1.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/1.png)
 
 After you have created the image, you'll be able to see it barely. So zoom in so you are able to see it.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/1-zoom.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/1-zoom.png)
 
 ## Step 2: Setup Image Interpolation to Nearest Neighbors
 
@@ -27,17 +27,17 @@ When your pixel art is resized or scaled, you'll want the edges or corners to lo
 
 > Here’s the old man from The Legend of Zelda who gives you the sword. (*You may want to squint to see it*)
 
-![old-man-from-zelda-original]({{ site.url }}/img/px-pixel/LozMan.bmp)
+![old-man-from-zelda-original]({{ site.url }}/img/ps-pixel/LozMan.bmp)
 
 > Here he is scaled up 4x with nearest neighbor ... and bicubic interpolation.
 
-![old-man-from-zelda-nn]({{ site.url }}/img/px-pixel/lozman_4_0.bmp)
+![old-man-from-zelda-nn]({{ site.url }}/img/ps-pixel/lozman_4_0.bmp)
 
-![old-man-from-zelda-nn]({{ site.url }}/img/px-pixel/lozman_4_2.bmp)
+![old-man-from-zelda-nn]({{ site.url }}/img/ps-pixel/lozman_4_2.bmp)
 
 So you'll need to tell Photoshop to use the 'Nearest Neighbor' image interpolation algorithm.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/5.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/5.png)
 
 Note: If you are exporting the image ('Save for Web' option) and resizing it, make sure that 'Nearest neighbor' is selected under 'Quality' or 'Resample'.
 
@@ -50,7 +50,7 @@ You'll need to setup your drawing tools and get the desired pixelated effects. F
 * opacity to 100%.
 * for the eraser tool, mode was set to 'Pencil'.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/2.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/2.png)
 
 The only other tool I used was the paint bucket which didn't require any customization.
 
@@ -58,13 +58,13 @@ The only other tool I used was the paint bucket which didn't require any customi
 
 Grid is helpful in positioning and aligning things precisely. I find grid very useful when creating sprites. Grid can be enabled from the 'View' menu.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/3.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/3.png)
 
 Next, we'll need to **adjust the grid so it can display each pixel individually**. Open "Guides, Grids and Slices" settings from the Preferences menu and update the grid settings.
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/4.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/4.png)
 
-![photoshop-pixel-art]({{ site.url }}/img/px-pixel/5.png)
+![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/5.png)
 
 That's all there is. I hope you found this tutorial helpful and that you go on to create magnificent pixel art :) If you are looking for encouragement, to [quote](http://www.bobrossquotes.com/quotes.shtml) [Bob Ross](https://en.wikipedia.org/wiki/Bob_Ross):
 
