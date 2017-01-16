@@ -13,11 +13,11 @@ I'm a huge fan of retro video games and [pixel art](http://imgur.com/a/d30KO). O
 
 Pixel art is done in very low resolutions. What this means is that you'll start by creating a **very small image, one that you can barely see without zooming in**. I can't give you a rule of thumb, but I generally use 20x20 pixels for sprites (sometimes 40x40 pixels if I want to put in more details) and about 150x80 pixels for backgrounds.
 
-So go ahead and create a new image in Photoshop. The screenshot below is for creating a *20x20 pixels* sprite.
+So go ahead and create a new image in Photoshop.
 
 ![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/1.png)
 
-After you have created the image, you'll be able to see it barely. So zoom in so you are able to see it.
+After you have created the image, you'll be able to see it barely. So **zoom in** so you are able to see it.
 
 ![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/1-zoom.png)
 
@@ -68,8 +68,6 @@ Next, we'll need to **adjust the grid so it can display each pixel individually*
 
 ![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/5.png)
 
-That's all there is. I hope you found this tutorial helpful and that you go on to create magnificent pixel art :) If you are looking for encouragement, to [quote](http://www.bobrossquotes.com/quotes.shtml) [Bob Ross](https://en.wikipedia.org/wiki/Bob_Ross):
+That's all there is. I hope you found this tutorial helpful and that you go on to create magnificent pixel art :) To [quote](http://www.bobrossquotes.com/quotes.shtml) [Bob Ross](https://en.wikipedia.org/wiki/Bob_Ross):
 
 > "**People might look at you a bit funny, but it's okay. Artists are allowed to be a bit different.**"
-
-> “The secret to doing anything is believing that you can do it. **Anything that you believe you can do strong enough, you can do. Anything. As long as you believe.**”
