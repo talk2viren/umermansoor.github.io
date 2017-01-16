@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Leadership vs Management - Leaders Have a Dream.
+title: Leadership vs Management - Leaders Have a Dream
 comments: True
 excerpt_separator: <!--more-->
 ---

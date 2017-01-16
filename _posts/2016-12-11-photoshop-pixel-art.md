@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-I'm a huge fan of retro video games and pixel art. Over the christmas break, I tried (after a long hiatus) to create some pixel art for a retro-style 2D game I was building in Unity for fun. I had to struggle a little in setting up Photoshop to create 2D sprites and the background, so here's a quick step-by-step tutorial on how to configure Photoshop to create pixel art.
+I'm a huge fan of retro video games and [pixel art](http://imgur.com/a/d30KO). Over the christmas break, I tried (after a long hiatus) to create some pixel art for a retro-style 2D mobile game I was building in Unity for fun. I had to struggle a little in setting up Photoshop to create 2D sprites and the background, so here's a quick step-by-step tutorial on how to configure Photoshop to create pixel art.
 
 <!--more-->
 
@@ -13,7 +13,7 @@ I'm a huge fan of retro video games and pixel art. Over the christmas break, I t
 
 Pixel art is done in very low resolutions. What this means is that you'll start by creating a **very small image, one that you can barely see without zooming in**. I can't give you a rule of thumb, but I generally use 20x20 pixels for sprites (sometimes 40x40 pixels if I want to put in more details) and about 150x80 pixels for backgrounds.
 
-So go ahead and create a new image in Photoshop. The screenshot below is for creating a 20x20 pixels sprite.
+So go ahead and create a new image in Photoshop. The screenshot below is for creating a *20x20 pixels* sprite.
 
 ![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/1.png)
 
@@ -23,19 +23,21 @@ After you have created the image, you'll be able to see it barely. So zoom in so
 
 ## Step 2: Setup Image Interpolation to Nearest Neighbors
 
-When your pixel art is resized or scaled, you'll want the edges or corners to look hard and jagged instead of smooth and blurred. Be default, Photoshop uses Bicubic interpolation (or Bilinear) that produces a blurred effect when images are enlarged. While Bicubic interpolation works great for normal images, pixel art scaled using Bicubic look terrible and blurry as hell. As as example ([source](http://blog.demofox.org/2015/08/15/resizing-images-with-bicubic-interpolation/)):
+When your pixel art is resized or scaled, you'll want the **edges or corners to look hard and jagged instead of smooth and blurred**. Be default, Photoshop uses *Bicubic interpolation* (or Bilinear) that produces a blurred effect when images are enlarged. While Bicubic interpolation works great for normal images, pixel art scaled using Bicubic look terrible and blurry as hell. As as example ([source](http://blog.demofox.org/2015/08/15/resizing-images-with-bicubic-interpolation/)):
 
 > Here’s the old man from The Legend of Zelda who gives you the sword. (*You may want to squint to see it*)
 
 ![old-man-from-zelda-original]({{ site.url }}/img/ps-pixel/LozMan.bmp)
 
-> Here he is scaled up 4x with nearest neighbor ... and bicubic interpolation.
-
-![old-man-from-zelda-nn]({{ site.url }}/img/ps-pixel/lozman_4_0.bmp)
+Here he is scaled up **4x with Bicubic interpolation**:
 
 ![old-man-from-zelda-nn]({{ site.url }}/img/ps-pixel/lozman_4_2.bmp)
 
-So you'll need to tell Photoshop to use the 'Nearest Neighbor' image interpolation algorithm.
+Scale here 4x using **Nearest Neighbor**:
+
+![old-man-from-zelda-nn]({{ site.url }}/img/ps-pixel/lozman_4_0.bmp)
+
+See the difference? Here's how to configure Photoshop to use the 'Nearest Neighbor' image interpolation algorithm.
 
 ![photoshop-pixel-art]({{ site.url }}/img/ps-pixel/5.png)
 
