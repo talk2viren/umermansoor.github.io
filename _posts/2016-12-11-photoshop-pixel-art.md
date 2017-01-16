@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 
 I'm a huge fan of retro video games and pixel art. Over the christmas break, I tried (after a long hiatus) to create some pixel art for a retro-style 2D game I was building in Unity for fun. I had to struggle a little in setting up Photoshop to create 2D sprites and the background, so here's a quick step-by-step tutorial on how to configure Photoshop to create pixel art.
 
+<!--more-->
+
 ## Step 1: Create a Tiny Image
 
 Pixel art is done in very low resolutions. What this means is that you'll start by creating a **very small image, one that you can barely see without zooming in**. I can't give you a rule of thumb, but I generally use 20x20 pixels for sprites (sometimes 40x40 pixels if I want to put in more details) and about 150x80 pixels for backgrounds.
