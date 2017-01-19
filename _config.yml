@@ -10,7 +10,7 @@ permalink:        pretty
 title:            Code Ahoy
 tagline:          'Articles on Software and Human Factors. 100% Tested on Humans.'
 description:      'Articles on Software and Human Factors. 100% Tested on Humans.'
-url:              http://codeahoy.com
+url:              https://codeahoy.com
 baseurl:          /
 
 # Social Media
@@ -28,7 +28,7 @@ author:
 
 name: Code Ahoy
 description: Articles on Software and Human Factors. 100% Tested on Humans.
-url: http://codeahoy.com
+url: https://codeahoy.com
 
 
 paginate:         5
