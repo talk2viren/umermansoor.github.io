@@ -1,6 +1,6 @@
 ---
 layout: post
-title: If Your Site Isn't Using Https, You Are Doing It Wrong
+title: If Your Site Isn't Using HTTPS, You Are Doing It Wrong
 comments: True
 excerpt_separator: <!--more-->
 ---
