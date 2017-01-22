@@ -11,7 +11,7 @@ In school, I enrolled and took a couple of AI and machine learning courses: neur
 
 One evening by chance, I came across a link to a what sounded like a [Mario video](https://news.ycombinator.com/item?id=9713802). Being a sucker for retro video games, I clicked on it. The video shows a skilled player playing Super Mario World. Here's the twist: **the skilled player isn't human**. It is a machine learning program that taught itself how to play Super Mario World with zero help. When it started, it knew absolutely nothing about Super Mario World or Super Nintendo. It didn't even know that pressing the A key on the controller makes Mario jump over obstacles. **It learned to play and complete the first level all by itself... by applying machine learning**.
 
-{% youtube qv6UVOQ0F44 %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qv6UVOQ0F44" frameborder="0" allowfullscreen></iframe>
 
 Mind = Blown.
 
