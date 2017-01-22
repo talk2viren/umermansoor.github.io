@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Online Course Review: the Best Machine Learning Course for Beginners
+title: Online Course Review - the Best Machine Learning Course for Beginners
 comments: True
 excerpt_separator: <!--more-->
 ---
