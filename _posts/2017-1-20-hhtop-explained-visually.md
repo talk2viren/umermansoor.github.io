@@ -5,17 +5,21 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-[htop](http://hisham.hm/htop/) is a very nice linux utility that comes very handy when monitoring systems and processes. It has a great visual interface and graphs that update themselves in real time. I used it a lot when I had to troubleshoot applications or systems. Even though I used it frequently, I didn't fully understand all the information that it showed (it can be daunting to look at). Then I stumbled upon Pēteris Ņikiforovs's [excellent analysis of htop](https://peteris.rocks/blog/htop/) and was enlightened. I encourage you to read this blog post for it is a fantastic insight into the linux internals through the lens of htop.
+[htop](http://hisham.hm/htop/) is great tool for monitoring system resources and performance. It's a far superior alternative to [top](http://man7.org/linux/man-pages/man1/top.1.html) which comes preinstalled on linux. I used htop many times to troubleshoot [ec2](https://aws.amazon.com/ec2/) instances especially when [CloudWatch](https://aws.amazon.com/cloudwatch/) was lagging behind.
+
+![htop]({{ site.url }}/img/htop-small.png)
 
 <!--more-->
 
+htop is interactive and has a nice visual interface. It packs a lot of information which can be daunting to look at. I tried to find a nice infographic to explain what each number, value or color coded bars mean, but couldn't find any. I myself didn't understand everything that htop display. Then I stumbled upon Pēteris Ņikiforovs's [excellent analysis of htop](https://peteris.rocks/blog/htop/) and was enlightened. I encourage you to read Pēteris's blog post for it not only explains htop, but is a fantastic insight into linux internals through the lens of htop.
+
 On my way back from the Christmas break, I had some time to spare so I decided to create a quick infographic for myself, my team and for you dear readers. I didn't get a chance to finish it until today.
 
-Here's what you see when you first run htop. (Image courtesy of [Joe Collins](https://www.youtube.com/channel/UCTfabOKD7Yty6sDF4POBVqA))
+Here's what htop looks like when you first run it. (Image courtesy of [Joe Collins](https://www.youtube.com/channel/UCTfabOKD7Yty6sDF4POBVqA))
 
 ![htop]({{ site.url }}/img/htop.png)
 
-I've broken the interface into two sections: the top and the bottom. We'll look at them separately.
+I've broken the interface into two sections so I have room to annotate. We'll look at the top and the bottom sections separately.
 
 Let's start at the top.
 
@@ -25,4 +29,4 @@ Here's the bottom section of htop.
 
 ![htop]({{ site.url }}/img/htop-bottom.png)
 
-Until next time.
+That's all. I hope you found this post useful. Until next time.
