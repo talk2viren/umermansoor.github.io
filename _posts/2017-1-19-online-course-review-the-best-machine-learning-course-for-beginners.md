@@ -5,11 +5,11 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-In school, I enrolled and took a couple of AI and machine learning courses: neural networks and image recognition come to mind. But at the time, I wasn't at all interested in the dry mathematics and statistical equations that professors preached. A couple of years ago, I started seeing articles and blogs on self-driving cars. It didn't change my mind - I still wasn't sure what the hype was all about. That was about to change.
+Long time ago, I enrolled and took a couple of introductory [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) courses in school. I quickly got bored of it: [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) didn't sound very practical at the time and the dry mathematics was off-putting. After I finished the courses, I quickly forgot everything. Then a couple of years ago, I started noticing articles and blogs on self-driving cars that use "machine learning". It sounded like a fancy new way to position decades-old field of AI. I still wasn't sure what the hype was all about. That was about to change.
 
 <!--more-->
 
-One evening by chance, I came across a link to a what sounded like a [Mario video](https://news.ycombinator.com/item?id=9713802). Being a sucker for retro video games, I clicked on it. The video shows a skilled player playing Super Mario World. Here's the twist: **the skilled player isn't a human**. It is a machine learning program that taught itself how to play Super Mario World with zero help. When it started, it knew absolutely nothing about Super Mario World or Super Nintendo. It didn't even know that pressing the A key on the controller makes Mario jump over obstacles. **It learned to play and complete the first level all by itself... made possible by machine learning**.
+One evening by chance, I came across a link to a what sounded like a [Mario video](https://news.ycombinator.com/item?id=9713802). Being a sucker for retro video games, I opened it. The video shows a skilled player playing Super Mario World. Here's the twist: **the skilled player isn't a human**. It is a neural network program that taught itself how to play Super Mario World with zero help. When it started, it knew absolutely nothing about Super Mario World or Super Nintendo. It didn't even know that pressing the A key on the controller makes Mario jump over obstacles. **It learned to play and complete the first level all by itself... made possible by machine learning**.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qv6UVOQ0F44" frameborder="0" allowfullscreen></iframe>
 
