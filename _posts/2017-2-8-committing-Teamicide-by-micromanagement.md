@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Committing "Teamicide" by Micromanagement
+title: Committing Teamicide by Micromanagement
 comments: True
 excerpt_separator: <!--more-->
 ---
