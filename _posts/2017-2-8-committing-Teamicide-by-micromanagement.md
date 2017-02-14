@@ -7,7 +7,9 @@ excerpt_separator: <!--more-->
 
 [Micromanagement](https://en.wikipedia.org/wiki/Micromanagement) is a "management style whereby a manager closely observes or controls the work of subordinates or employees". Micromanagement is bad. It hurts morale and works against making individuals or teams productive. An effective manager or a leader makes people use their brains instead of acting like mindless zombies who require constant babysitting and instructions. A micromanager is like a helicopter parent closely watching and monitoring the employees, which is very demoralizing especially to smart people.
 
-![micromanagement]({{ site.url }}/img/leadership/micromanagement.jpg)
+<!--more-->
+
+![micromanagement]({{ site.url }}/img/micromanagement.jpg)
 
 While some managers micromanage out of fear or job insecurity, most do it because **they don't trust** their direct reports to carry out the tasks as well as themselves or they fear that without their supervision, mistakes will be made. This lack of trust forces the manager to become defensive and assume that the only way employees will do good work is if they are being constantly monitored and reviewed and they cannot be trusted to make decisions on their own. Employees reporting to a micromanager become cynical and sometimes even despise the manager. They start acting in their own self-interest which is counter-productive and inhibits team formation.
 
