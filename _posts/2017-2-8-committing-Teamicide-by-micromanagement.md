@@ -9,7 +9,7 @@ Micromanagement [is a](https://en.wikipedia.org/wiki/Micromanagement) "*manageme
 
 <!--more-->
 
-![micromanagement]({{ site.url }}/img/micromanagement-rsz.jpg)
+![micromanagement-comic]({{ site.url }}/img/micromanagement-rsz.jpg)
 
 While some managers micromanage out of fear or job insecurity, most do it because **they don't trust** their direct reports to carry out the tasks as well as themselves or they fear that without their supervision, mistakes will be made. This lack of trust forces the manager to become defensive and assume that the only way employees will do good work is if they are being constantly monitored and reviewed and they cannot be trusted to make decisions on their own. Employees reporting to a micromanager become cynical and sometimes even despise the manager. They start acting in their own self-interest which is counter-productive and inhibits team formation.
 
