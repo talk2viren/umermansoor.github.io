@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Long time ago, I enrolled and took a couple of introductory [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) courses in school. I quickly got bored of it: [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) didn't sound very practical at the time and the dry mathematics was off-putting. After I finished the courses, I quickly forgot everything. Then a couple of years ago, I started noticing articles and blogs on self-driving cars that use "machine learning". It sounded like a fancy new way to position decades-old field of AI. I still wasn't sure what the hype was all about. That was about to change.
+Back when I was in college, I enrolled in a couple of introductory [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) courses. I quickly got bored: [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) didn't sound very practical and the dry mathematics was off-putting. After I finished the courses, I chalked it down as too futuristic and didn't think about pursuing the subject further. A while ago, I started noticing articles and blogs on self-driving cars that use "machine learning". It sounded like a fancy new way to position decades-old field of AI. I still wasn't sure what the hype was all about. That was about to change.
 
 <!--more-->
 
