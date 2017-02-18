@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Great Testers Make Software Teams Highly Productive
+title: Testers Make Software Teams Highly Productive
 comments: True
 excerpt_separator: <!--more-->
 ---
@@ -29,12 +29,8 @@ Some organizations **naively assume that automated tests written by developers c
 >
 *Developer*: Yeah. That makes sense when I think a about it. I will get it fixed.
 
-Another great reason for having dedicated testers on the team is to provide **positive reinforcement and closure to developers** who may otherwise be doubtful whether they are on the right track or not. Developers breathe a sigh of relief when testers tell them that the new feature they implemented is working as expected.
+Another great reason for having dedicated testers on the team is to provide **[positive reinforcement](https://www.joelonsoftware.com/2010/01/26/why-testers/) and closure to developers** who may otherwise be doubtful whether they are on the right track or not. Developers usually breathe a sigh of relief when testers tell them that the new feature they implemented is working as expected.
 
 > A great tester gives programmers immediate feedback on what they did right and what they did wrong. Believe it or not, one of the most valuable features of a tester is providing positive reinforcement. There is no better way to improve a programmer’s morale, happiness, and subjective sense of well-being than ~~a La Marzocco Linea espresso machine~~ to have dedicated testers who get frequent releases from the developers, try them out, and give negative and positive feedback.
 
-**Good testers pursue and focus on defects and refrain from criticizing people** and rubbing it in. Testers should maintain a healthy and constructive relationship with developers.
-
-All Testers run into obstacles sooner or later. Good testers don't give up and start complaining when they encounter a challenge. They overcome the obstacle by working around, above, over, under, left or right. If you have prima donnas on your team in any capacity who just look for an excuse to stop, blame and have someone make the world perfect for them while they do nothing for weeks, may be it's time you start looking for a replacement or start looking elsewhere.
-
-**Great testers are an asset for any software team, big or small**. It is a very real and important job and it is critical for the success of any project. So if you could make your team more productive by hiring great quality assurance engineers and **keep developers coding, why would you not?**
+Good testers pursue and focus on defects and refrain from **criticizing people** and rubbing it in. Testers should maintain a healthy and constructive relationship with developers. **Great testers are an asset for any software team, big or small**. It is a very real and important job and it is critical for the success of any project. So if you could make your team more productive by hiring great quality assurance engineers and **keep developers coding, why would you not?**
