@@ -21,7 +21,7 @@ QA: "Haven't started writing tests yet."
 >
 Me: "*Huh?*"
 >
-QA: "I was setting up the testing environment in all its glory. Once it is done, I will update the test client to dynamically fetch the server-side configuration to the tests are run with the right expectations... Didn't you see my Scrum board this morning? All of the yaks I need to shave listed under the parent story."
+QA: "I was setting up the testing environment in all its glory. Once it is done, I will update the test client to dynamically fetch the server-side configuration to the tests are run with the right expectations... Didn't you see my Scrum board this morning? All of the yaks I need to shave are listed under the parent story."
 
 <!--more-->
 

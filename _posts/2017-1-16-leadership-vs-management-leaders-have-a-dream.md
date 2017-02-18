@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Today is the Martin Luther King Jr. Day - a holiday to celebrate the life and legacy of a great [Civil Rights Movement](https://en.wikipedia.org/wiki/African-American_Civil_Rights_Movement_(1954%E2%80%931968) leader. [Dr. King](https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.) was an incredibly effective leader who *challenged the status quo* and transformed the American society forever. He had a [dream](http://www.americanrhetoric.com/speeches/mlkihaveadream.htm) and he got people to rally behind him to make it a reality. And that's what great leaders do. *Dr. King, Gandhi, Henry Ford, Jeff Bezos,* all had **vision** of a world that was very different from the one they lived in and they were able to **inspire people** to work towards making their vision a reality.
+Today is the Martin Luther King Jr. Day - a holiday to celebrate the life and legacy of a great [Civil Rights Movement](https://en.wikipedia.org/wiki/African-American_Civil_Rights_Movement) leader. [Dr. King](https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.) was an incredibly effective leader who *challenged the status quo* and transformed the American society forever. He had a [dream](http://www.americanrhetoric.com/speeches/mlkihaveadream.htm) and he got people to rally behind him to make it a reality. And that's what great leaders do. *Dr. King, Gandhi, Henry Ford, Jeff Bezos,* all had **vision** of a world that was very different from the one they lived in and they were able to **inspire people** to work towards making their vision a reality.
 
 ![showing-the-way]({{ site.url }}/img/leadership/showing-the-way.jpg)
 
