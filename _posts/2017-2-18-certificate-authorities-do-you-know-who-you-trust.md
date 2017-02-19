@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-HTTPS (aka HTTP over the secure [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) protocol) provide a secure communication channel between web browsers and servers to guard against [man-in-the-middle attacks](https://www.owasp.org/index.php/Man-in-the-middle_attack). Although researchers have identified and reported a [few](https://drownattack.com/) [vulnerabilities](http://heartbleed.com/), TLS is still the best option out there and all [websites should be using it](https://codeahoy.com/2017/01/18/if-your-site-isnt-using-https-you-are-doing-it-wrong/).
+HTTPS (aka *HTTP over the secure [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) protocol*) provide a secure communication channel between web browsers and servers to guard against [man-in-the-middle attacks](https://www.owasp.org/index.php/Man-in-the-middle_attack). Although researchers have identified and reported a [few](https://drownattack.com/) [vulnerabilities](http://heartbleed.com/), TLS is still the best option out there and all [websites should be using it](https://codeahoy.com/2017/01/18/if-your-site-isnt-using-https-you-are-doing-it-wrong/).
 
 <!--more-->
 

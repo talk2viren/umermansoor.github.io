@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-To put it mildly, developers are not great at testing their own products. Bias, pride, wrong assumptions, lack of time, switching contexts, all play a role in making developers ineffective at testing their code. Most companies especially startups, don't fully understand the role of a tester. Very early on in my career, we made the **mistake of hiring people to be testers who applied for a software developer position but weren't good enough programmers**. We paid for it in terms of software quality and over-worked team. It wasn't until I worked with some great testers that I realized how effective and productive software teams becomes when they have great testers on board.
+To put it mildly, developers are not great at testing their own products. Bias, pride, wrong assumptions, lack of time, switching contexts, all play a role in making developers ineffective at testing their code. Most companies, especially startups, don't fully understand the role of a tester. Very early on in my career, we made the **mistake of hiring people to be testers who applied for a software developer position but weren't good enough programmers**. We paid for it in terms of software quality and over-worked team. It wasn't until I worked with some great testers that I realized how effective and productive software teams become when they have great testers on board.
 
 <!--more-->
 
@@ -31,6 +31,6 @@ Some organizations **naively assume that automated tests written by developers c
 
 Another great reason for having dedicated testers on the team is to provide **[positive reinforcement](https://www.joelonsoftware.com/2010/01/26/why-testers/) and closure to developers** who may otherwise be doubtful whether they are on the right track or not. Developers usually breathe a sigh of relief when testers tell them that the new feature they implemented is working as expected.
 
-> A great tester gives programmers immediate feedback on what they did right and what they did wrong. Believe it or not, one of the most valuable features of a tester is providing positive reinforcement. There is no better way to improve a programmer’s morale, happiness, and subjective sense of well-being than ~~a La Marzocco Linea espresso machine~~ to have dedicated testers who get frequent releases from the developers, try them out, and give negative and positive feedback.
+> A great tester gives programmers immediate feedback on what they did right and what they did wrong. Believe it or not, one of the most valuable features of a tester is providing positive reinforcement. There is no better way to **improve a programmer’s morale, happiness, and subjective sense of well-being** than ~~a La Marzocco Linea espresso machine~~ to have dedicated testers who get frequent releases from the developers, try them out, and give negative and positive feedback.
 
 Good testers pursue and focus on defects and refrain from **criticizing people** and rubbing it in. Testers should maintain a healthy and constructive relationship with developers. They can be an **asset** for any software team, big or small. It is a very real and important job and it is critical for the success of any project. So if you could make your team more productive by hiring great quality assurance engineers and **keep developers coding, why would you not?**
