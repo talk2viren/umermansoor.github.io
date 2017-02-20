@@ -1,6 +1,6 @@
 ---
 layout: post
-title: K-means Explained
+title: Cluster Analysis Using K-means Explained
 comments: True
 excerpt_separator: <!--more-->
 ---
