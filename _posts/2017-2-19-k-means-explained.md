@@ -17,6 +17,8 @@ K-means is a very simple and widely used clustering technique. It divides a data
 
 > We call the process k-means clustering because we assume that there are **k** clusters, and each cluster is defined by its center point — its mean. To find these clusters, we use **Lloyd’s Algorithm**: we start out with **k** random centroids. A centroid is simply a datapoint around which we form a cluster. For each centroid, we find the datapoints that are closer to that centroid than to any other centroid. We call that set of datapoints its cluster. Then we take the mean of the cluster, and let that be the new centroid. We repeat this process (using the new centroids to form clusters, etc.) until the algorithm stops moving the centroids.[0] We do this in order to minimize the total sum of distances from every centroid to the points in its cluster — *that is our metric for how well the clusters split up the data*.
 
+Here's an [animation](http://simplystatistics.org/2014/02/18/k-means-clustering-in-a-gif/) showing how it works.
+
 ![kmeans-animated]({{ site.url }}/img/kmeans/kmeans-animated.gif)
 
 As far as its performance is concerned, k-means and its [variants can usually process large datasets very quickly](https://upcommons.upc.edu/bitstream/handle/2117/23414/R13-8.pdf), as long as the number of clusters isn't very high.
