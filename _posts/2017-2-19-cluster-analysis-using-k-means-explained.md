@@ -51,7 +51,7 @@ K-means won't identify clusters properly if clusters have an uneven size or dens
 
 **I see 3 clusters** of uneven densities. Do you?
 
-![uneven-labelled-manual]({{ site.url }}/img/kmeans/uneven-labelled-manual.png)
+![uneven-unlabelled-manual]({{ site.url }}/img/kmeans/uneven-unlabelled-manual.png)
 
 Let's see how k-means does. I wrote a simple python script with scikit-learn and ran k-means with *k=3*.
 
@@ -73,7 +73,7 @@ Looking at the result, it's obvious that k-means couldn't correctly identify the
 
 ### 3. There are outliers in the data.
 
-If outliers are present in the dataset, they can influence clusterings results and change the outcome. The dataset should be pre-processed before applying k-means to detect and remove any outliers. There are many techniques for [outlier detection](http://www.pmg.it.usyd.edu.au/outliers.pdf) [and](https://pdfs.semanticscholar.org/49f3/d110f87ae245127d2e30049628785e95d23e.pdf) [removal](http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster). Unfortunately, discussing these techniques is outside the scope of this post and my expertise.
+If outliers are present in the dataset, they can influence clusterings results and change the outcome. The dataset should be pre-processed before applying k-means to detect and remove any outliers. There are many techniques for [outlier detection](http://www.pmg.it.usyd.edu.au/outliers.pdf) [and](https://pdfs.semanticscholar.org/49f3/d110f87ae245127d2e30049628785e95d23e.pdf) [removal](http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster). Unfortunately, discussing these techniques is beyond the scope of this post and my expertise.
 
 ## Evaluating k-means results
 
