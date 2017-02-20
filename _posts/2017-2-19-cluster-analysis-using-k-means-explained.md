@@ -9,11 +9,11 @@ Clustering or [cluster analysis](https://en.wikipedia.org/wiki/Cluster_analysis)
 
 <!--more-->
 
-There are various models and techniques for cluster analysis. When we were building the machine learning application, I was *mistakenly searching for 'the best clustering model or technique.'* I wasn't aware that there is no universal best algorithm and the choice depends on your requirements and the dataset. There are [density-based](https://en.wikipedia.org/wiki/Cluster_analysis#Density-based_clustering), [graph based](https://en.wikipedia.org/wiki/HCS_clustering_algorithm) or [centroid based](https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering) clustering models. We finally settled on a clustering technique called k-means. This blog post is a brain-dump of everything I've learned about clustering and k-means so far.
+There are various models and techniques for cluster analysis. When I first started, I was *mistakenly searching for 'the best clustering model or technique.'* I wasn't aware that there is no universal best algorithm and the choice depends on your requirements and the dataset. There are [density-based](https://en.wikipedia.org/wiki/Cluster_analysis#Density-based_clustering), [graph based](https://en.wikipedia.org/wiki/HCS_clustering_algorithm) or [centroid based](https://en.wikipedia.org/wiki/Cluster_analysis#Centroid-based_clustering) clustering models. We finally settled on a clustering technique called k-means. This blog post is a brain-dump of everything I've learned about clustering and k-means so far.
 
 # K-means
 
-K-means is a very simple and widely used clustering technique. It divides a dataset into '*k*' clusters. The '*k*' must be supplied by the users, hence the name k-means. It is general purpose and the [algorithm is straigh-forward](http://johnloeber.com/docs/kmeans.html):
+K-means is a very simple and widely used clustering technique. It divides a dataset into '*k*' clusters. The '*k*' must be supplied by the users, hence the name k-means. It is general purpose and the [algorithm is straight-forward](http://johnloeber.com/docs/kmeans.html):
 
 > We call the process k-means clustering because we assume that there are **k** clusters, and each cluster is defined by its center point — its mean. To find these clusters, we use **Lloyd’s Algorithm**: we start out with **k** random centroids. A centroid is simply a datapoint around which we form a cluster. For each centroid, we find the datapoints that are closer to that centroid than to any other centroid. We call that set of datapoints its cluster. Then we take the mean of the cluster, and let that be the new centroid. We repeat this process (using the new centroids to form clusters, etc.) until the algorithm stops moving the centroids.[0] We do this in order to minimize the total sum of distances from every centroid to the points in its cluster — *that is our metric for how well the clusters split up the data*.
 
@@ -25,7 +25,7 @@ As far as its performance is concerned, k-means and its [variants can usually pr
 
 ## Finding 'k': number of clusters using the elbow method
 
-If you know the number of clusters before hand, you have everything you need to apply k-means. However, in practice, it's rare that the number of clusters in the dataset is known. When I was modeling, I wasn't sure if there are 3 clusters or 13 in the dataset. Luckily, there's a technique called the '[elbow method](https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set)' that you can use to determine the number of clusters:
+If you know the number of clusters before hand, you have everything you need to apply k-means. However, in practice, it's rare that the number of clusters in the dataset is known. When I'm modeling, I'm not sure if there are 3 clusters or 13 in the dataset. Luckily, there's a technique called the '[elbow method](https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set)' that you can use to determine the number of clusters:
 
 > One should choose a number of clusters so that adding another cluster doesn't give much better modeling of the data. More precisely, if one plots the percentage of variance explained by the clusters against the number of clusters, the first clusters will add much information (explain a lot of variance), but at some point the marginal gain will drop, giving an angle in the graph. The number of clusters is chosen at this point, hence the "elbow criterion".
 
@@ -49,7 +49,7 @@ K-means won't identify clusters properly if clusters have an uneven size or dens
 
 ![uneven-unlabelled]({{ site.url }}/img/kmeans/uneven-unlabelled.png)
 
-I see 3 clusters of uneven densities. Do you?
+**I see 3 clusters** of uneven densities. Do you?
 
 ![uneven-labelled-manual]({{ site.url }}/img/kmeans/uneven-labelled-manual.png)
 
@@ -57,7 +57,7 @@ Let's see how k-means does. I wrote a simple python script with scikit-learn and
 
 ![uneven-applied]({{ site.url }}/img/kmeans/uneven-applied.png)
 
-As it was expected, k-means messed up and couldn't find naturally occurring clusters that we recognized in the dataset and expected k-means to find. It identified the larger cluster correctly but mixed the smaller ones. If you have datasets where naturally occurring clusters have unequal densities, try look into [density based models](https://en.wikipedia.org/wiki/Cluster_analysis#Density-based_clustering).
+As it was expected, k-means messed up and couldn't find naturally occurring clusters that we recognized in the dataset. It identified the larger cluster correctly but mixed the smaller ones. If you have datasets where naturally occurring clusters have unequal densities, try [density based models](https://en.wikipedia.org/wiki/Cluster_analysis#Density-based_clustering).
 
 ### 2. The clusters are non-spherical
 
@@ -65,26 +65,26 @@ Let's generate a 2d dataset with non-spherical clusters.
 
 ![kmeans-spherical-unlabelled]({{ site.url }}/img/kmeans/kmeans-spherical-unlabelled.png)
 
-It's how you look at it, but I see two clusters in the dataset. Let's run k-means and see how it performs.
+It's how you look at it, but **I see 2 clusters** in the dataset. Let's run k-means and see how it performs.
 
 ![kmeans-spherical-applied]({{ site.url }}/img/kmeans/kmeans-spherical-applied.png)
 
-It's obvious: k-means couldn't correctly identify the clusters. If you have a similar dataset, try a hierarchical or density based algorithm like [spectral clustering](https://en.wikipedia.org/wiki/Spectral_clustering) or [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN) that are better suited.
+Looking at the result, it's obvious that k-means couldn't correctly identify the clusters. If you have a similar dataset, try a hierarchical or density based algorithm like [spectral clustering](https://en.wikipedia.org/wiki/Spectral_clustering) or [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN) that are better suited.
 
 ### 3. There are outliers in the data.
 
-If outliers are present in the dataset, they can influence clusterings results and change the outcome. The dataset should be pre-processed before applying k-means to detect and remove any outliers. There are many techniques for [outlier detection](http://www.pmg.it.usyd.edu.au/outliers.pdf) [and](https://pdfs.semanticscholar.org/49f3/d110f87ae245127d2e30049628785e95d23e.pdf) [removal](http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster). Unfortunately, discussing these techniques is outside the scope of this post and my knowledge.
+If outliers are present in the dataset, they can influence clusterings results and change the outcome. The dataset should be pre-processed before applying k-means to detect and remove any outliers. There are many techniques for [outlier detection](http://www.pmg.it.usyd.edu.au/outliers.pdf) [and](https://pdfs.semanticscholar.org/49f3/d110f87ae245127d2e30049628785e95d23e.pdf) [removal](http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster). Unfortunately, discussing these techniques is outside the scope of this post and my expertise.
 
 ## Evaluating k-means results
 
-Let's assume you have just applied k-means to a dataset. **How do you tell if k-means did its job right and identified all clusters correctly?** *If* your dataset is 2-dimensional and isn't very large, you could probably plot the results and visually inspect to assess k-means, just like how I've been showing results so far. But what if your dataset is high-dimensional, as is often the case? We are trapped and can't visualize data beyond 3-dimensions. So we need some way to evaluate result of k-means and there are a couple that I know of:
+Let's assume you have just applied k-means to a dataset. **How do you tell if k-means did its job right and identified all clusters correctly?** *If* your dataset is 2-dimensional and isn't very large, you could probably plot the results and visually inspect to assess k-means, just like how I've been showing results to you so far. But what if your dataset is high-dimensional, as is often the case? We are trapped and can't visualize data beyond 3-dimensions. So we need some way to evaluate result of k-means and there are a couple that I know of:
 
 1. Supervised evaluation
 2. Unsupervised evaluation
 
 ### 1. Supervised evaluation
 
-Supervised evaluation can be used to check the results of k-means when you have a pre-classified dataset available that can act as a benchmark. Typically, an expert would carefully process a small dataset assigning datapoints to clusters manually. This is the **gold standard** for evaluation and tells us how close the results are to the benchmark. Keep in mind that in order to use supervised evaluation, you'd need to be able to train k-means and then supply the pre-classified benchmarks to check expectations against actual results (something not possible if you are using a tool like Weka or Tableau). This page describes how to use supervised evaluation in [scikit-learn](http://scikit-learn.org/stable/modules/clustering.html#homogeneity-completeness-and-v-measure), a popular python machine learning library.
+Supervised evaluation can be used to check the results of k-means when you have a pre-classified dataset available that can act as a benchmark. Typically, an expert would carefully process a small dataset assigning datapoints to clusters manually. This is the **gold standard** for evaluation and tells us how close the results are to the benchmark. Keep in mind that in order to use supervised evaluation, you'd need to be able to train k-means and then supply the pre-classified benchmarks to check expectations against actual results (not possible if you are using a standalone app like Weka or Tableau). This [page describes how to use supervised evaluation](http://scikit-learn.org/stable/modules/clustering.html#homogeneity-completeness-and-v-measure) in scikit-learn, a popular python machine learning library.
 
 ### 2. Unsupervised evaluation
 
