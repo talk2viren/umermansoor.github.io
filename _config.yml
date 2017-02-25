@@ -7,9 +7,9 @@ permalink:        pretty
 #relative_permalinks: true
 
 # Setup
-title:            Code Ahoy
-tagline:          'Articles on Software and Human Factors. 100% Tested on Humans.'
-description:      'Articles on Software and Human Factors. 100% Tested on Humans.'
+title:            CodeAhoy
+tagline:          'Technology. People. Imagination.'
+description:      'Technology. People. Imagination.'
 url:              https://codeahoy.com
 baseurl:          /
 
@@ -26,8 +26,8 @@ author:
   name:           'Umer Mansoor'
   url:            https://twitter.com/codeahoy
 
-name: Code Ahoy
-description: Articles on Software and Human Factors. 100% Tested on Humans.
+name: CodeAhoy
+description: Technology. People. Imagination.
 url: https://codeahoy.com
 
 

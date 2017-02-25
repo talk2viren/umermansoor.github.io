@@ -19,7 +19,7 @@ Or this one.
 
 These bug reports not only clearly identified the issue, but also the root cause and suggested a better course of action, thus refining the product and improving its quality.
 
-Some organizations **naively assume that automated tests written by developers can replace testers**. Wrong, very wrong. I love automated tests. But a good tester finds deficiencies and suggests improvements that a developer or an automated suite may not see:
+Some organizations **naively assume that automated tests written by developers can replace testers**. Wrong, very wrong. I love automated tests. But a good tester finds deficiencies and suggests improvements that a developer or an automated suite may overlook:
 
 > *Tester*: When I pass a string instead of a number for the billing amount, the app doesn't capture it. You need to check the type and ensure its a number.
 >
@@ -29,8 +29,8 @@ Some organizations **naively assume that automated tests written by developers c
 >
 *Developer*: Yeah. That makes sense when I think a about it. I will get it fixed.
 
-Another great reason for having dedicated testers on the team is to provide **[positive reinforcement](https://www.joelonsoftware.com/2010/01/26/why-testers/) and closure to developers** who may otherwise be doubtful whether they are on the right track or not. Developers usually breathe a sigh of relief when testers tell them that the new feature they implemented is working as expected.
+Another great reason for having dedicated testers on the team is to provide **[positive reinforcement](https://www.joelonsoftware.com/2010/01/26/why-testers/) and closure to developers** who may otherwise be doubtful whether they are on the right track or not. Developers usually breathe a sigh of relief when their releases are certified by testers and are told that everything works as expected.
 
-> A great tester gives programmers immediate feedback on what they did right and what they did wrong. Believe it or not, one of the most valuable features of a tester is providing positive reinforcement. There is no better way to **improve a programmer’s morale, happiness, and subjective sense of well-being** than ~~a La Marzocco Linea espresso machine~~ to have dedicated testers who get frequent releases from the developers, try them out, and give negative and positive feedback.
+> A great tester gives programmers immediate feedback on what they did right and what they did wrong. Believe it or not, one of the most valuable features of a tester is providing positive reinforcement. There is no better way to **improve a programmer’s morale, happiness, and subjective sense of well-being than ~~a La Marzocco Linea espresso machine~~ to have dedicated testers who get frequent releases from the developers, try them out, and give negative and positive feedback**.
 
-Testers should pursue and focus on defects and never **criticize or attack developers** and make it personal. They should try to maintain a healthy and constructive relationship and boost developers' morale whenever possible. Likewise, developers mustn't assume that it's entirely QA's responsibility to test the software and find all bugs. It's a shared responsibility. After all, testers are an asset and every team, big or small, that wants to be successful, must have great testers on-board.
+Good testers are a huge asset. They undoubtedly increase developers' morale and happiness by providing exceptional support to the team in the form of quick and concise feedback. They find bugs before they leak to production and save everyone from working late or on the weekends to fix critical bugs. Good testers should also have great soft skills and maintain healthy and constructive relationship with the development team. They should focus on defects and never **criticize or attack developers**. After all, aren't good testers brought in to judge the quality of software, and not the person who wrote it?
