@@ -6,7 +6,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-[TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) is *complex* protocol.
+[TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) is a *complex* protocol.
 
 Don't get me wrong. It is a marvelous piece of engineering that gives us the reliable data transmission guarantee that other protocols don't provide. Reliable data transmission between two devices on the internet is no walk in the park and TCP uses a [lot](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Flow_control) [of](https://en.wikipedia.org/wiki/TCP_congestion_control) [magic](https://en.wikipedia.org/wiki/TCP_window_scale_option) under the hood to make things happen. Generally, it does a fine job of [abstracting low level details](https://codeahoy.com/2016/05/06/good-abstractions-have-fewer-leaks/) and its default settings work fine for most TCP applications. However, once in a while, things don't go according to plan and we need to pop open the hood and tweak some parameters. It is in these situations, that some knowledge of TCP comes in very handy.
 
@@ -24,7 +24,7 @@ My first (naive) thought was that TCP must be buffering packets in its send buff
 
 ## Nagle's Algorithm
 
-Normally, TCP sends data out each time it receives it from the application and tacks on a header. If the application is sending a lot of small messages, the headers can add a lot of overhead (Each TCP+IP header is 40 bytes so if we are sending 1-byte of data, it's sent as 41-byte packet on the network.) Nagle's algorithm is way to reduce the overhead by combining small messages into a larger message. In other words, **it is a technique to make TCP more efficient by reducing the number of packets that are sent over the network**.
+If there's no congestion, TCP is supposed to send data out as soon as it receives it from the application, after tacking on a header. If the application is generating a lot of small messages, the headers can add a lot of overhead (Each TCP+IP header is 40 bytes so if we are sending 1-byte of data, it's sent as 41-byte packet on the network.) Nagle's algorithm is way to reduce the overhead by combining many small messages into a single message. In other words, **it is a technique to make TCP more efficient by reducing the number of packets that are sent over the network**.
 
 Nagle's algorithm works great for most TCP applications like video streaming or the high-volume network sniffer I wrote, which produced data at a very high rate for a few consumers (TCP clients.) But it doesn't work in this case where, even though Edge Server has tens of thousands of concurrent clients, there's only a small amount of data (a chat message ~ 100 bytes) for each client.
 
