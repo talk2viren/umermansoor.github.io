@@ -20,6 +20,8 @@ I selected a not-so-fine weekend for my investigation (It had continued to rain 
 
 It took me a few minutes to find the root cause of why the latency was higher than expected. Now, I had to figure out how to *disable* buffering.
 
+![imbuffering]({{ site.url }}/img/imbuffering.jpg)
+
 My first (naive) thought was that TCP must be buffering packets in its send buffer and if I could somehow force it to 'flush' its buffer every time I add a message to it, the buffering problem will go away. But there is no API call to force TCP to flush its send buffer. In fact, the TCP cannot be forced to send buffered data out. It makes up its own mind as to when to send data. There must be something else. Back to research... and a few Google searches later, I had found my answer as to what caused the TCP to buffer data: something called the **Nagle's algorithm**.
 
 ## Nagle's Algorithm
