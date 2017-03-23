@@ -26,9 +26,9 @@ My first (naive) thought was that TCP must be buffering packets in its send buff
 
 If there's no congestion, TCP is supposed to send data out as soon as it receives it from the application, after tacking on a header. If the application is generating a lot of small messages, the headers can add a lot of overhead (Each TCP+IP header is 40 bytes so if we are sending 1-byte of data, it's sent as 41-byte packet on the network.) Nagle's algorithm is way to reduce the overhead by combining many small messages into a single message. In other words, **it is a technique to make TCP more efficient by reducing the number of packets that are sent over the network**.
 
-Nagle's algorithm works great for most TCP applications like video streaming or the high-volume network sniffer I wrote, which produced data at a very high rate for a few consumers (TCP clients.) But it doesn't work in this case where, even though Edge Server has tens of thousands of concurrent clients, there's only a small amount of data (a chat message ~ 100 bytes) for each client.
+Nagle's algorithm works great for most TCP applications like video streaming or the high-volume network sniffer I wrote many years ago, which produced data at a very high rate for a few consumers (TCP clients.) But it doesn't work in this case where, even though Edge Server has tens of thousands of concurrent clients, there's only a small amount of data (a chat message ~ 100 bytes) for each client.
 
-Luckily, Nagle's algorithm can be turned off easily by setting the [TCP_NODELAY](http://download.java.net/jdk7/archive/b123/docs/api/java/net/SocketOptions.html#TCP_NODELAY) flag in the application. Once Nagle's algorithm was disabled, the latency improved.
+Luckily, Nagle's algorithm can be turned off easily by setting the [TCP_NODELAY](http://download.java.net/jdk7/archive/b123/docs/api/java/net/SocketOptions.html#TCP_NODELAY) flag in the application. Once Nagle's algorithm was disabled, the latency improved and was at an acceptable levels.
 
 So if you are building **TCP applications that expect responses to arrive in real-time, Nagle's algorithm (turned on by default) will result in poor performance and higher latency**. You should consider disabling it using the TCP_NODELAY socket option.
 
