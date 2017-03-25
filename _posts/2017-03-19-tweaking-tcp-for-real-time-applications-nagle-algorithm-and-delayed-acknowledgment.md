@@ -12,7 +12,7 @@ Don't get me wrong. It is a marvelous piece of engineering that gives us the rel
 
  <!--more-->
 
-By default, **TCP uses two buffering techniques** to optimize and minimize overhead for general purpose applications. However, if you are building applications that require real-time message delivery for small messages (e.g. chat or control messages), you must be familiar the buffering techniques that TCP use:
+By default, **TCP uses two buffering techniques** to optimize and minimize overhead for general purpose applications. However, if you are building applications that require real-time message delivery for small messages (e.g. chat or control messages), you must have some knowledge of these techniques.
 
 1. Nagle's algorithm
 2. TCP delayed acknowledgment
@@ -21,7 +21,7 @@ Let's look at them in more detail.
 
 ## Nagle's Algorithm
 
-If there's no congestion, TCP tacks on a header and sends data out as soon as it gets it from the application. If the application is generating a lot of small messages, the headers can add a lot of **overhead**: TCP/IP headers are 40 bytes, so 1-byte of data is sent as 41-byte packet on the network. A computer programmer named John Nagle came up with an algorithm to reduce the overhead by combining many small messages into a single message. Nagle's algorithm, named after its inventor, **is a technique to make TCP more efficient by reducing the number of packets that are sent over the network**. Here's the [pseudo code]((https://en.wikipedia.org/wiki/Nagle's_algorithm)) for the algorithm:
+If there's no congestion, TCP tacks on a header and sends data out as soon as it gets it from the application. If the application is generating a lot of small messages, the headers can add a lot of **overhead**: TCP/IP headers are 40-byte, so 1-byte of data is sent as 41-byte packet on the network. A computer programmer named John Nagle came up with an algorithm to reduce the overhead by combining many small messages into a single message. Nagle's algorithm, named after its inventor, **is a technique to make TCP more efficient by reducing the number of packets that are sent over the network**. Here's the [pseudo code]((https://en.wikipedia.org/wiki/Nagle's_algorithm)) for the algorithm:
 
 ```
 if there is new data to send
