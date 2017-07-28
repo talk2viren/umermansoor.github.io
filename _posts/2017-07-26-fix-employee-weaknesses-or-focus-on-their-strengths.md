@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 
 In "[First, Break All the Rules: What the World's Greatest Managers Do Differently](https://www.amazon.com/First-Break-All-Rules-Differently/dp/1531865208)" the authors, Marcus Buckingham and Curt Coffman, have put together their observations from more than 80,000 Gallup interviews they conducted with various leaders and managers over a period of 25 years. The book is full of excellent insight into what *great managers do and don't do* and debunks several traditional management myths. One such myth is that people are capable of almost anything if they work hard enough or **everyone has unlimited potential**. According to the authors, this is a complete fallacy and while it is an uplifting thought, it is far from reality.
 
+<!--more-->
+
 > “There once lived a scorpion and a frog.
 >
 The scorpion wanted to cross the pond, but, being a scorpion, he couldn’t swim. So he scuttled up to the frog and asked: “Please, Mr. Frog, can you carry me across the pond on your back?”
@@ -25,8 +27,8 @@ In this old parable, the frog made a fatal mistake in believing that scorpion's 
 
 > Great managers reject this out of hand. They remember what the frog forgot: that each individual, like the scorpion, is true to his unique nature ... They know that there is a *limit* to how much remolding they can do to someone. But they don't bemoan these differences and try to grind them down. Instead they *capitalize* on them. They try to help each person become more and more of who he already is.
 
-![frog_and_scorpion]({{ site.url }}/img/blog/frog_and_scorpion.png)
-(Image source)[https://www.redbubble.com/people/zugart/works/14869112-frog-and-a-scorpion?p=t-shirt]
+![frog_and_scorpion]({{ site.url }}/img/blogs/frog_and_scorpion.png)
+[Image source](https://www.redbubble.com/people/zugart/works/14869112-frog-and-a-scorpion?p=t-shirt)
 
 Under the same situation, different people react differently according to their nature. People are motivated differently. For example, I worked with a software developer who was very competitive by nature and his productivity would go through the roof when he hears that someone else on the team did it better or faster. That was his trigger. If a task carries too much risk, it is best assigned to the person who is meticulous than to someone who is a risk taker.
 
@@ -56,6 +58,6 @@ There is also criticism. Dr. Tomas Chamorro-Premuzic suggests that focusing too 
 
 > Think of an employee or an individual who is very driven and ambitious. If we developed their ambition and drive even further, they might just become greedy. Or somebody who is very socially skilled, if they develop their social skills even further, they might become almost Machiavellian and manipulative. People who are very creative can become odd and eccentric, and people who are already a little bit confident, if we make them even more confident, they might become arrogant or overconfident.
 
-I generally agree with the idea of focusing on strengths as I have seen too many managers focusing on *irrelevant* weaknesses or non-talents of their reports. There isn't enough time to change an employee's nature even a little or to give birth to a new talent. Does this mean we should completely ignore weaknesses? If the weakness is relevant and it is affecting performance, the manager must determine if the weakness is trainable (i.e. missing skill), the person is casted in the wrong role or whether the person can be paired up with someone who has complementary strengths. Either way, poor performance should be tackled head on as soon as possible.
+I generally agree with the idea of focusing on strengths as too many managers focus on *irrelevant* weaknesses or non-talents of their reports. There isn't enough time to change an employee's nature even a little or to give birth to a new talent. Does this mean we should completely ignore weaknesses? If the weakness is relevant and it is affecting performance, the manager must determine if the weakness is trainable (i.e. missing skill), the person is casted in the wrong role or whether the person can be paired up with someone who has complementary strengths. Either way, poor performance should be tackled head on as soon as possible.
 
 Until next time.
