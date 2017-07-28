@@ -41,7 +41,7 @@ quires a fire to bel it beneath it. And, by contrast, your patient, relation
 ship-building salesperson should be offered the territory that requires
 careful nurturing.
 
-This may sound like common knowledge but all too often hiring managers put excessive emphasis on skills and experience over talent. Skill or how-to's of role can be taught. Talent cannot be taught. A Java software developer can learn Python. An aggressive, ego-driven person generally makes a poor team player but put that person in a situation that requires a fire to be lit under it, and that person may just become a rockstar.
+This may sound like common knowledge but all too often hiring managers put excessive emphasis on skills and experience over talent. Skill or how-to's of role can be taught. Talent cannot be taught. A Java software developer can learn Python. An aggressive, ego-driven person generally makes a poor team player but put that person in a situation that requires a fire to be lit under it, and that person might just become a rockstar.
 
 > People don't change that much.
 Don't waste time trying to put in what was left out.
