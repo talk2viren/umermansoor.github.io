@@ -41,7 +41,7 @@ quires a fire to bel it beneath it. And, by contrast, your patient, relation
 ship-building salesperson should be offered the territory that requires
 careful nurturing.
 
-This may sound like common knowledge but I've seen it all too often where hiring managers put excessive emphasis on skills and knowledge over talent. Skill or how-to's of role can be taught. Talent cannot be taught. A Java software developer can learn Python. An aggressive, ego-driven person generally makes a poor team player but put that person in a situation that requires a fire to be lit under it, and you may find a great fit.
+This may sound like common knowledge but all too often hiring managers put excessive emphasis on skills and experience over talent. Skill or how-to's of role can be taught. Talent cannot be taught. A Java software developer can learn Python. An aggressive, ego-driven person generally makes a poor team player but put that person in a situation that requires a fire to be lit under it, and that person may just become a rockstar.
 
 > People don't change that much.
 Don't waste time trying to put in what was left out.
@@ -52,12 +52,12 @@ This is the essence of the '[focus on strengths](http://www.strengthsfinder.com/
 
 > Beyond a person's mid-teens, that unique network of synaptic connections, in which some are strong and robust and others non-existent, does not change significantly. This means that a person's recurring patterns of thought, of feeling and of behavior do not change significantly. If he is empathic when he is hired, he will stay empathic. If he is impatient for action when he is hired, he will stay impatient.
 
-There is also criticism. Dr. Tomas Chamorro-Premuzic suggests that focusing too much on our strengths [may actually weakening us](https://hbr.org/ideacast/2016/01/stop-focusing-on-your-strengths.html):
+There is also criticism. Dr. Tomas Chamorro-Premuzic suggests that focusing too much on our strengths [has negative impacts](https://hbr.org/ideacast/2016/01/stop-focusing-on-your-strengths.html):
 
 >  it’s important to understand that even the smartest, brightest, and most brilliant individuals have a dark side. They have certain elements of their personality, of their typical behaviors, that are quite counterproductive. And if those tendencies are left unchecked, no matter how smart, competent, and talented they are, their careers at risk of derailing.
 
 > Think of an employee or an individual who is very driven and ambitious. If we developed their ambition and drive even further, they might just become greedy. Or somebody who is very socially skilled, if they develop their social skills even further, they might become almost Machiavellian and manipulative. People who are very creative can become odd and eccentric, and people who are already a little bit confident, if we make them even more confident, they might become arrogant or overconfident.
 
-I generally agree with the idea of focusing on strengths as too many managers focus on *irrelevant* weaknesses or non-talents of their reports. There isn't enough time to change an employee's nature even a little or to give birth to a new talent. Does this mean we should completely ignore weaknesses? If the weakness is relevant and it is affecting performance, the manager must determine if the weakness is trainable (i.e. missing skill), the person is casted in the wrong role or whether the person can be paired up with someone who has complementary strengths. Either way, poor performance should be tackled head on as soon as possible.
+I generally agree with the idea of focusing on strengths as too many managers focus on *irrelevant* weaknesses or non-talents of their reports. There isn't enough time to change an employee's nature even a little or to give birth to a new talent. Does this mean we should completely ignore weaknesses? If the weakness is relevant and it is affecting performance, the manager must determine if the weakness is trainable (i.e. missing skill), whether the person is casted in the wrong role or if the person can be paired up with someone who has complementary strengths. Either way, poor performance should be tackled head on as soon as possible.
 
 Until next time.

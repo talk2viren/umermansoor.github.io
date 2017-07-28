@@ -27,7 +27,7 @@ Andrew Ng have good reasons to be optimistic. So let's look at the other side of
 
 In one of the many Watson ad campaigns IBM ran, Watson tells Bob Dylan that he has read all his lyrics and that the meaning of Dylan's music is all about '*time passing and love fading*.'
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=oMBUk-57FGU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oMBUk-57FGU" frameborder="0" allowfullscreen></iframe>
 
 Did Watson get it right? Roger Schank [disagrees](http://www.rogerschank.com/fraudulent-claims-made-by-IBM-about-Watson-and-AI):
 
@@ -35,7 +35,7 @@ Did Watson get it right? Roger Schank [disagrees](http://www.rogerschank.com/fra
 
 IBM Watson is a good product and I won't be so harsh on IBM. Their ads and marketing efforts got lots of people and companies interested in AI. A colleague of mine told me that his CEO rolled his eyes (metaphorically speaking) when he told him to use machine learning to make predictions about customer behavior and revenue a few years ago. While he will never know for sure if it was because of IBM PR, but the CEO changed his mind recently and now thinks of AI as crystal ball that will transform his business and bring millions and millions of dollars in revenue.
 
-**AI is not magic**. As a small example, I used Watson to build a gaming chatbot with AI that could hold 'meaningful' conversations with users on a small number of pre-decided topics. Watson uses [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) and Machine Learning algorithms to understand user messages and requires lots of training. We weren't able to get it to converse at a level of a 2 or 3-year old and it could be easily confused. In the end, we decided to use a cloud based API called [Wit.ai](https://wit.ai/) which gave us pretty much the same results as Watson.
+**AI is not magic; just science and mathematics**. I used Watson a few weeks ago for building a gaming chatbot with AI that could have conversations with users on a small number of topics. Watson uses [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) and Machine Learning algorithms to understand user messages and requires lots of training. We weren't able to get it to converse at a level of a 2 or 3-year old and it could be easily confused. In the end, we decided to use a cloud based API called [Wit.ai](https://wit.ai/) which gave us pretty much the same results as Watson.
 
 Chatbots with AI replacing humans to provide customer service is a long, long shot. That doesn't mean that chatbots or AI isn't useful. Even if chatbots can increase 1%-2% of customer service efficiency for a major enterprise or a large internet company and help their customers troubleshoot simple issues or prescreen before passing off to a live agent, it will still be massive improvement. Richard Socher, chief scientist at Salesforce [said](https://www.technologyreview.com/s/603062/ai-winter-isnt-coming/):
 
