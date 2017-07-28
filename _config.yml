@@ -11,7 +11,7 @@ title:            CodeAhoy
 tagline:          'Technology. People. Imagination.'
 description:      'Technology. People. Imagination.'
 url:              https://codeahoy.com
-baseurl: /
+baseurl:          https://codeahoy.com
 
 # Social Media
 twitter:        codeahoy
@@ -29,7 +29,6 @@ author:
 name: CodeAhoy
 description: Technology. People. Imagination.
 url: https://codeahoy.com
-
 
 
 paginate:         5
