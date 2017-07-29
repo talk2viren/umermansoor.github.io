@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I wrote that "*AI is not magic*" In this blog post, my goal is to discuss at a high level how neural networks learn, and show that there is no magic at all, just mathematics. This is a high level intro and assumes that you are somewhat familiar with neural networks.
+In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I claimed that "*AI is not magic*" In this blog post, my goal is to discuss at a high level how neural networks learn, and show that AI isn't a crystal ball or magic, just science and mathematics. This is a high level intro and assumes that you are familiar with neural networks.
 
 Let's start with an example. Suppose we are building an app to [identify hot dogs](https://www.theverge.com/2017/6/26/15876006/hot-dog-app-android-silicon-valley). Take a picture of a hot dog and the app will tell you if it's a "hotdog". Give it a picture of something else like a shoe and it will tell you that it's "not hotdog"
 
