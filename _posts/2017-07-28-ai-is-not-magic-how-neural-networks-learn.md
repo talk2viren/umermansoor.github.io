@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I claimed that "*AI is not magic*" In this blog post, my goal is to discuss at a high level how neural networks learn, and show that AI isn't a crystal ball or magic, just science and mathematics. This is a high level intro and assumes that you are familiar with neural networks.
+In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I claimed that "*AI is not magic.*" In this blog post, my goal is to discuss how neural networks learn, and show that AI isn't a crystal ball or magic, just science and some very slick mathematics. This is a *high level intro* and assumes that you are familiar with neural networks.
 
 Let's start with an example. Suppose we are building an app to [identify hot dogs](https://www.theverge.com/2017/6/26/15876006/hot-dog-app-android-silicon-valley). Take a picture of a hot dog and the app will tell you if it's a "hotdog". Give it a picture of something else like a shoe and it will tell you that it's "not hotdog"
 
@@ -19,11 +19,11 @@ Imagine our neural network consists of few layers of neurons. The actual number 
 
 ![neural_network]({{ site.url }}/img/blogs/neural_network.svg.png)
 
-The neurons have weights and biases. The **goal is to find the best set of weights and biases** over our training data. What constitutes the best set of weight and biases? The one which gives the **minimum error**. To make sense of it all, let's define a an error function of weights and biases. Let's give it a fancy name: the cost function.
+The neurons have weights and biases, which allow a neuron to change it's output for the same input values. The **goal is to find the best set of weights and biases** over our training data. What constitutes the best set of weight and biases? The one which gives the **minimum error**. To make sense of it all, let's define a an error function of weights and biases. Let's give it a fancy name: the cost function.
 
 > Cost Function (weights,biases) = # of images incorrectly identified / Total # of images
 
-Now we can measure the performance of our neural network and have a clear objective: **find weights and biases which minimizes the cost function**. But how do we find weights and biases? One way is to just randomly pick them, run neural network over entire training data (6,000 images) and calculate the cost function. Keep repeating until we've found a low enough value of the cost function that we like. Let's say we want to stop when the neural network has a success rate of 99%. Let's see how this would work. To keep it simple, suppose we are only doing this for 2 weights and biases.
+Great. Now we can measure the performance of our neural network and have a clear objective: **find weights and biases which minimizes the cost function**. So how to find weights and biases? One way is to just **randomly** pick them, run neural network over entire training data (6,000 images) and calculate the cost function. Keep repeating until we've found a low enough value of the cost function that we like. Let's say we want to stop when the neural network has a success rate of 99%. When we reach this goal, the combination of weights and biases have *detected some similarity between hotdogs* and could identify new hotdog images. Let's see how this would work. To keep it simple, suppose we are only doing this for 2 weights and biases.
 
 **Iteration 1**: Weight1 = 1, Weight2 = 3, Bias1 = 1, Bias2 = 4. Let's say it correctly classifies 300 out of 500 images of hot dog correctly. We'll say the error rate is 200/500 = 40%
 
@@ -57,6 +57,12 @@ Unlike the first simplified cost function we created, MSE is a **smooth** cost f
 
 There is one more concept that you should know: the **learning rate**. The learning rate is the amount by which gradient descent updates weights and biases in each step. If the learning rate is too low, the algorithm may take a very long time to find the minimum. If the learning rate is too high, the algorithm may overshoot and miss the minimum (i.e. jump to the other side of the hill.) In practice, several parameters like learning rate and others that we'll see in later posts needs to be adjusted to get the best results and performance.
 
-Gradient descent, or rather its variations (as we'll see in later posts), remain in wide use in machine learning algorithms like linear regression and neural networks. In linear regression, it gives us the line that best fits the data we are modeling; in neural networks, it gives us the best weights and biases.
+Gradient descent, or rather its variations and several optimizations (as we'll see in later posts), remains in wide use in machine learning algorithms like linear regression and neural networks. In linear regression, it gives us the line that best fits the data we are modeling; in neural networks, it gives us the best weights and biases.
 
-Hope you enjoyed. Until next time.
+Neural networks and machine learning algorithms are not magic or crystal ball. The reason I say this is because many CEO's and executives overestimate the power of AI because of the unrealistic picture painted by the media. AI is extremely powerful and is proving itself with positive ROI in many domains, but it also has its *limitations*. You should understand what the AI can and cannot do and then incorporate into your overall strategy. Andrew Ng gave an easy [rule of thumb](https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now):
+
+> **If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future**.
+
+![machinelearningcansandcannots]({{ site.url }}/img/blogs/machinelearningcansandcannots.png)
+
+See you next time.
