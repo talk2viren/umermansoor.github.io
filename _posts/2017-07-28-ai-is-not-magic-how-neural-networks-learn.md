@@ -59,9 +59,9 @@ There is one more concept that you should know: the **learning rate**. The learn
 
 Gradient descent, or rather its variations and several optimizations (as we'll see in later posts), remains in wide use in machine learning algorithms like linear regression and neural networks. In linear regression, it gives us the line that best fits the data we are modeling; in neural networks, it gives us the best weights and biases.
 
-Neural networks and machine learning algorithms are not magic or crystal ball. The reason I say this is because many CEO's and executives overestimate the power of AI because of the unrealistic picture painted by the media. AI is extremely powerful and is proving itself with positive ROI in many domains, but it also has its *limitations*. You should understand what the AI can and cannot do and then incorporate into your overall strategy. Andrew Ng gave an easy [rule of thumb](https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now):
+*Is AI magic?* Magic of matrix multiplication and gradient descent, arguably. But no, AI is not going to [take over the world](https://www.extremetech.com/extreme/252781-elon-musk-warns-us-ai-destroy-world) and it is not a crystal ball. Many CEO's and executives **overestimate** the power of AI because of the unrealistic picture painted by the media. AI is extremely powerful and is proving itself with positive ROI in many domains, but it also has its *limitations*. You should understand what the AI can and cannot do and then incorporate into your overall strategy. Andrew Ng gave an easy [rule of thumb](https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now):
 
-> **If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future**.
+> If a typical **person can do a mental task with less than one second of thought**, we can probably **automate it using AI** either now or in the near future.
 
 ![machinelearningcansandcannots]({{ site.url }}/img/blogs/machinelearningcansandcannots.png)
 
