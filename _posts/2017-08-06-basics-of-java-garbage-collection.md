@@ -166,13 +166,13 @@ Here's a description of these algorithms also taken from Jon's blog. Please note
 5. **"CMS"**  (Concurrent Mark Sweep) is a mostly concurrent, low-pause collector.
 6. "Parallel Old" is a compacting collector that uses multiple GC threads.
 
-I used **ParNew** and [**CMS**](https://docs.oracle.com/javase/9/gctuning/concurrent-mark-sweep-cms-collector.htm#JSGCT-GUID-FF8150AC-73D9-4780-91DD-148E63FA1BFF) for **server side applications** where response time and latency are bounded by SLA's and must be kept low. CMS generally does a very good job to concurrently marking objects and stops the world to do **major** GC when the old generation memory is 70% full (this is the default, it can be changed with `-XX:CMSInitiatingOccupancyFraction=70` argument)
+I used **ParNew**  (young generation) and [**CMS**](https://docs.oracle.com/javase/9/gctuning/concurrent-mark-sweep-cms-collector.htm#JSGCT-GUID-FF8150AC-73D9-4780-91DD-148E63FA1BFF) (old generation) for **server side applications** where response time and latency are bounded by SLA's and must be kept low. CMS generally does a very good job to concurrently marking objects and stops the world to do **major** GC when the old generation memory is 70% full (this is the default, it can be changed with `-XX:CMSInitiatingOccupancyFraction=70` argument)
 
-Since java 8, the [CMS has been deprecated](https://community.oracle.com/thread/3648979) and [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) aka **G1** collector should be used instead.
+There have been calls that [CMS should be deprecated](http://openjdk.java.net/jeps/291) and the *new* [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) aka **G1** collector should be used instead. G1 was first introduced with Java 7.
 
 > The G1 collector is a server-style garbage collector, targeted for multi-processor machines with large memories. It meets garbage collection (GC) pause time goals with high probability, while achieving high throughput.
 
-**G1**, unlike other garbage collectors, **works on both old and young generation**. I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't say if it's better than CMS. A quick online search of benchmarks reveals that [CMS performs better](http://blog.novatec-gmbh.de/g1-action-better-cms/) [than G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). Not what I expected. If you'd like to try G1, it can be enabled with:
+**G1**, unlike other garbage collectors, **works on both old and young generation**. I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't say if it's better than CMS. A quick online search of benchmarks reveals that [CMS performs better](http://blog.novatec-gmbh.de/g1-action-better-cms/) [than G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). Not what I expected so I'd tread with caution. If you'd like to try G1, it can be enabled with:
 
 ```
 -XX:+UseG1GC
