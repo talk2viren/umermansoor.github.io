@@ -5,14 +5,17 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Knock, knock.
+>Knock, knock.
+>
 Who's there?
+>
 *...long GC pause...*
+>
 Java.
 
 ![wiseguy-eh]({{ site.url }}/img/blogs/wiseguy.jpg)
 
-It's not a new joke or even news to anyone that Java's garbage collection has the biggest impact on an application's performance. However, turning garbage collector to get the best performance is a chore which requires careful examination of the project and profiling of the application under load to find the optimum settings. It requires *patience*. A few times a year, I find myself explaining garbage collection to a new developer who is not familiar or I'm troubleshooting garbage collection related performance issues. In this post, I'll visit this garbage collection the way I know it and explain few key concepts with examples. This post is for you if you want to understand garbage collection at a high-level and at the very least, want enough information to start your garbage collection performance tuning journey.
+It's an old joke when Java was *new* and slow compared to other languages. These days, [Java is fast](http://benchmarksgame.alioth.debian.org/) and powers many real-time applications serving hundreds of thousands of concurrent users. It's no news to anyone that the **biggest impact on Java's performance comes from the its garbage collection**. Fortunately, almost in all cases, garbage collection can we **tweaked and optimized to boost performance**. Tuning garbage collector is a chore which requires knowledge of garbage collection and lots of patience to profile the application to understand its behavior. A few times a year, I find myself explaining garbage collection to a new developer who is not familiar or I'm troubleshooting garbage collection related performance issues. In this post, I'll visit this garbage collection the way I know it and explain few key concepts with examples. This post is for you if you want to understand garbage collection at a high-level and at the very least, want enough information to start your garbage collection performance tuning journey.
 
 
 <!--more-->
