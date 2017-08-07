@@ -5,12 +5,10 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-<pre>
-<b>Knock, knock.</b>
+Knock, knock.
 Who's there?
-<i>...long GC pause...</i>
-<b>Java.</b>
-</pre>
+*...long GC pause...*
+Java.
 
 ![wiseguy-eh]({{ site.url }}/img/blogs/wiseguy.jpg)
 
