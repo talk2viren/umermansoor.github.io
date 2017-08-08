@@ -179,13 +179,13 @@ HotSpot JVM allows you to configure different GC algorithms for young and old ge
 5. **"CMS"**  (Concurrent Mark Sweep) is a mostly concurrent, low-pause collector.
 6. **"Parallel Old"** is a compacting collector that uses multiple GC threads.
 
-Concurrent Mark Sweep (*CMS*), paired with *ParNew*, works really well for server-side applications processing live requests from clients. I have been using it with ~ 10GB of heap memory and it keep response times steady and spikes aren't an issue. Some developers I know use Parallel collectors (*Parallel Scavenge* + *Parallel Old*) and are happy with results.
+Concurrent Mark Sweep (*CMS*), paired with *ParNew*, works really well for server-side applications processing live requests from clients. I have been using it with ~ 10GB of heap memory and it keeps response times steady and spikes aren't an issue. Some developers I know use Parallel collectors (*Parallel Scavenge* + *Parallel Old*) and are happy with results.
 
 One important thing to know about the CMS is that there have been **[calls to deprecate](http://openjdk.java.net/jeps/291)** it and it will probably happen in Java 9 :'( Oracle recommends that the new concurrent collector, the [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) or the **G1**, introduced first with Java, be used instead:
 
 > The G1 collector is a server-style garbage collector, targeted for multi-processor machines with large memories. It meets garbage collection (GC) pause time goals with high probability, while achieving high throughput.
 
-**G1** works on both old and young generation. It is optimized for larger heap sizes (>10 GB). I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't yet compare the two. A quick online search reveals benchmarks showing [CMS outperforming](http://blog.novatec-gmbh.de/g1-action-better-cms/) [G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully. If you'd like to try G1, it can be enabled with:
+**G1** works on both old and young generation. It is optimized for larger heap sizes (>10 GB). I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't yet compare the two. A quick online search reveals benchmarks showing [CMS outperforming](http://blog.novatec-gmbh.de/g1-action-better-cms/) [G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully, but G1 should be fine. It can be enabled with:
 
 ```
 -XX:+UseG1GC
