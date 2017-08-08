@@ -5,24 +5,27 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
->Knock, knock.
 >
-Who's there?
->
-*...long GC pause...*
->
-Java.
+- **Knock, knock**.
+- Who's there?
+- *...long GC pause...*
+- **Java**.
 
 ![wiseguy-eh]({{ site.url }}/img/blogs/wiseguy.jpg)
 
-It's an old joke when Java was *new* and slow compared to other languages. These days, [Java is fast](http://benchmarksgame.alioth.debian.org/) and powers many real-time applications serving hundreds of thousands of concurrent users. It's no news to anyone that the **biggest impact on Java's performance these days comes from its garbage collection**. Fortunately, almost in all cases, garbage collection can we **tweaked and optimized to boost performance**. Tuning garbage collector is a chore which requires knowledge of garbage collection and lots of patience to profile the application to understand its behavior. A few times a year, I find myself explaining garbage collection to a new developer who is not familiar or I'm troubleshooting garbage collection related performance issues myself. In this post, I'll visit this garbage collection the way I know it and explain few key concepts with examples. This post is for you if you want to understand garbage collection at a high-level and at the very least, want enough information to start your garbage collection performance tuning journey.
-
+It's an old joke from the time when Java was *new* and *slow* compared to other languages. Over time, Java became a lot [**faster**](http://benchmarksgame.alioth.debian.org/). Today it powers many real-time applications with hundreds of thousands of concurrent users. These days, the **biggest impact on Java's performance comes from its garbage collection**. Fortunately, in many cases, it can be tweaked and optimized to improve performance.
 
 <!--more-->
 
-Java ships with **several** garbage collection algorithms. Each works differently and has pros and cons. The most important thing to keep in mind is that all garbage collection algorithms **stop the world**. That is, your application is put on hold or paused, as the garbage is collected and taken out. The main difference among the algorithms is *how* they stop the world. Some algorithms sit completely **idle until the garbage collection is absolutely needed** and then pause your application for a long period while others **work concurrently with your application** and thus need a **shorter pause** during stop the world phase. The best algorithm depends on your goals: are your **optimizing for throughput** where long pauses every now and then are tolerable or you are **optimizing for low latency** by spreading it out and having short pauses all along.
+For most applications, the default settings of the JVM work fine. But when you start noticing performance issues caused by garbage collection and giving more heap memory isn't possible, you need to tune and optimize the garbage collection. For most developers, it's a **chore**. It requires patience and a good knowledge of how garbage collection works and an understanding of application's behavior. This post is a high-level overview of Java's garbage collection with some examples of troubleshooting performance issues.
 
-To *enhance* the garbage collection process, Java (HotSpot JVM, more accurately) divides up the heap memory into two *generations*: **Young Generation** and **Old Generation** (also called Tenured). There is also a Permanent Generation, but we won't be discussing it.  
+Let's get started.
+
+Java ships with **several** garbage collectors. More specifically, these are different *algorithms* that run in their own *threads*. Each works differently and has pros and cons. The most important thing to keep in mind is that all garbage collectors **stop the world**. That is, your application is put on hold or paused, as the garbage is collected and taken out. The main difference among the algorithms is *how* they stop the world. Some algorithms sit completely **idle until the garbage collection is absolutely needed** and then pause your application for a long period while others **do most of their work concurrently** with your application and thus need a **shorter pause** during stop the world phase. The best algorithm depends on your goals: are your **optimizing for throughput** where long pauses every now and then are tolerable or you are **optimizing for low latency** by spreading it out and having short pauses all along.
+
+To *enhance* the garbage collection process, Java (HotSpot JVM, more accurately) divides up the heap memory into two *generations*: **Young Generation** and **Old Generation** (also called Tenured). There is also a *Permanent Generation*, but we won't cover it in this post.
+
+![hotspot-heap]({{ site.url }}/img/blogs/hotspot-heap.png)
 
 **Young generation** is where *young* objects live. It's further subdivided into the following areas:
 
@@ -30,9 +33,9 @@ To *enhance* the garbage collection process, Java (HotSpot JVM, more accurately)
 2. Survivor Space 1
 3. Survivor Space 2
 
-By default, **Eden is bigger** than the two survivor spaces combined. On my Mac OS X, the 64-bit HotSpot JVM, Eden takes about 76% of all the young generation space. All objects are first created here. When Eden is full, a **minor** garbage collection is triggered. All new objects are quickly inspected to check their eligibility for garbage collection. The ones that are dead, that is, aren't referenced (ignoring reference strength for this discussion) from other objects are marked as dead and garbage collected. The **surviving objects are moved to one of the empty 'survivor spaces'**. Which one of two survivor spaces? It doesn't matter but let's quickly explore survivor spaces.
+By default, **Eden is bigger** than the two survivor spaces combined. On my Mac OS X, the 64-bit HotSpot JVM, Eden takes about 76% of all the young generation space. All objects are first created here. When Eden is full, a **minor** garbage collection is triggered. All new objects are quickly inspected to check their eligibility for garbage collection. The ones that are dead, that is, aren't referenced (ignoring reference strength for this discussion) from other objects are marked as dead and garbage collected. The **surviving objects are moved to one of the empty 'survivor spaces'**. Which one of two survivor spaces? To answer this question, let's discuss survivor spaces.
 
-The reason for two survivor spaces is to avoid **memory fragmentation**. Imagine if there was just one survivor space. While you are at it, also imagine survivor space as a contiguous array of memory. When young generation GC runs through the array, it identifies dead objects for removal. This would leave holes in memory where objects previously lived and **compaction** will be needed. To avoid compaction, HotSpot JVM just copies all live objects from the survivor space to the other (empty) survivor space so that there are no holes or empty spaces. While we are discussing compaction, please note that old generation garbage collectors (with the exception of CMS) perform compaction on the heap memory to avoid memory fragmentation.
+The reason for having two survivor spaces is to avoid **memory fragmentation**. Imagine if there was just one survivor space. While you are at it, also imagine survivor space as a contiguous array of memory. When young generation GC runs through the array, it identifies dead objects for removal. This would leave holes in memory where objects previously lived and **compaction** will be needed. To avoid compaction, HotSpot JVM just copies all live objects from the survivor space to the other (empty) survivor space so that there are no holes or empty spaces. While we are discussing compaction, please note that old generation garbage collectors (with the exception of CMS) perform compaction on the heap memory to avoid memory fragmentation.
 
 In short, minor garbage collections (triggered when Eden is full) **ping-pong** objects from Eden and one of the survivor space (known as the 'from' survivor space in logs) *to* the other (known as the 'to' survivor space). This happens until one of the following happens:
 
@@ -60,7 +63,7 @@ private static void createFewLongLivedAndManyShortLivedObjects() {
 Let's enable garbage collection logs and other settings using the following JVM command line arguments:
 
 ```
--Xmx100m                     // Give JVM 100 MB of heap memory
+-Xmx100m                     // Allow JVM 100 MB of heap memory
 -XX:-PrintGC                 // Enable GC Logs
 -XX:+PrintHeapAtGC           // Enable GC logs
 -XX:MaxTenuringThreshold=15  // Allow objects to live in the young space longer
@@ -126,7 +129,7 @@ Heap <b>after</b> GC invocations=1 (full 0):
  concurrent mark-sweep (<u>old</u>) generation total 6848K, used <b>76K</b>
 </pre>
 
-**Not what we predicted**. We can see that this time, the **old generation received objects right after the first minor** garbage collection. We know that these objects are short-lived and tenuring threshold is set to 15 and this is the first collection. What happened is the following: the application created a large number of objects which filled up Eden space. Minor garbage collection ran and tried to collect garbage. However, most of these short-lived objects were **active** during the GC, i.e. were being referenced from a live thread and being processed. The young generation garbage collector had **no choice but to push these objects to the old generation**. This is bad because the objects that got pushed to the old generation were **forcibly aged** and can only be cleaned up by old generation's major garbage collection which usually takes more time.
+**Not what we predicted**. We can see that this time, the **old generation received objects right after the first minor** garbage collection. We know that these objects are short-lived and tenuring threshold is set to 15 and this is the first collection. What happened is the following: the application created a large number of objects which filled up Eden space. Minor garbage collection ran and tried to collect garbage. However, most of these short-lived objects were **active** during the GC, i.e. were being referenced from a live thread and being processed. The young generation garbage collector had **no choice but to push these objects to the old generation**. This is bad because the objects that got pushed to the old generation were **prematurely aged** and can only be cleaned up by old generation's major garbage collection which usually takes more time.
 
 How to fix this? There are several ways. One theoretical way is to estimate the number of active short-lived objects and size the young generation appropriately. Let us make the following changes:
 
@@ -150,31 +153,41 @@ Heap <b>after</b> GC invocations=8 (full 0):
  concurrent mark-sweep generation total 5120K, used <b>0K</b>
 </pre>
 
-This is in no way an exhaustive method of tuning garbage collection. I'm simply trying to demonstrate the steps involved. For real applications, optimum settings are found as a result of trial and error with different settings. For example, we could have also fixed the problem by increasing the total heap memory size.
+This is in no way an exhaustive method of tuning garbage collection. I'm simply trying to demonstrate the steps involved. For real applications, optimum settings are found as a result of trial and error with different settings. For example, we could have also fixed the problem by doubling the total heap memory size.
 
 ## Garbage Collection Algorithms
 
-As we discussed earlier, Java comes with several different garbage collection algorithms for young and old generations. Prior to Java 7, garbage collection **algorithms worked either for young generation or old, but not both**. In addition, you can only pair up compatible algorithms. For example, you cannot pair up 'Parallel Scavenge' young generation collector with 'CMS' old generation collector because they are not compatible. To make it easier for you, I was going to make an infographic to show which garbage collectors are compatible, however, luckily I searched first and found one created by JVM engineer, [Jon Masamitsu](https://blogs.oracle.com/jonthecollector/our-collectors).
+As we discussed earlier, Java comes with several different garbage collection algorithms for young and old generations. At a high level, there are three general types of collectors available each with its own [performance characteristic](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html):
+
+> **serial collector** uses a single thread to perform all garbage collection work, which makes it relatively efficient because there is no communication overhead between threads. It is best-suited to single processor machines -XX:+UseSerialGC.
+>
+> **parallel collector** (also known as the throughput collector) performs minor collections in parallel, which can significantly reduce garbage collection overhead. It is intended for applications with medium-sized to large-sized data sets that are run on multiprocessor or multithreaded hardware.
+>
+> **concurrent collector** performs most of its work concurrently (for example, while the application is still running) to keep garbage collection pauses short. It is designed for applications with medium-sized to large-sized data sets in which response time is more important than overall throughput because the techniques used to minimize pauses can reduce application performance.
+
+![gc-compared]({{ site.url }}/img/blogs/gc-compared.png)
+
+HotSpot JVM allows you to configure different GC algorithms for young and old generation. You can only pair up compatible algorithms. For example, you cannot pair up *Parallel Scavenge* for young generation collector with *Concurrent Mark Sweep* for old generation collector because they are not compatible. To make it easier for you, I was going to make an infographic to show which garbage collectors are compatible, however, luckily I searched first and found one created by JVM engineer, [Jon Masamitsu](https://blogs.oracle.com/jonthecollector/our-collectors).
 
 ![gc-collectors-pairing]({{ site.url }}/img/blogs/gc-collectors-pairing.jpg)
 
-Here's a description of these algorithms also taken from Jon's blog. Please note that I have never seen anyone use 'Serial' collector. It's old; avoid using it unless you are sure that it is right choice.
-
 >
 1. "Serial" is a stop-the-world, copying collector which uses a single GC thread.
-2. "Parallel Scavenge" is a stop-the-world, copying collector which uses multiple GC threads.
+2. **"Parallel Scavenge"** is a stop-the-world, copying collector which uses multiple GC threads.
 3. **"ParNew"** is a stop-the-world, copying collector which uses multiple GC threads. It differs from "Parallel Scavenge" in that it has enhancements that make it usable  with CMS. For example, "ParNew" does the synchronization needed so that it can run during the concurrent phases of CMS.
 4. "Serial Old" is a stop-the-world, mark-sweep-compact collector that uses a single GC thread.
 5. **"CMS"**  (Concurrent Mark Sweep) is a mostly concurrent, low-pause collector.
-6. "Parallel Old" is a compacting collector that uses multiple GC threads.
+6. **"Parallel Old"** is a compacting collector that uses multiple GC threads.
 
-I have been using **ParNew**  (young generation) and [**CMS**](https://docs.oracle.com/javase/9/gctuning/concurrent-mark-sweep-cms-collector.htm#JSGCT-GUID-FF8150AC-73D9-4780-91DD-148E63FA1BFF) (old generation) for **server side applications** where response time and latency are bounded by SLA's and must be kept low. CMS generally does a very good job to concurrently marking objects and stops the world to do **major** GC when the old generation memory is 70% full (this is the default, it can be changed with `-XX:CMSInitiatingOccupancyFraction=70` argument)
+I have been using **ParNew** (young generation) with [**Concurrent Mark Sweep**](https://docs.oracle.com/javase/9/gctuning/concurrent-mark-sweep-cms-collector.htm#JSGCT-GUID-FF8150AC-73D9-4780-91DD-148E63FA1BFF) (old generation) or the **Parallel collectors** for server side applications where response time and latency are bounded by SLA's and must be kept low. CMS does a good job of concurrently marking objects and has shorter major collection pauses. Major GC is triggered when the old generation memory is 70% full (this is the default, it can be changed with `-XX:CMSInitiatingOccupancyFraction=70` argument)
 
-There have been calls that [CMS should be deprecated](http://openjdk.java.net/jeps/291) and the *new* [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) aka **G1** collector be used instead. G1 was first introduced with Java 7.
+Concurrent Mark Sweep (*CMS*), paired with *ParNew*, works really well for server-side applications processing live requests from clients. I have been using it with ~ 10GB of heap memory and it keep response times steady and spikes aren't seen. Some developers I know use Parallel collectors (Parallel Scavenge + Parallel Old) are happy with results.
+
+One important thing to know about the CMS is that there have been [calls to deprecate](http://openjdk.java.net/jeps/291) it and it will probably be deprecated in Java 9. Oracle recommends that the new concurrent collector, the [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) or the **G1**, introduced first with Java, be used instead:
 
 > The G1 collector is a server-style garbage collector, targeted for multi-processor machines with large memories. It meets garbage collection (GC) pause time goals with high probability, while achieving high throughput.
 
-**G1**, unlike other garbage collectors, **works on both old and young generation**. I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't say if it's better than CMS. A quick online search of benchmarks reveals that [CMS performs better](http://blog.novatec-gmbh.de/g1-action-better-cms/) [than G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully. If you'd like to try G1, it can be enabled with:
+**G1** works on both old and young generation. It is optimized for larger heap sizes (~10 GB). I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't yet compare the two. A quick online search of benchmarks reveals that [CMS performs better](http://blog.novatec-gmbh.de/g1-action-better-cms/) [than G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully. If you'd like to try G1, it can be enabled with:
 
 ```
 -XX:+UseG1GC
