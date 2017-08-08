@@ -17,7 +17,7 @@ It's an old joke from the time when Java was *new* and *slow* compared to other 
 
 <!--more-->
 
-For most applications, the default settings of the JVM work fine. But when you start noticing performance issues caused by garbage collection and giving more heap memory isn't possible, you need to tune and optimize the garbage collection. For most developers, it's a **chore**. It requires patience and a good knowledge of how garbage collection works and an understanding of application's behavior. This post is a high-level overview of Java's garbage collection with some examples of troubleshooting performance issues.
+For most applications, the default settings of the JVM work fine. But when you start noticing performance issues caused by garbage collection and giving more heap memory isn't possible, you need to tune and optimize the garbage collection. For most developers, it's a **chore**. It requires patience, good knowledge garbage collection works and an understanding of application's behavior. This post is a high-level overview of Java's garbage collection with some examples of troubleshooting performance issues.
 
 Let's get started.
 
@@ -35,9 +35,9 @@ To *enhance* the garbage collection process, Java (HotSpot JVM, more accurately)
 
 By default, **Eden is bigger** than the two survivor spaces combined. On my Mac OS X, the 64-bit HotSpot JVM, Eden takes about 76% of all the young generation space. All objects are first created here. When Eden is full, a **minor** garbage collection is triggered. All new objects are quickly inspected to check their eligibility for garbage collection. The ones that are dead, that is, aren't referenced (ignoring reference strength for this discussion) from other objects are marked as dead and garbage collected. The **surviving objects are moved to one of the empty 'survivor spaces'**. Which one of two survivor spaces? To answer this question, let's discuss survivor spaces.
 
-The reason for having two survivor spaces is to avoid **memory fragmentation**. Imagine if there was just one survivor space. While you are at it, also imagine survivor space as a contiguous array of memory. When young generation GC runs through the array, it identifies dead objects for removal. This would leave holes in memory where objects previously lived and **compaction** will be needed. To avoid compaction, HotSpot JVM just copies all live objects from the survivor space to the other (empty) survivor space so that there are no holes or empty spaces. While we are discussing compaction, please note that old generation garbage collectors (with the exception of CMS) perform compaction on the heap memory to avoid memory fragmentation.
+The reason for having two survivor spaces is to avoid **memory fragmentation**. Imagine if there was just one survivor space. While you are at it, also imagine survivor space as a contiguous array of memory. When young generation GC runs through the array, it identifies dead objects for removal. This would leave holes in memory where objects previously lived and **compaction** will be needed. To avoid compaction, HotSpot JVM just copies all surviving objects from the survivor space to the other (empty) survivor space so that there are no holes or empty spaces. While we are discussing compaction, please note that *old generation* garbage collectors (with the exception of CMS) perform compaction on the heap memory to avoid memory fragmentation.
 
-In short, minor garbage collections (triggered when Eden is full) **ping-pong** objects from Eden and one of the survivor space (known as the 'from' survivor space in logs) *to* the other (known as the 'to' survivor space). This happens until one of the following happens:
+In short, minor garbage collections (triggered when Eden is full) **ping-pong** live objects from Eden and one of the survivor space (known as the 'from' survivor space in logs) *to* the other (known as the 'to' survivor space). This happens until one of the following happens:
 
 1. Objects reach *maximum tenuring threshold*, in other words, have ping-pong'ed enough times that they aren't young anymore,
 2. There is no room in survivor space to receive newly birthed objects (We'll revisit this later.)
@@ -90,7 +90,7 @@ Heap <b>after</b> GC invocations=6 (full 0):
 
 From the logs, we can see a few things. The first thing to notice is that there have been 5 minor garbage collections before this one (total of 6.) Eden was 100% used which triggered it. One of survivor space is 39% used and as such has some room available. After the garbage collection is over, we can see that Eden went back to 0% and survivor space increased to 59%. This means that **live objects from Eden and survivor space were moved to second survivor space** and dead one's were garbage collected. How can we tell that some dead objects were collected? We can see that Eden is much larger than survivor space (27328K vs 3392K) and since survivor space size only slightly increased, a large number of objects must have been collected. The **old generation space stayed completely empty** before and after the garbage collection (Recall that the *tenuring threshold* was set to 15.)
 
-Let's try an experiment. Let's run an application that is only creating short-lived objects in multiple threads. Based on what we've discussed so far, **none of these objects should go to the old generation**; minor garbage collection should be able to clean them up.
+Let's try an experiment. Let's run an application that is only creating **short-lived** objects in multiple threads. Based on what we've discussed so far, **none of these objects should go to the old generation**; minor garbage collection should be able to clean them up.
 
 ```java
 private static void createManyShortLivedObjects() {
@@ -129,11 +129,11 @@ Heap <b>after</b> GC invocations=1 (full 0):
  concurrent mark-sweep (<u>old</u>) generation total 6848K, used <b>76K</b>
 </pre>
 
-**Not what we predicted**. We can see that this time, the **old generation received objects right after the first minor** garbage collection. We know that these objects are short-lived and tenuring threshold is set to 15 and this is the first collection. What happened is the following: the application created a large number of objects which filled up Eden space. Minor garbage collection ran and tried to collect garbage. However, most of these short-lived objects were **active** during the GC, i.e. were being referenced from a live thread and being processed. The young generation garbage collector had **no choice but to push these objects to the old generation**. This is bad because the objects that got pushed to the old generation were **prematurely aged** and can only be cleaned up by old generation's major garbage collection which usually takes more time.
+**Not what we predicted**. We can see that this time, the **old generation received objects right after the first minor** garbage collection. We know that these objects are short-lived and tenuring threshold is set to 15 and this is the first collection. What happened is the following: the application created a large number of objects which filled up Eden space. Minor garbage collection ran and tried to collect garbage. However, most of these short-lived objects were **active** during the GC, i.e. were being referenced from a live thread and being processed. The young generation garbage collector had **no choice but to push these objects to the old generation**. This is bad because the objects that got pushed to the old generation were **prematurely aged** and can only be cleaned up by old generation's major garbage collection which usually takes more time. With a particular GC algorithm that we'll cover later, *CMS*, major GC is triggered when the old generation memory is 70% full. This default value can be changed with the `-XX:CMSInitiatingOccupancyFraction=70` argument.
 
 How to fix this? There are several ways. One theoretical way is to estimate the number of active short-lived objects and size the young generation appropriately. Let us make the following changes:
 
-- Young Generation by default is 1/3 of the old generation size. Let's change this using the -`XX:NewRatio=1` which gives young generation more memory (~3.4 MB compared to the 3.0 MB the last time.)
+- Young Generation by default is 1/3 of the total heap. Let's change this using the -`XX:NewRatio=1` which gives young generation more memory (~3.4 MB compared to the 3.0 MB the last time.)
 - Also increase the survivor space ratio using the `-XX:SurvivorRatio=1` argument. (~1.6MB each compared to 0.3 MB the last time.)
 
 The problem was fixed. After 8 minor garbage collections, the old generation space was still empty.
@@ -179,15 +179,13 @@ HotSpot JVM allows you to configure different GC algorithms for young and old ge
 5. **"CMS"**  (Concurrent Mark Sweep) is a mostly concurrent, low-pause collector.
 6. **"Parallel Old"** is a compacting collector that uses multiple GC threads.
 
-I have been using **ParNew** (young generation) with [**Concurrent Mark Sweep**](https://docs.oracle.com/javase/9/gctuning/concurrent-mark-sweep-cms-collector.htm#JSGCT-GUID-FF8150AC-73D9-4780-91DD-148E63FA1BFF) (old generation) or the **Parallel collectors** for server side applications where response time and latency are bounded by SLA's and must be kept low. CMS does a good job of concurrently marking objects and has shorter major collection pauses. Major GC is triggered when the old generation memory is 70% full (this is the default, it can be changed with `-XX:CMSInitiatingOccupancyFraction=70` argument)
+Concurrent Mark Sweep (*CMS*), paired with *ParNew*, works really well for server-side applications processing live requests from clients. I have been using it with ~ 10GB of heap memory and it keep response times steady and spikes aren't an issue. Some developers I know use Parallel collectors (*Parallel Scavenge* + *Parallel Old*) and are happy with results.
 
-Concurrent Mark Sweep (*CMS*), paired with *ParNew*, works really well for server-side applications processing live requests from clients. I have been using it with ~ 10GB of heap memory and it keep response times steady and spikes aren't seen. Some developers I know use Parallel collectors (Parallel Scavenge + Parallel Old) are happy with results.
-
-One important thing to know about the CMS is that there have been [calls to deprecate](http://openjdk.java.net/jeps/291) it and it will probably be deprecated in Java 9. Oracle recommends that the new concurrent collector, the [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) or the **G1**, introduced first with Java, be used instead:
+One important thing to know about the CMS is that there have been **[calls to deprecate](http://openjdk.java.net/jeps/291)** it and it will probably happen in Java 9 :'( Oracle recommends that the new concurrent collector, the [Garbage-First](http://docs.oracle.com/javase/7/docs/technotes/guides/vm/G1.html) or the **G1**, introduced first with Java, be used instead:
 
 > The G1 collector is a server-style garbage collector, targeted for multi-processor machines with large memories. It meets garbage collection (GC) pause time goals with high probability, while achieving high throughput.
 
-**G1** works on both old and young generation. It is optimized for larger heap sizes (~10 GB). I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't yet compare the two. A quick online search of benchmarks reveals that [CMS performs better](http://blog.novatec-gmbh.de/g1-action-better-cms/) [than G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully. If you'd like to try G1, it can be enabled with:
+**G1** works on both old and young generation. It is optimized for larger heap sizes (>10 GB). I've not experienced G1 collector first-hand and developers in my team are still using CMS, so I can't yet compare the two. A quick online search reveals benchmarks showing [CMS outperforming](http://blog.novatec-gmbh.de/g1-action-better-cms/) [G1](https://dzone.com/articles/g1-vs-cms-vs-parallel-gc). I'd tread carefully. If you'd like to try G1, it can be enabled with:
 
 ```
 -XX:+UseG1GC
