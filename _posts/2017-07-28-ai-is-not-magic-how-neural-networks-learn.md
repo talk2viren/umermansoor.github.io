@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I claimed that "*AI is not magic.*" In this blog post, my goal is to discuss how neural networks learn, and show that AI isn't a crystal ball or magic, just science and some very slick mathematics. This is a *high level intro* and assumes that you are familiar with neural networks.
+In my previous [blog post](https://codeahoy.com/2017/07/27/ai-winter-is-coming/), I claimed that "*AI is not magic.*" In this blog post, my goal is to discuss how neural networks learn, and show that AI isn't a crystal ball or magic, just science and some very slick mathematics. I'll keep this *high level*, but assume that you know what an artificial neuron is and have at least little bit knowledge of neural networks.
 
 Let's start with an example. Suppose we are building an app to [identify hot dogs](https://www.theverge.com/2017/6/26/15876006/hot-dog-app-android-silicon-valley). Take a picture of a hot dog and the app will tell you if it's a "hotdog". Give it a picture of something else like a shoe and it will tell you that it's "not hotdog"
 
@@ -13,13 +13,15 @@ Let's start with an example. Suppose we are building an app to [identify hot dog
 
 <!--more-->
 
-To identify hot dogs, we choose to build a neural network and train it over 1,000 images of hot dogs of different varities and various settings, New York vs Chicago, with and without relish, half eaten and so on. We also train the neural network over 5,000 images of various non hotdog objects like shoes, hamburgers, burrito, human legs to name a few. Our goal is to train the neural network tell "hotdog" apart from "not hotdog" when it's given an image it has never seen before.
+To identify hot dogs, let's build a neural network and **train** it with 1,000 images of hot dogs of different varieties and backgrounds. New York vs Chicago, with and without relish, half eaten on a beach chair, etc. We'll also train the neural network over 5,000 images of various non hotdog objects like shoes, hamburgers, burrito, human legs to name a few. Our goal is to train the neural network to tell "hotdog" apart from "not hotdog" when it's given an image it has never seen before.
 
-Imagine our neural network consists of few layers of neurons. The actual number doesn't matter.
+Imagine the neural network we cook up consists of few layers of neurons. The actual number doesn't matter.
 
 ![neural_network]({{ site.url }}/img/blogs/neural_network.svg.png)
 
-The neurons have weights and biases, which allow a neuron to change it's output for the same input values. The **goal is to find the best set of weights and biases** over our training data. What constitutes the best set of weight and biases? The one which gives the **minimum error**. To make sense of it all, let's define a an error function of weights and biases. Let's give it a fancy name: the cost function.
+The individual neurons have *weights* and *biases*. These allow neurons to **change their output** for the same input values. This is arguably the **most important feature** of an artificial neuron and is the key to its *learning*. If you are familiar with logic gates like NAND, NOT, you'd know that logic gates always produce the same output for same inputs. Unlike logic gates, artificial neurons can change their outputs for the same inputs because of weights and biases.
+
+To train our neural network to identify hot dogs, our goal is to find the **best combination of weights and biases** over our training data. What constitutes the best set of weight and biases? The one which gives the **least error** on our training set of images. To make sense of it all, let's define a an error function of weights and biases. Let's give it a fancy name: the cost function.
 
 > Cost Function (weights,biases) = # of images incorrectly identified / Total # of images
 
