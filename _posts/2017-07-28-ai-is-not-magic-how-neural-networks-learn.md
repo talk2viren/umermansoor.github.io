@@ -33,9 +33,9 @@ This particular type of neural network is called feedforward because information
 
 Back to weights and biases. The ability to change output for the same input values is arguably the most important feature of an artificial neuron (and by extension, the neural network) and it is the **key to its learning**. The goal of learning is to *find* the best **combination of weights and biases** for the neural network. Let's express this objective formally so we can measure it and give it a name: **cost function**:
 
-> Cost Function (weights,biases) = # of images incorrectly identified / Total # of images
+> Cost Function (weights,biases) **=** (# of images incorrectly identified) **÷** (Total # of images)
 
-Great. Now we can measure the performance with a clear objective: **find weights and biases which minimize the cost function**. How to find *best* weights and biases? One way is to just **randomly** pick them, run neural network over entire training data (6,000 images) and calculate the cost function which is the ratio of images incorrectly identified and the total number of images. Keep repeating until we've found a low enough value of the cost function that we like. Let's say we want to stop when the neural network has a success rate of 99%. When we reach this goal, the combination of weights and biases have *detected some similarity between hotdogs* and could identify new hotdog images. Let's see how this would work. To keep it simple, suppose we are only doing this for 2 weights and biases.
+Great. Now we can measure the performance with a clear objective: **find weights and biases which minimize the cost function**. How to find *best* weights and biases? One way is to just **randomly** pick them, run neural network over entire training data (6,000 images) and calculate the cost function which is the ratio of images incorrectly identified and the total number of images. Keep repeating until we've found a low enough value of the cost function that we like. Let's say we want to stop when the neural network has a success rate of 99%. When we reach this goal, the combination of weights and biases *reflect some similarity between hotdogs* and our neural network can identify never seen before hotdog images. Let's try it out. To keep it simple, suppose we are only doing this for 2 weights and biases.
 
 **Iteration 1**: Weight1 = 1, Weight2 = 3, Bias1 = 1, Bias2 = 4. Let's say it correctly classifies 300 out of 500 images of hot dog correctly. We'll say the error rate is 200/500 = 40%
 
@@ -55,7 +55,7 @@ Of course, there is much, much more happening under the hood. If you are interes
 
 Let's revisit our cost function:
 
-> Cost Function (weights,biases) = # of images incorrectly identified / Total # of images
+> Cost Function (weights,biases) **=** (# of images incorrectly identified) **÷** (Total # of images)
 
 This cost function is too simple and isn't practical for gradient descent. Gradient descent cannot make incremental updates to weights and biases to minimize it. We need a **smooth** cost function. In practice, people usually use a quadratic cost function also known as the *mean squared error* (MSE).  
 
