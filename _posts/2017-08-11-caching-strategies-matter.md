@@ -21,9 +21,9 @@ A caching strategy for Top-10 leaderboard system for mobile games will be very d
 
 ## Cache-Aside
 
-This is perhaps the most commonly used caching approach, at least in the projects that I worked on. The cache sits on the side and the application directly talks to both the cache and the database.
+This is perhaps the most commonly used caching approach, at least in the projects that I worked on. The cache sits on the *side* and the application directly talks to both the cache and the database.
 
-![cache-aside]({{ site.url }}/img/blogs/cache-aside.png)
+![cache-aside]({{ site.url }}/img/cache-aside.png)
 
 Here's what's happening:
 1. The application first checks the cache.
@@ -42,7 +42,7 @@ When cache-aside is used, the most common write strategy is to write data to the
 
 Read-through cache sits in-line with the database. When there is a cache miss, it loads missing data from database, populates the cache and returns it to the application.
 
-![read-through]({{ site.url }}/img/blogs/read-through.png)
+![read-through]({{ site.url }}/img/read-through.png)
 
 Both cache-aside and read-through strategies load data lazily, that is, only when it is first read.
 
@@ -59,7 +59,7 @@ Read-through caches work best for **read-heavy** workloads when the same data is
 
 In this write strategy, data is first written to the cache and then to the database. The cache sits in-line with the database and writes always go *through* the cache to the main database.
 
-![write-through]({{ site.url }}/img/blogs/write-through.png)
+![write-through]({{ site.url }}/img/write-through.png)
 
 #### Use Cases, Pros and Cons
 
@@ -79,7 +79,7 @@ Write-around can be combine with read-through and provides good performance in s
 
 Here, the application writes data to the cache which acknowledges immediately and after some *delay*, it writes the data *back* to the database.
 
-![write-back]({{ site.url }}/img/blogs/write-back.png)
+![write-back]({{ site.url }}/img/write-back.png)
 
 This is sometimes called write-behind as well.
 
@@ -87,14 +87,14 @@ This is sometimes called write-behind as well.
 
 Write back caches improve the write performance and are good for **write-heavy** workloads. When combined with read-through, it works good for mixed workloads, where the most recently updated and accessed data is always available in cache.
 
-It's resilient to database failures and can tolerate some database downtime. If batching or coalescing is supported, it can reduce overall writes to the database, which decreases the load and **reduces costs**, if the database provider charges by number of requests e.g. DynamoDB. Keep in mind that **DAX is write-through** so you won't see any reductions in costs if your application is write heavy. (When I first heard of DAX, this was my first question - DynamoDB can be very expensive, but damn you Amazon)
+It's resilient to database failures and can tolerate some database downtime. If batching or coalescing is supported, it can reduce overall writes to the database, which decreases the load and **reduces costs**, if the database provider charges by number of requests e.g. DynamoDB. Keep in mind that **DAX is write-through** so you won't see any reductions in costs if your application is write heavy. (When I first heard of DAX, this was my first question - DynamoDB can be very expensive, but damn you Amazon.)
 
-The main drawback is that if there's a cache failure, the data may be permanently lost. Some developers use Redis for both cache-aside and write-back to better absorb spikes during peak load.
+Some developers use Redis for both cache-aside and write-back to better absorb spikes during peak load. The main disadvantage is that if there's a cache failure, the data may be permanently lost.
 
 Most relational databases storage engines (i.e. InnoDB) have write-back cache enabled by default where data is first written to memory and eventually flushed to the disk.
 
 ### Summary
 
-In this post, we explored several caching strategies and how different read and write strategies can be **combined**, according to data access patterns, to get the most increase in performance. On the flip side, if the wrong caching strategy is chosen, you may not see the full benefits. For example, if you choose write-through / read-through when you actually should be picked write-around / read-through (because data that is written is only accessed less than 5% of the time), you'll have useless junk in your cache but if the cache is big enough, it may be fine. But for high-throughput systems, when memory is never big enough or where server costs are a huge concern, the right strategy, to squeeze the best performance, matters.
+In this post, we explored several caching strategies and how different read and write strategies can be **combined**, according to data access patterns, to get the most increase in performance. On the flip side, if the wrong caching strategy is chosen, you may not see the full benefits. For example, if you choose write-through / read-through when you actually should be picked write-around / read-through (because data that is written is only accessed less than 5% of the time), you'll have useless junk in your cache. But if the cache is big enough, it may be fine. But for high-throughput systems, when memory is never big enough or where server costs are a huge concern, the right strategy, to squeeze the best performance, matters.
 
-I hope you enjoyed this post. Let me know in the comments section below what type of caching strategy you used in your application. Until next time.
+I hope you enjoyed this post. Let me know in the comments section below which type of caching strategies you used in your projects. Until next time.
