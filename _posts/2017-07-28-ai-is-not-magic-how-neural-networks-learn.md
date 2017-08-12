@@ -13,7 +13,7 @@ Let's start with a *hypothetical scenario*. Suppose we are building an app to [i
 
 <!--more-->
 
-To recognize images, we choose to implement a popular machine learning algorithm called the *neural network*. This decision was made after reading an online article which talked about how neural networks can learn to recognize objects by training on lots of labelled examples. Once trained, it can start identifying images it has never seen before. We go ahead and obtain a **training set** of *6000* images gathered from online sources. *1000* images of different types of hotdogs: New York vs Chicago, ketchup, no ketchup, hotdogs on a grill, etc. The other *5000* images are of various non-hotdog objects: shoes, hamburgers, burrito, human legs. Now all that remains is to build our neural network.
+To recognize images, we choose to implement a popular machine learning algorithm called the *neural network*. (In this hypothetical scenario) This decision was made after reading an online article which talked about how neural networks can learn to recognize objects by training on lots of labelled examples. Once trained, it can start identifying images it has never seen before. We go ahead and obtain a **training set** of *6000* images gathered from online sources. *1000* images of different types of hotdogs: New York vs Chicago, ketchup, no ketchup, hotdogs on a grill, etc. The other *5000* images are of various non-hotdog objects: shoes, hamburgers, burrito, human legs. Now all that remains is to build our neural network.
 
 To understand neural networks, we must first understand its elementary building block: the artificial neuron.
 
