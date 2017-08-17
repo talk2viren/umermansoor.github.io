@@ -32,7 +32,7 @@ Here's what's happening:
 
 #### Use Cases, Pros and Cons
 
-Cache-aside caches are usually general purpose and work best for **read-heavy workloads**. **Memcached** and Redis are widely used. Systems using cache-aside are **resilient to cache failures**. If the cache cluster goes down, the system can still operate by going directly to the database. (Although, it doesn't help much if cache goes down during peak load. Response times can become terrible and in worst case, the database can stop working.)
+Cache-aside caches are usually general purpose and work best for **read-heavy workloads**. *Memcached* and *Redis* are widely used. Systems using cache-aside are **resilient to cache failures**. If the cache cluster goes down, the system can still operate by going directly to the database. (Although, it doesn't help much if cache goes down during peak load. Response times can become terrible and in worst case, the database can stop working.)
 
 Another benefit is that the data model in cache can be different than the data model in database. E.g. the response generated as a result of multiple queries can be stored against some request id.
 
@@ -44,13 +44,13 @@ Read-through cache sits in-line with the database. When there is a cache miss, i
 
 ![read-through]({{ site.url }}/img/read-through.png)
 
-Both cache-aside and read-through strategies load data lazily, that is, only when it is first read.
+Both cache-aside and read-through strategies load data **lazily**, that is, only when it is first read.
 
 #### Use Cases, Pros and Cons
 
 While read-through and cache-aside are very similar, there are at least two key differences:
 
-1. In cache-aside, the application is responsible for fetching data from the database and populating the cache. In read-through, this logic is usually supported by the library or stand-alone caching provider.
+1. In cache-aside, the application is responsible for fetching data from the database and populating the cache. In read-through, this logic is usually supported by the library or stand-alone cache provider.
 2. Unlike cache-aside, the data model in read-through cache cannot be different than that of the database.
 
 Read-through caches work best for **read-heavy** workloads when the same data is requested many times. For example, a news story. The disadvantage is that when the data is requested the first time, it always results in cache miss and incurs the extra penalty of loading data to the cache. Developers deal with this by '*warming*' or 'pre-heating' the cache by issuing queries manually. Just like cache-aside, it is also possible for data to become inconsistent between cache and the database, and solution lies in the write strategy, as we'll see next.
@@ -67,7 +67,7 @@ On its own, write-through caches don't seem to do much, in fact, they introduce 
 
 [DynamoDB Accelerator (DAX)](https://aws.amazon.com/dynamodb/dax/) is a good example of read-through / write-through cache. It sits inline with DynamoDB and your application. Reads and writes to DynamoDB can be done through DAX. (Side note: If you are planning to use DAX, please make sure you familiarize yourself with [its data consistency model](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.consistency.html) and how it interplays with DynamoDB.)
 
-### Write-Around
+## Write-Around
 
 Here, data is written directly to the database and only the data that is read makes it way into the cache.
 
@@ -91,10 +91,12 @@ It's resilient to database failures and can tolerate some database downtime. If 
 
 Some developers use Redis for both cache-aside and write-back to better absorb spikes during peak load. The main disadvantage is that if there's a cache failure, the data may be permanently lost.
 
-Most relational databases storage engines (i.e. InnoDB) have write-back cache enabled by default where data is first written to memory and eventually flushed to the disk.
+Most relational databases storage engines (i.e. InnoDB) have write-back cache enabled by default in their internals. Queries are first written to memory and eventually flushed to the disk.
 
 ### Summary
 
-In this post, we explored several caching strategies and saw how to choose the right read/write combination to get the most out of it. If the wrong caching strategy is used, one that doesn't match your data or the access patterns, you may not see the full benefits. For example, if you choose write-through / read-through when you actually should be picked write-around / read-through (because data that is written is only accessed less than 5% of the time), you'll have useless junk in your cache. Arguably, if the cache is big enough, it may be fine. But in many real-world, high-throughput systems, when memory is never big enough and server costs are a concern, the right strategy to reduce response times, matters.
+In this post, we explored several caching strategies and discussed how to **choose the right read/write cache combination**. In short, you evaluate your system's read and write patterns, and pick the most appropriate strategies. 
+
+What happens if you choose the wrong strategy or combination? One that doesn't match your data or the access patterns? You may introduce additional latency and not see the *full benefits*. For example, if you choose write-through/read-through when you actually should be picked write-around/read-through (because data that is written is only accessed less than 5% of the time), you'll have useless junk in your cache. Arguably, if the cache is big enough, it may be fine. But in many real-world, high-throughput systems, when memory is never big enough and server costs are a concern, the right strategy, matters.
 
 I hope you enjoyed this post. Let me know in the comments section below which type of caching strategies you used in your projects. Until next time.
