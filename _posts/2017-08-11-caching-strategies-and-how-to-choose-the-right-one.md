@@ -95,8 +95,8 @@ Most relational databases storage engines (i.e. InnoDB) have write-back cache en
 
 ### Summary
 
-In this post, we explored several caching strategies and discussed how to **choose the right read/write cache combination**. In short, you evaluate your system's read and write patterns, and pick the best ones. 
+In this post, we explored different caching strategies and their pros and cons. In practice, carefully evaluate your goals, understand data access (read/write) patterns and choose the best strategy or a combination.
 
-What happens if you choose the wrong strategy or combination? One that doesn't match your data or the access patterns? You may introduce additional latency, or at the very least, not see the *full benefits*. For example, if you choose *write-through/read-through* when you actually should be using *write-around/read-through* (written data is accessed less frequently), you'll have useless junk in your cache. Arguably, if the cache is big enough, it may be fine. But in many real-world, high-throughput systems, when memory is never big enough and server costs are a concern, the right strategy, matters.
+What happens if you choose wrong? One that doesn't match your goals or access patterns? You may introduce additional latency, or at the very least, not see the *full benefits*. For example, if you choose *write-through/read-through* when you actually should be using *write-around/read-through* (written data is accessed less frequently), you'll have useless junk in your cache. Arguably, if the cache is big enough, it may be fine. But in many real-world, high-throughput systems, when memory is never big enough and server costs are a concern, the right strategy, matters.
 
 I hope you enjoyed this post. Let me know in the comments section below which type of caching strategies you used in your projects. Until next time.
