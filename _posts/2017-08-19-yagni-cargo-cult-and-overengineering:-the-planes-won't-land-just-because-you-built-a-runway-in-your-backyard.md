@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 It was April. Year was probably was 2010. The cold, snowy winter was finally coming to an end and the spring was almost in the air. I was preparing for my **final exams**. The review lectures were going on for the **RDBMS course** that I was enrolled in at my [university](https://www.ucalgary.ca/utoday/issue/2013-12-23/undergraduate-viewbook-and-admission-package-receive-marcom-awards).
 
-![uofc]({{ site.url }}/img/blog/uofc_winter_campus-0006.jpg)
+![uofc]({{ site.url }}/img/blogs/uofc_winter_campus-0006.jpg)
 
 <!--more-->
 
@@ -103,7 +103,7 @@ Just like the South Sea natives who built primitive runways, prayed and performe
 
 > In the South Seas there is a cargo cult of people. During the war they saw airplanes land with lots of good materials, and they want the same thing to happen now. So they’ve arranged to make things like runways, to put fires along the sides of the runways, to make a wooden hut for a man to sit in, with two wooden pieces on his head like headphones and bars of bamboo sticking  out like antennas — he’s the controller — and they wait for the airplanes to land. They’re doing everything right. The form is perfect. It looks exactly the way it looked before. But it doesn’t work. No airplanes landed.
 
-![cargo-cult]({{ site.url }}/img/blog/cargo-cult.jpeg)
+![cargo-cult]({{ site.url }}/img/blogs/cargo-cult.jpeg)
 
 It reminded me of the time when we took a perfectly good monolith and created service-oriented architecture (SOA). **It didn't work. No planes landed**.
 
@@ -118,7 +118,7 @@ Cargo-cult engineering just doesn't work. You are not Google. What worked for th
 
 20 petabytes is just enormous. In terms of the number of disk drives, here's what half of that, 10 petabytes, would [look](https://www.backblaze.com/blog/10-petabytes-visualized/) like:
 
-![10petabytes]({{ site.url }}/img/blog/10petabytes.jpg)
+![10petabytes]({{ site.url }}/img/blogs/10petabytes.jpg)
 
 To avoid falling in the cargo-cult trap, I have learned to do the following:
 
