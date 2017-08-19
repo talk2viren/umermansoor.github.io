@@ -148,4 +148,4 @@ Back to the guy I interviewed. It's highly unlikely, even for a small startup, t
 
 You may have a great reasons to use MapReduce or microservices. What matters is how you arrive at your decision. Did you fell victim to the hype-cycle and picked up the technology just to jump on the bandwagon? Or did you carefully analyze the problem, and picked the *best* tool that gets the job done and you and your team can deal with it?
 
-As the professor said: "Pick the right tool for the job." Don't build Formula One cars when you need a Corolla.
+As the professor said: "Pick the right tool for the job." I'll also add: don't build Formula One cars when you need a Corolla.
