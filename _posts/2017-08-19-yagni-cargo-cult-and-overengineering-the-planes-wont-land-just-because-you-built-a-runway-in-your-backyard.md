@@ -64,7 +64,7 @@ I'm not saying microservices architecture is bad. It's beneficial, **but only to
 >
 So my primary guideline would be **don't even consider microservices unless you have a system that's too complex to manage as a monolith**. The majority of software systems should be built as a single monolithic application. Do pay attention to good modularity within that monolith, but don't try to separate it into separate services.
 
-Martin's been generous. I believe that only very few, very large organizations really benefit from microservices. Netflix is one of such organizations. Their system grew too large and too complex to justify switching to microservices.
+Martin's being generous. I believe that only very few, very large organizations really benefit from microservices. Netflix is one of such organizations. Their system grew too large and too complex to justify switching to microservices.
 
 In almost all cases, you can't go wrong by building a monolith first. You break your architecture into services-oriented or... microservices when the benefits outweigh the complexity.
 
@@ -114,7 +114,7 @@ Whatever the reasons:
 - technology that could keep up with the projected 5000% YoY company growth: YAGNI.
 - latest tools to convince people that you're a *proper* SF bay area tech company.
 
-Cargo-cult engineering just doesn't work. You are not Google. What worked for them, didn't work for a 9-person bay area startup. Google actually needed MapReduce because they wanted to regenerate indexes for the entire World Wide Web, or something like that. They needed fault tolerance from thousands of commodity servers. They had **[20 petabytes of data](https://www.usenix.org/legacy/event/osdi08/tech/full_papers/zaharia/zaharia_html/index.html)** to process.
+Cargo-cult engineering just doesn't work. You are not Google. What works for them, may not work for your much smaller company. Google actually needed MapReduce because they wanted to regenerate indexes for the entire World Wide Web, or something like that. They needed fault tolerance from thousands of commodity servers. They had **[20 petabytes of data](https://www.usenix.org/legacy/event/osdi08/tech/full_papers/zaharia/zaharia_html/index.html)** to process.
 
 20 petabytes is just enormous. In terms of the number of disk drives, here's what half of that, 10 petabytes, would [look](https://www.backblaze.com/blog/10-petabytes-visualized/) like:
 
@@ -123,13 +123,13 @@ Cargo-cult engineering just doesn't work. You are not Google. What worked for th
 To avoid falling in the cargo-cult trap, I have learned to do the following:
 
 - Focus on the problem first, not the solution. Don't pick any tool until you have fully understood what you are trying to achieve or solve. Don't give up solving the actual problem and make it all about learning and using the shinny new tech.
-- Keep it simple. It's an over-used term, but software developers just don't get it. Keep. It. Simple.
+- Keep it simple. It's an over-used term, but software developers *still* just don't get it. Keep. It. Simple.
 - If you are leaning towards something that Twitter or Google uses, do your homework and understand the real reasons why they picked that technology.
 - When thinking of growth, understand that the chances of your startup growing to be the size of Facebook are slim to none. Even if your odds are huge, is it really worth all this effort to set-up a 'world-class foundation' now vs doing it later?
 - Weigh operational burden and complexity. Do you really need multi-region replication for fault-tolerance in return of making your DevOps life 2x more difficult?
-- Be selfish. Do you want to be woken up in the middle of night because something, somewhere stopped working? There is nothing wrong with learning the new JavaScript framework. Create a new project and publish it on GitHub. Don't build production systems just because you like it.
-- Think about people who'd have to live with your mess. Think about your legacy. Do people remember you as the guy who built rock-solid systems or someone who left a crazy mess behind?
-- Share your ideas with experts and veterans and let them criticize. Identify people in other teams who you respect and who'd disagree freely.
+- Be selfish. Do you want to be woken up in the middle of night because something, somewhere stopped working? There is nothing wrong with learning the new JavaScript framework from last week. Create a new project and publish it on GitHub. Don't build production systems just because you like it.
+- Think about people who'd have to live with your mess. Think about your **legacy**. Do people remember you as the guy who built rock-solid systems or someone who left a crazy mess behind?
+- Share your ideas with experts and veterans and let them **criticize**. Identify people in other teams who you respect and who'd disagree freely.
 - Don't jump to conclusions on the results of quick experiments. *HelloWorld* prototypes of anything is easy. Real-life is very different from *HelloWorld*.
 
 ---
@@ -146,6 +146,6 @@ Back to the guy I interviewed. It's highly unlikely, even for a small startup, t
 
 ---
 
-You may have a great reasons to use MapReduce or microservices. What matters is how you arrive at your decision. Did you fell victim to the hype-cycle and picked up the technology just to jump on the bandwagon? Or did you carefully analyze the problem, and picked the *best* tool that gets the job done and you and your team can deal with it?
+You may have great reasons to use MapReduce or microservices. What matters is how you arrive at your decision. Did you fell victim to the hype-cycle and picked up the technology just to jump on the bandwagon? Or did you carefully analyze the problem, and picked the *best* tool that gets the job done and you and your team can deal with it?
 
 As the professor said: "Pick the right tool for the job." I'll also add: don't build Formula One cars when you need a Corolla.
