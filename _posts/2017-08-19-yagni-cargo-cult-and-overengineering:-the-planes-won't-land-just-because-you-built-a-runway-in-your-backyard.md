@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Yagni, Cargo Cult and Overengineering: the Planes Won't Land Just Because You Built a Runway in Your Backyard
+title: Yagni, Cargo Cult and Overengineering - the Planes Won't Land Just Because You Built a Runway in Your Backyard
 comments: True
 excerpt_separator: <!--more-->
 ---
