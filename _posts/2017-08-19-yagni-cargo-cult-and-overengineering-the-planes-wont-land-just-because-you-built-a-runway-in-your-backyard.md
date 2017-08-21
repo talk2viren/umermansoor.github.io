@@ -13,7 +13,7 @@ It was April. Year was probably was 2010. The cold, snowy winter was finally com
 
 Around the same time, I had started hearing and reading about the shiny, new technology that was going to change the way we use databases. The *NoSQL* movement was gaining momentum. I was reading blogs about how MongoDB is big time outperforming ancient, [non web scale](https://www.youtube.com/watch?v=b2F-DItXtZs) relational databases.
 
-After the lecture, being a smart-ass that I'm, I asked my professor:
+After the lecture, being a smart-ass that I was, I asked my professor:
 
 >
 *Me:* So, between RDBMS and *NoSQL* databases, which one do you think is the best?
