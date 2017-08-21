@@ -11,7 +11,7 @@ It was April. Year was probably was 2010. The cold, snowy winter was finally com
 
 <!--more-->
 
-Around the same time, I had started hearing and reading about the shinny, new technology that was going to change the way we use databases. The *NoSQL* movement was gaining momentum. I was reading blogs about how MongoDB is big time outperforming ancient, [non web scale](https://www.youtube.com/watch?v=b2F-DItXtZs) relational databases.
+Around the same time, I had started hearing and reading about the shiny, new technology that was going to change the way we use databases. The *NoSQL* movement was gaining momentum. I was reading blogs about how MongoDB is big time outperforming ancient, [non web scale](https://www.youtube.com/watch?v=b2F-DItXtZs) relational databases.
 
 After the lecture, being a smart-ass that I'm, I asked my professor:
 
@@ -105,7 +105,7 @@ Just like the South Sea natives who built primitive runways, prayed and performe
 
 ![cargo-cult]({{ site.url }}/img/blogs/cargo-cult.jpeg)
 
-It reminded me of the time when we took a perfectly good monolith and created service-oriented architecture (SOA). **It didn't work. No planes landed**.
+It reminded me of the time when we took a perfectly good monolith and created service-oriented architecture (SOA). **It didn't work. The planes didn't land**.
 
 Whatever the reasons:
 - *not wanting to be left out*: the new Javascript framework from this week will be the next hottest thing.
@@ -114,7 +114,7 @@ Whatever the reasons:
 - technology that could keep up with the projected 5000% YoY company growth: YAGNI.
 - latest tools to convince people that you're a *proper* SF bay area tech company.
 
-Cargo-cult engineering just doesn't work. You are not Google. What works for them, may not work for your much smaller company. Google actually needed MapReduce because they wanted to regenerate indexes for the entire World Wide Web, or something like that. They needed fault tolerance from thousands of commodity servers. They had **[20 petabytes of data](https://www.usenix.org/legacy/event/osdi08/tech/full_papers/zaharia/zaharia_html/index.html)** to process.
+Cargo-cult engineering just doesn't work. You are not Google. What works for them will most likely not work for your much, much smaller company. Google actually needed MapReduce because they wanted to regenerate indexes for the entire World Wide Web, or something like that. They needed fault tolerance from thousands of commodity servers. They had **[20 petabytes of data](https://www.usenix.org/legacy/event/osdi08/tech/full_papers/zaharia/zaharia_html/index.html)** to process.
 
 20 petabytes is just enormous. In terms of the number of disk drives, here's what half of that, 10 petabytes, would [look](https://www.backblaze.com/blog/10-petabytes-visualized/) like:
 
@@ -122,7 +122,7 @@ Cargo-cult engineering just doesn't work. You are not Google. What works for the
 
 To avoid falling in the cargo-cult trap, I have learned to do the following:
 
-- Focus on the problem first, not the solution. Don't pick any tool until you have fully understood what you are trying to achieve or solve. Don't give up solving the actual problem and make it all about learning and using the shinny new tech.
+- Focus on the problem first, not the solution. Don't pick any tool until you have fully understood what you are trying to achieve or solve. Don't give up solving the actual problem and make it all about learning and using the shiny new tech.
 - Keep it simple. It's an over-used term, but software developers *still* just don't get it. Keep. It. Simple.
 - If you are leaning towards something that Twitter or Google uses, do your homework and understand the real reasons why they picked that technology.
 - When thinking of growth, understand that the chances of your startup growing to be the size of Facebook are slim to none. Even if your odds are huge, is it really worth all this effort to set-up a 'world-class foundation' now vs doing it later?
@@ -146,6 +146,6 @@ Back to the guy I interviewed. It's highly unlikely, even for a small startup, t
 
 ---
 
-You may have great reasons to use MapReduce or microservices. What matters is how you arrive at your decision. Did you fell victim to the hype-cycle and picked up the technology just to jump on the bandwagon? Or did you carefully analyze the problem, and picked the *best* tool that gets the job done and you and your team can deal with it?
+You may have great reasons to use MapReduce or SOA. What matters is *how* you arrive at your decision. Whether by careful, sane thought or by jumping on the bandwagon and cargo-cult'ing.
 
-As the professor said: "Pick the right tool for the job." I'll also add: don't build Formula One cars when you need a Corolla.
+As my professor said: "*Pick the right tool for the job*." I'll also add: **don't build Formula One cars when you need a Corolla**.
