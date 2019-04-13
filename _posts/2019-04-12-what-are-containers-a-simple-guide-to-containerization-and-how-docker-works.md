@@ -36,7 +36,7 @@ Let's put everything that we have learned so far and create and run a Docker con
 
 We'l start where all Docker projects start. By creating a file called `Dockerfile`. This file contains instructions that tell Docker how to create an *image* that's used for creating and running containers. Since, we didn't discuss images, let's take a look at the [official definition](https://docs.docker.com/get-started/#images-and-containers):
 
-> An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files. A�container�is a runtime instance of an image
+> An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files. A?container?is a runtime instance of an image
 
 Put simply, when you ask Docker to run a container, you give it an *image* which contains:
 
