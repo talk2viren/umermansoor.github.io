@@ -13,7 +13,7 @@ It was April. Year was probably was 2010. The cold, snowy winter was finally com
 
 Around the same time, I had started hearing and reading about the shiny, new technology that was going to change the way we use databases. The *NoSQL* movement was gaining momentum. I was reading blogs about how MongoDB is big time outperforming ancient, [non web scale](https://www.youtube.com/watch?v=b2F-DItXtZs) relational databases.
 
-After the lecture, being a smart-ass that I was, I asked my professor:
+After the lecture, I asked my professor:
 
 >
 *Me:* So, between RDBMS and *NoSQL* databases, which one do you think is the best?
@@ -26,11 +26,9 @@ After the lecture, being a smart-ass that I was, I asked my professor:
 >
 *Me:* But MySQL can't really scale.
 >
-*Professor:* How do you think we got this far? Send me an email and I'll send you some papers and practical uses of MySQL handling very high load.
+*Professor:* How do you think we got this far? Send me an email and I'll send you some papers and practical uses in the industry.
 
-SQL was hard for my brain, especially the joins. I loved NoSQL. Simple *key->value* model without any joins! Stone-aged RDBMS systems that were designed in 1960's were simply not enough to keep up with modern demands. I had lost all interest in RDBMS and predicted they'll just die off in the next few years.
-
-I never emailed my professor.
+SQL was hard for my brain, especially the joins. I loved NoSQL. Simple *key->value* model without any joins! RDBMS systems that were designed in 1960's were simply not enough to keep up with modern demands. I had lost all interest in RDBMS and predicted they'll just fade off in the next few years.
 
 ---
 
@@ -52,19 +50,19 @@ A grey San Francisco afternoon. I'm conducting an on-site interview. Masters deg
 >
 *Guy:* We built the system using the *microservices* architecture. We had lots of small services which made our life really easy...
 >
-*Me:* Go on...
+*Me:* Tell me more about it
 >
 *Guy:* Data was written to the BI system through a *Kafka* cluster. *Hadoop* and *MapReduce* system was built to process data for analytics. The system was super scalable.
 
 I pressed him to tell me drawbacks of microservices architecture and problems it introduces. The guy tried to hand-wave his way through and was convinced, just like I was in 2010 about NoSQL databases, that there are absolutely no issues with microservices architecture.
 
-I'm not saying microservices architecture is bad. It's beneficial, **but only to a few organizations** in the world. Organizations who have very complex systems that justify the operational burden, **the overhead**, it introduces. Martin Fowler, who coined the term microservices, warns us of the "[microservices premium](https://martinfowler.com/bliki/MicroservicePremium.html)":
+I'm not saying microservices architecture is bad. It has its pros and cons. Organizations who have very complex systems that justify the operational burden, **the overhead**, it introduces. Martin Fowler, who coined the term microservices, warns us of the "[microservices premium](https://martinfowler.com/bliki/MicroservicePremium.html)":
 
 > The fulcrum of whether or not to use microservices is the complexity of the system you're contemplating. **The microservices approach is all about handling a complex system, but in order to do so the approach introduces its own set of complexities**. When you use microservices you have to work on automated deployment, monitoring, dealing with failure, eventual consistency, and other factors that a distributed system introduces. There are well-known ways to cope with all this, but it's extra effort, and nobody I know in software development seems to have acres of free time.
 >
 So my primary guideline would be **don't even consider microservices unless you have a system that's too complex to manage as a monolith**. The majority of software systems should be built as a single monolithic application. Do pay attention to good modularity within that monolith, but don't try to separate it into separate services.
 
-Martin's being generous. I believe that only very few, very large organizations really benefit from microservices. Netflix is one of such organizations. Their system grew too large and too complex to justify switching to microservices.
+Netflix is a great example. Their system grew too large and too complex to justify switching to microservices.
 
 In almost all cases, you can't go wrong by building a monolith first. You break your architecture into services-oriented or... microservices when the benefits outweigh the complexity.
 
