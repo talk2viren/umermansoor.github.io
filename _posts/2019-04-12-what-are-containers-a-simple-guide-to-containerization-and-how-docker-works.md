@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Are Containers? Understanding Containerization and How Docker Works
+title: What Are Containers? A Simple Guide to Containerization and How Docker Works
 comments: True
 excerpt_separator: <!--more-->
 ---
@@ -18,8 +18,8 @@ Containers provide a way to install and run your applications in isolated enviro
 
 This might sound familiar. The concept is similar to *virtual machines*. But there’s a a key difference: containers use a very different, light-weight technique to achieve resource isolation. The technique used by containers *exploits* features of the underlying Linux kernel* as opposed to [hypervisor](https://en.wikipedia.org/wiki/Hypervisor) based approach taken by virtual machines. In other words, containers call Linux commands to allocate and isolate a set of resources and then runs your application in this space. Let’s take a quick look at two such features:
 
-##### 1. Namespaces
-I’m over simplifying but [Linux namespaces](http://man7.org/linux/man-pages/man7/namespaces.7.html), essentially allow users to isolate resources like CPU, between independent processes. A process’s access and visibility are limited to its namespace. So users can run processes in one namespace without ever having to worry about conflicting with processes running inside another namespace. Processes can even have the same PID on the same machine within different containers. Likewise, applications in two different containers can use port 80 without conflicting with each other.
+##### 1. namespaces
+I’m over simplifying but [Linux namespaces](http://man7.org/linux/man-pages/man7/namespaces.7.html) basically allow users to isolate resources like CPU, between independent processes. A process’s access and visibility are limited to its namespace. So users can run processes in one namespace without ever having to worry about conflicting with processes running inside another namespace. Processes can even have the same PID on the same machine within different containers. Likewise, applications in two different containers can use port 80 without conflicting with each other.
 
 ##### 2. cgroups 
 [croups](http://man7.org/linux/man-pages/man7/cgroups.7.html) allow putting *limits and constraints* on resources.  For example, you can create a namespace and limit available memory for processes inside it to 1 GB on a machine that has say 16 GB of memory available.
@@ -69,16 +69,14 @@ RUN wget http://www.cs.cmu.edu/afs/cs/academic/class/15213-s00/www/class28/tiny.
 CMD ["./tiny", "8082"]
 
 # Expose port 8082
-EXPOSE 8082
-``` 
+EXPOSE 8082 
+```
 
 The `Dockerfile` we created above contains instructions on how to create the *image*. Essentially, we base our image on Alpine Linux ([rootfs tarball](http://www.ethernetresearch.com/geekzone/building-linux-rootfs-from-scratch/)) and set our working directory to be `/home`. Next, we downloaded, compiled and created an executable of a simple web server written in C. After, that we specified the command to be executed when container is run and expose container’s port 8082 to the outside world.
 
 Now, we are ready to create the image. Running `docker build` in the *same directory* where you created `Dockerfile` should do the trick.  
 
-```
-umermansoor$ docker build -t codeahoydocker . 
-```
+``` umermansoor$ docker build -t codeahoydocker .  ```
 
 If the command is successful, you should see something similar:  
 
@@ -103,7 +101,7 @@ Let’s understand what’s going on here.
 
 With `docker run`, we asked Docker to create and start a container from the `codeahoydocker:latest` image. `-p 8082:8082` maps port 8082 of our local machine to port 8082 inside the container. (Remember, our web server inside the container is listening for connections on port 8082.) You’ll not see any output after this command which is totally fine. Switch to your web browser and navigate to [localhost:8082/index.html](localhost:8082/index.html]). You should see ‘Hello World’ message. (Instructions on how to delete the image and container to clean up will be in comments.)
 
-![tiny-container]({{ site.url }}/img/blogs/docker-containers⁩/tiny-container.png)
+![tiny-container]({{site.url}}/img/blogs/docker-containers⁩/tiny-container.png)
 
 Hope this was helpful. Until next time.
 
