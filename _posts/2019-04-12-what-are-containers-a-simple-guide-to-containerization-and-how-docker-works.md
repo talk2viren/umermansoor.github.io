@@ -76,11 +76,13 @@ The `Dockerfile` we created above contains instructions on how to create the *im
 
 Now, we are ready to create the image. Running `docker build` in the *same directory* where you created `Dockerfile` should do the trick.  
 
-``` umermansoor$ docker build -t codeahoydocker .  ```
+```sh
+umermansoor$ docker build -t codeahoydocker .  
+```
 
 If the command is successful, you should see something similar:  
 
-```
+```sh
 Successfully tagged codeahoydocker:latest 
 ``` 
 
@@ -93,7 +95,7 @@ At this point, our image is created. It essentially contains:
 
 Now that we’ve created the image, we can build and run a container from this image. To do so, run the following command:  
 
-```
+```sh
 umermansoor$ docker run -p 8082:8082 codeahoydocker:latest 
 ``` 
 
@@ -101,7 +103,7 @@ Let’s understand what’s going on here.
 
 With `docker run`, we asked Docker to create and start a container from the `codeahoydocker:latest` image. `-p 8082:8082` maps port 8082 of our local machine to port 8082 inside the container. (Remember, our web server inside the container is listening for connections on port 8082.) You’ll not see any output after this command which is totally fine. Switch to your web browser and navigate to [localhost:8082/index.html](localhost:8082/index.html]). You should see ‘Hello World’ message. (Instructions on how to delete the image and container to clean up will be in comments.)
 
-![tiny-container]({{site.url}}/img/blogs/docker-containers⁩/tiny-container.png)
+![tiny-container]({{site.url}}/img/dockercontainers⁩/tiny-container.png)
 
 Hope this was helpful. Until next time.
 
