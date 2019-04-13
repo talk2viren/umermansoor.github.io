@@ -52,7 +52,7 @@ In our example, we’ll base our image on Alpine Linux. When you see the term *a
 
 Alright. Create a new folder on your computer and then create a new file `Dockerfile`. In that file, paste the following contents.  
 
-``` 
+```sh
 # Use Alpine Linux rootfs tarball to base our image on
 FROM alpine:3.9 
 
