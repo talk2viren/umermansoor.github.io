@@ -5,11 +5,11 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Docker is awesome. I was late to the party and didn't get hands-on until last year. But Docker has quickly become one of the favorite tools. It enables software developers, like myself, to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
+Docker is awesome. I was late to the party and didn't get hands-on until last year. But Docker has quickly become one of the favorite tools. It enables software developers to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
 
 So what exactly is Docker? 
 
-It's a **platform** for building, testing, deploying and publishing *containerized* applications. I say platform because Docker is a **set of tools** for managing all-things related to containers. Containers are at the heart of Docker so that's what we're going to explore in depth next.
+It's a **platform** for building, testing, deploying and publishing **containerized** applications. I say platform because Docker is a **set of tools** for managing all-things related to containers. Containers are at the heart of Docker so that's what we're going to explore in depth next.
 
 <!--more-->
 
