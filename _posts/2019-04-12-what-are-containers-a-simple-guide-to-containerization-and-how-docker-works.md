@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Docker is awesome. It has quickly become one of the favorite tools for deploying backend microservices. It enables software developers to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
+Docker is awesome. It enables software developers to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
 
 So what exactly is Docker? 
 
@@ -110,7 +110,7 @@ With `docker run`, we asked Docker to create and start a container from the `cod
 
 ![tiny-container]({{site.url}}/img/dockercontainers/tiny-container.png)
 
-In the end, I'd like to add that while Docker is awesome and it's a good choice for most projects, I don't use it evewhere. In our case, Docker combined with Kubernetes makes it really easy to deploy and manage backend microservices. We don't have to worry about provisioning a new environment for each service, configurations, etc. On the other hand, for performance intensive applications, Docker may not be the best choice. One of the projects I worked on had to handle long-living TCP connections from mobile game clients (1000s per machine.) Docker networking presented a lot of issues and I just couldn't get the performance out of it and didn't use it for the project.
+In the end, I'd like to add that while Docker is awesome and it's a good choice for most projects, **I don't use it evewhere**. In our case, Docker combined with Kubernetes makes it really easy to deploy and manage backend **microservices**. We don't have to worry about provisioning a new environment for each service, configurations, etc. On the other hand, for performance intensive applications, Docker may not be the best choice. One of the projects I worked on had to handle long-living TCP connections from mobile game clients (1000s per machine.) **Docker networking** presented a lot of issues and I just couldn't get the performance out of it and didn't use it for the project.
 
 Hope this was helpful. Until next time.
 
