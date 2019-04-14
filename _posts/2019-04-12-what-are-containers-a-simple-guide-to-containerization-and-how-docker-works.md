@@ -5,7 +5,7 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
-Docker is awesome. I was late to the party and didn't get hands-on until last year. But Docker has quickly become one of the favorite tools. It enables software developers to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
+Docker is awesome. It has quickly become one of the favorite tools for deploying backend microservices. It enables software developers to package, ship and run their applications anywhere without having to worry about setup or dependencies. Combined with Kubernetes, it becomes even more powerful for streamling cluster deployments and management. I digress. Back to Docker. Docker is loved by software developers and its adoption rate has been remarkable.
 
 So what exactly is Docker? 
 
@@ -15,7 +15,7 @@ It's a **platform** for building, testing, deploying and publishing **containeri
 
 ### What is a Container?
 
-Containers provide a way to install and run your applications in **isolated environments** on a machine. Applications running inside a container are limited to resources (CPU, memory, disk, process space, users, networking, volumes) allocated for that container. Their visibility is limited container's resources and can't conflict with other containers. You can think of containers as isolated sandboxes on a single machine for applications to run in.
+Containers provide a way to install and run your applications in **isolated environments** on a machine. Applications running inside a container are limited to resources (CPU, memory, disk, process space, users, networking, volumes) allocated for that container. Their visibility is limited container's resources and doesn't conflict with other containers. You can think of containers as isolated sandboxes on a single machine for applications to run in. 
 
 This might sound familiar. The concept is similar to **virtual machines**. But there's a a key difference: containers use a very different, light-weight technique to achieve resource isolation. The technique used by containers exploits features of the underlying **Linux kernel** as opposed to **[hypervisor](https://en.wikipedia.org/wiki/Hypervisor)** based approach taken by virtual machines. In other words, containers call Linux commands to allocate and isolate a set of resources and then runs your application in this space. Let's take a quick look at two such features:
 
@@ -31,7 +31,7 @@ In short, Docker **orchestrates** by setting up containers using Linux's namespa
 
 ![docker containers]({{ site.url }}/img/dockercontainers/containers-on-box.png)
 
-Compared to virtual machines, containers are **light weight and faster** because they make use of the underlying Linux OS to run natively. However, namespace and cgroups features are only available on Linux, therefore **containers can not run on other operating systems**. At this point you might wonder how Docker runs on macOS or Windows? Docker actually uses a little trick and installs a **Linux virtual machines** on non-Linux operating systems. It then runs containers inside the virtual machine.
+Compared to virtual machines, containers are **light weight and faster** because they make use of the underlying Linux OS to run natively in **loosely** isolatated environments. A virtual machine hypervisor creates a very strong boundary to prevent applications from breaking out of it, where as [countainers' boundaries are not as strong](https://sysdig.com/blog/container-isolation-gone-wrong/). Another difference is that since _namespace_ and _cgroups_ features are only available on Linux, **containers can not run on other operating systems**. At this point you might be wondering how Docker runs on macOS or Windows? Docker actually uses a little trick and installs a **Linux virtual machines** on non-Linux operating systems. It then runs containers inside the virtual machine.
 
 Let's put everything that we have learned so far and create and run a Docker container from scratch. If you don't already have Docker installed on your machine, head over [here](https://docs.docker.com/install/) to install. In our super made up example, we'll create a Docker container, download a web server written in C, compile it, run it and then connect to the web server from our web browser (in other words, from host machine that's running the container.)
 
@@ -109,6 +109,8 @@ Let's understand what's going on here.
 With `docker run`, we asked Docker to create and start a container from the `codeahoydocker:latest` image. `-p 8082:8082` maps port 8082 of our local machine to port 8082 inside the container. (Remember, our web server inside the container is listening for connections on port 8082.) You'll not see any output after this command which is totally fine. Switch to your web browser and navigate to [localhost:8082/index.html](localhost:8082/index.html). You should see _Hello World_ message. (Instructions on how to delete the image and container to clean up will be in comments.)
 
 ![tiny-container]({{site.url}}/img/dockercontainers/tiny-container.png)
+
+In the end, I'd like to add that while Docker is awesome and it's a good choice for most projects, I don't use it evewhere. In our case, Docker combined with Kubernetes makes it really easy to deploy and manage backend microservices. We don't have to worry about provisioning a new environment for each service, configurations, etc. On the other hand, for performance intensive applications, Docker may not be the best choice. One of the projects I worked on had to handle long-living TCP connections from mobile game clients (1000s per machine.) Docker networking presented a lot of issues and I just couldn't get the performance out of it and didn't use it for the project.
 
 Hope this was helpful. Until next time.
 
